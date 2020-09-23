@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EzRegre</string>
+    <string name="btnCapturar">Capturar</string>
+    <string name="txtPrueba">pruebaEsto</string>
 </resources>

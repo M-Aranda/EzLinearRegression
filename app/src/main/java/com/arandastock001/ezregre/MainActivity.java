@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.vision.CameraSource;
@@ -18,6 +21,9 @@ import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textoReconocido;
     CameraSource cameraSource;
     final int RequestCameraPermissionID = 1001;
+    private Button btnCapturar;
 
 
     @Override
@@ -56,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         vistaDeCamara = (SurfaceView)findViewById(R.id.surface_view);
         textoReconocido = (TextView)findViewById(R.id.text_view);
+        btnCapturar = (Button)findViewById(R.id.btnCapturar);
 
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         if(!textRecognizer.isOperational()){
@@ -114,22 +122,54 @@ public class MainActivity extends AppCompatActivity {
                         textoReconocido.post(new Runnable() {
                             @Override
                             public void run() {
+
+
                                 StringBuilder st = new StringBuilder();
                                 for(int i = 0; i<items.size(); i++){
                                     TextBlock item = items.valueAt(i);
                                     st.append(item.getValue());
                                     st.append("\n");
+
                                 }
                                 textoReconocido.setText(st.toString());
 
+
                             }
                         });
-
                     }
 
+
+
+
+
+
+
+
                 }
+
+
+
+
+
+
+
+
+
+
             });
         }
+
+        btnCapturar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String caracteresReconocidos = textoReconocido.getText().toString();
+
+                startActivity(new Intent(MainActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
+                finish();
+
+            }
+        });
 
     }
 }
