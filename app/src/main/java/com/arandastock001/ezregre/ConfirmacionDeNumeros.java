@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ConfirmacionDeNumeros extends AppCompatActivity {
 
-    private TextView txtPrueba;
+    private TextView txtPruebaX, txtPruebaY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,48 +18,73 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         setContentView(R.layout.activity_confirmacion_de_numeros);
 
 
-        txtPrueba = (TextView) findViewById(R.id.txtPrueba);
+        txtPruebaX = (TextView) findViewById(R.id.txtPruebaX);
+        txtPruebaY = (TextView) findViewById(R.id.txtPruebaY);
 
         Intent i = getIntent();
-        String stringDeCaraceresReconocidos = ((String) i.getSerializableExtra("caracteresReconocidos"));
+        ArrayList<String> stringDeCaraceresReconocidos = (ArrayList<String>) i.getSerializableExtra("caracteresReconocidos");
 
 
 
-        ArrayList<Integer> listadoDeNumeros = new ArrayList<>();
-        //hay que hacerle un trim, sino reemplaza por -1's
-        stringDeCaraceresReconocidos = stringDeCaraceresReconocidos.trim();
+        ArrayList<Integer> listadoDeNumerosX = new ArrayList<>();
+        ArrayList<Integer> listadoDeNumerosY = new ArrayList<>();
+        //hay que hacerle un trim, sino reemplaza por -1's?
 
-        char[] partes = stringDeCaraceresReconocidos.toCharArray();
+        System.out.println("columna x es "+stringDeCaraceresReconocidos.get(0));
+
+        String parteXString = stringDeCaraceresReconocidos.get(0).replace(" ", "");
+        String parteYString = stringDeCaraceresReconocidos.get(1).replace(" ", "");
+
+        String [] parteX = stringDeCaraceresReconocidos.get(0).split("\n");
 
 
 
+        //char [] parteX = parteXString.toCharArray();
+        char [] parteY = parteYString.toCharArray();
 
-
-        Integer suma = 0;
-       //String partes [] = stringDeCaraceresReconocidos.split("");
-        for (int j = 0; j < partes.length  ; j++) {
-
-            listadoDeNumeros.add(Character.getNumericValue(partes[j]));
-
-            System.out.println(partes[j]);
-
+        int laSuma = 0;
+        for (int j = 0; j < parteX.length; j++) {
+            listadoDeNumerosX.add(Integer.parseInt(parteX[j]));
+            System.out.println(parteX[j]);
+            System.out.println("El array tiene " +parteX.length + " partes " );
+            laSuma = laSuma + Integer.parseInt(parteX[j]);
         }
 
 
 
 
-        for (int j = 0; j <listadoDeNumeros.size() ; j++) {
-            suma= suma+listadoDeNumeros.get(j);
-            System.out.println("El valor es "+listadoDeNumeros.get(j).toString());
-            System.out.println("La suma es "+suma.toString());
+
+        System.out.println("la suma hasta aqui es "+laSuma);
+        //Creo que pasa algo en la clase de calculo de regresion
+
+
+
+
+
+
+
+
+        for (int j = 0; j < parteY.length  ; j++) {
+
+    //        if(Character.getNumericValue(parteY[j])!=-1){
+                listadoDeNumerosX.add(Character.getNumericValue(parteY[j]));
+      //      }
+
         }
 
-        System.out.println("El tamaño de la lista es "+listadoDeNumeros.size());
-        System.out.println("El valor de la suma es " + suma.toString());
-        System.out.println("El listado de caracteres reconocidos es de "+partes.length);
 
 
-        txtPrueba.setText(suma.toString());
+        CalculadorDeRegresion cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
+
+
+
+        //txtPruebaX.setText(stringDeCaraceresReconocidos.get(0).trim());
+        //txtPruebaY.setText(stringDeCaraceresReconocidos.get(1).trim());
+
+
+        txtPruebaX.setText(cr.calcularSumaDeTodasLasX().toString());
+        txtPruebaY.setText(cr.calcularSumaDeTodasLasY().toString());
+
 
 
     }

@@ -9,11 +9,13 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.Gravity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
@@ -22,7 +24,6 @@ import com.google.android.gms.vision.text.TextRecognizer;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
     TextView textoReconocido;
     CameraSource cameraSource;
     final int RequestCameraPermissionID = 1001;
-    private Button btnCapturar;
+    private Button btnCapturarX, btnCapturarY;
+    private Boolean xCapturada, yCapturada;
+    private ArrayList<String> caracteresReconocidos;
 
 
     @Override
@@ -63,7 +66,13 @@ public class MainActivity extends AppCompatActivity {
 
         vistaDeCamara = (SurfaceView)findViewById(R.id.surface_view);
         textoReconocido = (TextView)findViewById(R.id.text_view);
-        btnCapturar = (Button)findViewById(R.id.btnCapturar);
+        btnCapturarX = (Button)findViewById(R.id.btnCapturarColumnaX);
+        btnCapturarY = (Button)findViewById(R.id.btnCapturarColumnaY);
+
+        xCapturada = false;
+        yCapturada = false;
+
+        caracteresReconocidos = new ArrayList<>();
 
         TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
         if(!textRecognizer.isOperational()){
@@ -88,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
                                return;
                            }
-
 
 
                            cameraSource.start(vistaDeCamara.getHolder());
@@ -138,13 +146,6 @@ public class MainActivity extends AppCompatActivity {
                         });
                     }
 
-
-
-
-
-
-
-
                 }
 
 
@@ -159,14 +160,57 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        btnCapturar.setOnClickListener(new View.OnClickListener() {
+        btnCapturarX.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String caracteresReconocidos = textoReconocido.getText().toString();
+                String caracteresReconocidosColumnaX = textoReconocido.getText().toString();
 
-                startActivity(new Intent(MainActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
-                finish();
+                caracteresReconocidos.add(caracteresReconocidosColumnaX);
+
+
+                xCapturada = true;
+
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Capturados los valores de la columna X",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+
+                toast.show();
+
+                if((xCapturada==true) && (yCapturada==true)){
+
+                    startActivity(new Intent(MainActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
+                    finish();
+                }
+
+
+            }
+        });
+
+
+        btnCapturarY.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String caracteresReconocidosColumnaY = textoReconocido.getText().toString();
+
+                caracteresReconocidos.add(caracteresReconocidosColumnaY);
+
+                yCapturada = true;
+
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Capturados los valores de la columna Y",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+
+                toast.show();
+
+                if((xCapturada==true) && (yCapturada==true)){
+
+                    startActivity(new Intent(MainActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
+                    finish();
+                }
+
 
             }
         });

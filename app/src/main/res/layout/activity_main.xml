@@ -21,22 +21,38 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Apunte a un texto"
+        android:layout_marginBottom="562dp"
+        android:text="@string/apunte_a_un_texto"
         android:textColor="@android:color/white"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCapturarColumnaY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/surface_view" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCapturar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="85dp"
+        android:id="@+id/btnCapturarColumnaX"
+        android:layout_width="177dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="95dp"
         android:text="@string/btnCapturar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnCapturarColumnaY"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCapturarColumnaY"
+        android:layout_width="173dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="95dp"
+        android:text="@string/btnCapturarColumnaY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCapturarColumnaX"
+        app:layout_constraintTop_toBottomOf="@+id/text_view" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

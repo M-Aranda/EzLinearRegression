@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">EzRegre</string>
-    <string name="btnCapturar">Capturar</string>
-    <string name="txtPrueba">pruebaEsto</string>
+    <string name="btnCapturar">Capturar columna x</string>
+    <string name="txtPruebaX">pruebaEsto</string>
+    <string name="apunte_a_un_texto">Apunte a una columna primero</string>
+    <string name="btnCapturarColumnaY">Capturar columna Y</string>
+    <string name="txtPruebaY">pruebaesto</string>
 </resources>
