@@ -196,6 +196,9 @@ public class MainActivity extends AppCompatActivity {
 
                 caracteresReconocidos.add(caracteresReconocidosColumnaY);
 
+                System.out.println("Lo que el programa ve ahora es"+ textoReconocido.getText().toString());
+                System.out.println("Los caracteres de la columna y son "+caracteresReconocidosColumnaY);
+
                 yCapturada = true;
 
                 Toast toast = Toast.makeText(getApplicationContext(),

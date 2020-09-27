@@ -28,47 +28,28 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
         ArrayList<Integer> listadoDeNumerosX = new ArrayList<>();
         ArrayList<Integer> listadoDeNumerosY = new ArrayList<>();
-        //hay que hacerle un trim, sino reemplaza por -1's?
 
-        System.out.println("columna x es "+stringDeCaraceresReconocidos.get(0));
-
-        String parteXString = stringDeCaraceresReconocidos.get(0).replace(" ", "");
-        String parteYString = stringDeCaraceresReconocidos.get(1).replace(" ", "");
-
-        String [] parteX = stringDeCaraceresReconocidos.get(0).split("\n");
 
 
 
-        //char [] parteX = parteXString.toCharArray();
-        char [] parteY = parteYString.toCharArray();
+        String [] parteX = stringDeCaraceresReconocidos.get(0).split("\n");
+        String [] parteY = stringDeCaraceresReconocidos.get(1).split("\n");
 
-        int laSuma = 0;
+
+
+
+
+
         for (int j = 0; j < parteX.length; j++) {
             listadoDeNumerosX.add(Integer.parseInt(parteX[j]));
-            System.out.println(parteX[j]);
-            System.out.println("El array tiene " +parteX.length + " partes " );
-            laSuma = laSuma + Integer.parseInt(parteX[j]);
+
         }
 
 
 
 
-
-        System.out.println("la suma hasta aqui es "+laSuma);
-        //Creo que pasa algo en la clase de calculo de regresion
-
-
-
-
-
-
-
-
         for (int j = 0; j < parteY.length  ; j++) {
-
-    //        if(Character.getNumericValue(parteY[j])!=-1){
-                listadoDeNumerosX.add(Character.getNumericValue(parteY[j]));
-      //      }
+                listadoDeNumerosY.add(Integer.parseInt(parteY[j]));
 
         }
 
@@ -77,9 +58,6 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         CalculadorDeRegresion cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
 
 
-
-        //txtPruebaX.setText(stringDeCaraceresReconocidos.get(0).trim());
-        //txtPruebaY.setText(stringDeCaraceresReconocidos.get(1).trim());
 
 
         txtPruebaX.setText(cr.calcularSumaDeTodasLasX().toString());

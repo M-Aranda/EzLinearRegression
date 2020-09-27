@@ -67,20 +67,20 @@ public class CalculadorDeRegresion {
 
     public Integer calcularSumaDeTodasLasX (){
         Integer suma = 0;
-        for (Integer i: getColumnaX()) {
-            suma = suma + i;
-            System.out.println("El numero es "+ i);
-            System.out.println("El valor de la suma x es " +suma);
-        }
+        System.out.println(this.getColumnaX().toString());
 
+        for (Integer i: this.getColumnaX()) {
+            suma = suma + i;
+        }
         return suma;
     }
 
     public Integer calcularSumaDeTodasLasY (){
         Integer suma = 0;
+        System.out.println(this.getColumnaY().toString());
         for (Integer i: this.getColumnaY()) {
             suma = suma + i;
-            //System.out.println("El valor de la suma y es " +suma);
+
         }
 
         return suma;
