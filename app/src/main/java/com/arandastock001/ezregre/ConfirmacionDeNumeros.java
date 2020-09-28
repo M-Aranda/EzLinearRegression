@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ConfirmacionDeNumeros extends AppCompatActivity {
 
-    private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY;
+    private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,9 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         txtPruebaY = (TextView) findViewById(R.id.txtPruebaY);
         txtSumaX2 = (TextView) findViewById(R.id.txtSumaX2);
         txtSumaY2 = (TextView) findViewById(R.id.txtSumaY2);
-        txtSumaXY = (TextView) findViewById(R.id.txtsumaXY);
+        txtSumaXY = (TextView) findViewById(R.id.txtSumaXY);
+        txtPendiente = (TextView) findViewById(R.id.txtPendiente);
+        txtInterseccion = (TextView) findViewById(R.id.txtInterseccion);
 
         Intent i = getIntent();
         ArrayList<String> stringDeCaraceresReconocidos = (ArrayList<String>) i.getSerializableExtra("caracteresReconocidos");
@@ -60,6 +63,7 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
         CalculadorDeRegresion cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
 
+        DecimalFormat df = new DecimalFormat("#.####");
 
 
 
@@ -68,6 +72,12 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         txtSumaX2.setText("La suma de todas las x2 es: "+cr.calcularSumaDeTodasLasXCuadrado().toString());
         txtSumaY2.setText("La suma de todas las y2 es: "+cr.calcularSumaDeTodasLasYCuadrado().toString());
         txtSumaXY.setText("La suma de todas las xy es: "+cr.calcularSumaDeTodasLasXY().toString());
+
+        txtPendiente.setText("La pendiente es "+df.format(cr.calcularPendiente()).toString());
+        txtInterseccion.setText("La intersección es "+df.format(cr.calcularInterseccion()).toString());
+
+
+
 
 
 

@@ -116,20 +116,22 @@ public class CalculadorDeRegresion {
     }
 
 
-    public Integer calcularPendiente(){
-        Integer resultado = 0;
+    public Double calcularPendiente(){
 
-        resultado =  ((this.getColumnaX().size())*(this.calcularSumaDeTodasLasXY()) - (this.calcularSumaDeTodasLasX()*this.calcularSumaDeTodasLasY()))/(this.getColumnaX().size()*this.calcularSumaDeTodasLasXCuadrado() -(this.calcularSumaDeTodasLasX()*this.calcularSumaDeTodasLasX())) ;
+
+       Double resultado = Double.valueOf(((this.getColumnaX().size())*(this.calcularSumaDeTodasLasXY()) - (this.calcularSumaDeTodasLasX()*this.calcularSumaDeTodasLasY())))/(this.getColumnaX().size()*this.calcularSumaDeTodasLasXCuadrado() -(this.calcularSumaDeTodasLasX()*this.calcularSumaDeTodasLasX()));
+        System.out.println("El decimal es "+resultado.toString());
         return resultado;
 
 
     }
 
 
-    public Integer calcularInterseccion(){
-        Integer resultado = 0;
+    public Double calcularInterseccion(){
 
-        resultado = (this.calcularSumaDeTodasLasY()-(calcularPendiente()*this.calcularSumaDeTodasLasX()))/this.getColumnaX().size();
+
+        Double resultado = Double.valueOf((this.calcularSumaDeTodasLasY()-(calcularPendiente()*this.calcularSumaDeTodasLasX())))/this.getColumnaX().size();
+        System.out.println("El decimal es "+resultado.toString());
 
         return resultado;
     }

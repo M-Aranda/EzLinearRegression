@@ -7,6 +7,16 @@
     tools:context=".ConfirmacionDeNumeros">
 
     <TextView
+        android:id="@+id/txtInterseccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="87dp"
+        android:text="@string/txtInterseccion"
+        app:layout_constraintStart_toStartOf="@+id/txtSumaXY"
+        app:layout_constraintTop_toBottomOf="@+id/txtSumaXY" />
+
+    <TextView
         android:id="@+id/txtPruebaX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtsumaXY"
+        android:id="@+id/txtSumaXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -56,4 +66,14 @@
         android:text="@string/txtsumaXY"
         app:layout_constraintStart_toStartOf="@+id/txtSumaY2"
         app:layout_constraintTop_toBottomOf="@+id/txtSumaY2" />
+
+    <TextView
+        android:id="@+id/txtPendiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/txtPendiente"
+        app:layout_constraintBottom_toTopOf="@+id/txtInterseccion"
+        app:layout_constraintStart_toStartOf="@+id/txtInterseccion" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,4 +8,6 @@
     <string name="txtSumaX2">txtSumaX2</string>
     <string name="txtSumaY2">txtSumaY2</string>
     <string name="txtsumaXY">txtsumaXY</string>
+    <string name="txtPendiente">txtPendiente</string>
+    <string name="txtInterseccion">txtInterseccion</string>
 </resources>
