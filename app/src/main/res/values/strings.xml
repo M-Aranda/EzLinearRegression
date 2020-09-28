@@ -5,4 +5,7 @@
     <string name="apunte_a_un_texto">Apunte a una columna primero</string>
     <string name="btnCapturarColumnaY">Capturar columna Y</string>
     <string name="txtPruebaY">pruebaesto</string>
+    <string name="txtSumaX2">txtSumaX2</string>
+    <string name="txtSumaY2">txtSumaY2</string>
+    <string name="txtsumaXY">txtsumaXY</string>
 </resources>

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ConfirmacionDeNumeros extends AppCompatActivity {
 
-    private TextView txtPruebaX, txtPruebaY;
+    private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,9 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
         txtPruebaX = (TextView) findViewById(R.id.txtPruebaX);
         txtPruebaY = (TextView) findViewById(R.id.txtPruebaY);
+        txtSumaX2 = (TextView) findViewById(R.id.txtSumaX2);
+        txtSumaY2 = (TextView) findViewById(R.id.txtSumaY2);
+        txtSumaXY = (TextView) findViewById(R.id.txtsumaXY);
 
         Intent i = getIntent();
         ArrayList<String> stringDeCaraceresReconocidos = (ArrayList<String>) i.getSerializableExtra("caracteresReconocidos");
@@ -60,8 +63,11 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
 
 
-        txtPruebaX.setText(cr.calcularSumaDeTodasLasX().toString());
-        txtPruebaY.setText(cr.calcularSumaDeTodasLasY().toString());
+        txtPruebaX.setText("La suma de todas las x es :"+cr.calcularSumaDeTodasLasX().toString());
+        txtPruebaY.setText("La suma de todas las y es: "+cr.calcularSumaDeTodasLasY().toString());
+        txtSumaX2.setText("La suma de todas las x2 es: "+cr.calcularSumaDeTodasLasXCuadrado().toString());
+        txtSumaY2.setText("La suma de todas las y2 es: "+cr.calcularSumaDeTodasLasYCuadrado().toString());
+        txtSumaXY.setText("La suma de todas las xy es: "+cr.calcularSumaDeTodasLasXY().toString());
 
 
 

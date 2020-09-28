@@ -116,6 +116,24 @@ public class CalculadorDeRegresion {
     }
 
 
+    public Integer calcularPendiente(){
+        Integer resultado = 0;
+
+        resultado =  ((this.getColumnaX().size())*(this.calcularSumaDeTodasLasXY()) - (this.calcularSumaDeTodasLasX()*this.calcularSumaDeTodasLasY()))/(this.getColumnaX().size()*this.calcularSumaDeTodasLasXCuadrado() -(this.calcularSumaDeTodasLasX()*this.calcularSumaDeTodasLasX())) ;
+        return resultado;
+
+
+    }
+
+
+    public Integer calcularInterseccion(){
+        Integer resultado = 0;
+
+        resultado = (this.calcularSumaDeTodasLasY()-(calcularPendiente()*this.calcularSumaDeTodasLasX()))/this.getColumnaX().size();
+
+        return resultado;
+    }
+
 
 
 

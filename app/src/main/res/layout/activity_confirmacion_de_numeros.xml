@@ -26,4 +26,34 @@
         app:layout_constraintStart_toStartOf="@+id/txtPruebaX"
         app:layout_constraintTop_toBottomOf="@+id/txtPruebaX"
         tools:text="textoY" />
+
+    <TextView
+        android:id="@+id/txtSumaX2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="27dp"
+        android:text="@string/txtSumaX2"
+        app:layout_constraintBottom_toTopOf="@+id/txtSumaY2"
+        app:layout_constraintStart_toStartOf="@+id/txtSumaY2" />
+
+    <TextView
+        android:id="@+id/txtSumaY2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="137dp"
+        android:text="@string/txtSumaY2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtsumaXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/txtsumaXY"
+        app:layout_constraintStart_toStartOf="@+id/txtSumaY2"
+        app:layout_constraintTop_toBottomOf="@+id/txtSumaY2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
