@@ -32,7 +32,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    //libreria necesaria para que se pueda "ver"
+    //libreria necesaria para que se pueda "ver los numeros"
     implementation 'com.google.android.gms:play-services-vision:9.8.0'
 
     //librerias necesarias para creacion de archivo excel

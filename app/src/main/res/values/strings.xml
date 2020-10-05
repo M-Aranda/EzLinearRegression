@@ -10,4 +10,9 @@
     <string name="txtsumaXY">txtsumaXY</string>
     <string name="txtPendiente">txtPendiente</string>
     <string name="txtInterseccion">txtInterseccion</string>
+    <string name="btnContinuarConfirmacionDeNumeros">Continuar</string>
+    <string name="txtPreguntaCreacionArchivo">¿Qué desea hacer?</string>
+    <string name="btnCrearExcel">Crear Excel</string>
+    <string name="btnCrearTxt">Crear txt</string>
+    <string name="btnCrearPDF">Crear PDF</string>
 </resources>

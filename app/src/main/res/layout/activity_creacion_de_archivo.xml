@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreacionDeArchivo">
+
+    <Button
+        android:id="@+id/btnCrearTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/btnCrearTxt"
+        app:layout_constraintStart_toStartOf="@+id/btnCrearPDF"
+        app:layout_constraintTop_toBottomOf="@+id/btnCrearPDF" />
+
+    <TextView
+        android:id="@+id/txtPreguntaCreacionArchivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="44dp"
+        android:text="@string/txtPreguntaCreacionArchivo"
+        app:layout_constraintBottom_toTopOf="@+id/btnCrearExcel"
+        app:layout_constraintStart_toStartOf="@+id/btnCrearExcel" />
+
+    <Button
+        android:id="@+id/btnCrearExcel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="37dp"
+        android:text="@string/btnCrearExcel"
+        app:layout_constraintBottom_toTopOf="@+id/btnCrearPDF"
+        app:layout_constraintStart_toStartOf="@+id/btnCrearPDF" />
+
+    <Button
+        android:id="@+id/btnCrearPDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="259dp"
+        android:text="@string/btnCrearPDF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

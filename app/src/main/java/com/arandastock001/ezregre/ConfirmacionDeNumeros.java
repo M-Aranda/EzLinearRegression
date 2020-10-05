@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -12,6 +14,7 @@ import java.util.ArrayList;
 public class ConfirmacionDeNumeros extends AppCompatActivity {
 
     private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion;
+    private Button btnContinuarConfirmacionDeNumeros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,8 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         txtSumaXY = (TextView) findViewById(R.id.txtSumaXY);
         txtPendiente = (TextView) findViewById(R.id.txtPendiente);
         txtInterseccion = (TextView) findViewById(R.id.txtInterseccion);
+
+        btnContinuarConfirmacionDeNumeros = (Button) findViewById(R.id.btnContinuarConfirmacionDeNumeros);
 
         Intent i = getIntent();
         ArrayList<String> stringDeCaraceresReconocidos = (ArrayList<String>) i.getSerializableExtra("caracteresReconocidos");
@@ -75,6 +80,17 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
         txtPendiente.setText("La pendiente es "+df.format(cr.calcularPendiente()).toString());
         txtInterseccion.setText("La intersección es "+df.format(cr.calcularInterseccion()).toString());
+
+        btnContinuarConfirmacionDeNumeros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),CreacionDeArchivo.class);
+                 startActivity(i);
+                 finish();
+
+
+            }
+        });
 
 
 
