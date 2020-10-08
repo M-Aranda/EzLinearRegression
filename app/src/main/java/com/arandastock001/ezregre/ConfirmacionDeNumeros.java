@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -15,6 +16,7 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
     private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion;
     private Button btnContinuarConfirmacionDeNumeros;
+    private CalculadorDeRegresion calculosRealizados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,8 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
 
         CalculadorDeRegresion cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
+        calculosRealizados = cr;
+
 
         DecimalFormat df = new DecimalFormat("#.####");
 
@@ -84,9 +88,10 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         btnContinuarConfirmacionDeNumeros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),CreacionDeArchivo.class);
-                 startActivity(i);
-                 finish();
+
+
+                startActivity(new Intent(ConfirmacionDeNumeros.this, CreacionDeArchivo.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                finish();
 
 
             }

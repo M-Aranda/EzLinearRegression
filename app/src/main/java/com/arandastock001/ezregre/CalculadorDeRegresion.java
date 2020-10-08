@@ -1,9 +1,10 @@
 package com.arandastock001.ezregre;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculadorDeRegresion {
+public class CalculadorDeRegresion implements Serializable {
     
 
     private ArrayList<Integer> columnaX;

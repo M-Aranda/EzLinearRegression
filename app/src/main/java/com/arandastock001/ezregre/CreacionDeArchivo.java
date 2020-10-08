@@ -1,6 +1,8 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Gravity;
@@ -13,7 +15,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -53,19 +57,60 @@ public class CreacionDeArchivo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent i = getIntent();
+                CalculadorDeRegresion cr = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+
 
                 Date momentoActual = Calendar.getInstance().getTime();
-                String nombreArchivo = "txt creado el "+momentoActual.toString();
+                String nombreArchivo = "txt creado el "+momentoActual.toString()+".txt";
 
-                String mensaje = "mensaje de prueba";
+                String texto = "La suma de todas las X es: "+cr.calcularSumaDeTodasLasX()+"\n"+
+                        "La suma de todas las Y es: "+cr.calcularSumaDeTodasLasY()+"\n"+
+                        "La suma de todas las X2 es: "+cr.calcularSumaDeTodasLasXCuadrado()+"\n"+
+                        "La suma de todas las Y2 es: "+cr.calcularSumaDeTodasLasYCuadrado()+"\n"+
+                        "La suma de todas las XY es: "+cr.calcularSumaDeTodasLasXY()+"\n";
 
+
+
+                File path = getApplicationContext().getExternalFilesDir(null);
+
+                File file = new File(path, nombreArchivo);
+
+                FileOutputStream stream = null;
+                try {
+                    stream = new FileOutputStream(file);
+
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Archivo guardado",
+                            Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+
+                    toast.show();
+
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    try {
+                        stream.write(texto.getBytes());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } finally {
+                    try {
+                        stream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
 
 
 
 
             }
-
             }
+
         );
 
 
