@@ -15,4 +15,9 @@
     <string name="btnCrearExcel">Crear Excel</string>
     <string name="btnCrearTxt">Crear txt</string>
     <string name="btnCrearPDF">Crear PDF</string>
+    <string name="btnAcercaDe">Acerca de</string>
+    <string name="btnProcederACamara">Capturar imagen</string>
+    <string name="txtTituloApp">Ez regression</string>
+    <string name="btnVolverAMenuPrincipal">Volver</string>
+    <string name="txtDescripcionApp">Algun texto</string>
 </resources>

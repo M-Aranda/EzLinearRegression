@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class CapturaActivity extends AppCompatActivity {
 
 
     SurfaceView vistaDeCamara;
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                        try {
                            if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
 
-                               ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA}, RequestCameraPermissionID);
+                               ActivityCompat.requestPermissions(CapturaActivity.this, new String[]{Manifest.permission.CAMERA}, RequestCameraPermissionID);
 
                                return;
                            }
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if((xCapturada==true) && (yCapturada==true)){
 
-                    startActivity(new Intent(MainActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
+                    startActivity(new Intent(CapturaActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
                     finish();
                 }
 
@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if((xCapturada==true) && (yCapturada==true)){
 
-                    startActivity(new Intent(MainActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
+                    startActivity(new Intent(CapturaActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
                     finish();
                 }
 
