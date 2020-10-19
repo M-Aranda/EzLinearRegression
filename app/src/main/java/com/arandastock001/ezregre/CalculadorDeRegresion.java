@@ -253,7 +253,6 @@ public class CalculadorDeRegresion implements Serializable {
                 "las X al cuadrado ("+this.calcularSumaDeTodasLasXCuadrado().toString()+"),\n menos la suma de todas las X("+this.calcularSumaDeTodasLasX().toString()+"), al cuadrado ("+this.calcularSumaDeTodasLasX().toString()+" * "+this.calcularSumaDeTodasLasX().toString()+")";
 
 
-
         //Calculos para la interseccion
         String pasosInterseccion = "7) Para el calculo de la intersección, a la suma de todas las Y ("+this.calcularSumaDeTodasLasY().toString()+"), se le resta la pendiente ("+this.calcularPendiente().toString().toString()+") por la suma de todas las X("+this.calcularSumaDeTodasLasX()+") y al resultado se le divide por" +
                 "la cantidad de valores en la columna X ("+this.getColumnaX().size()+")";

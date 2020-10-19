@@ -67,10 +67,13 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 String texto = cr.mostrarPasoAPaso();
 
 
-
+                // no usar?
                 File path = getApplicationContext().getExternalFilesDir(null);
 
-                File file = new File(path, nombreArchivo);
+                //deprecado?
+                File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+
+                File file = new File(dir, nombreArchivo);
 
                 FileOutputStream stream = null;
                 try {
@@ -103,9 +106,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
 
-                File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+nombreArchivo+".txt");
-                File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/documents/"+nombreArchivo+".txt");
-                from.renameTo(to);
+
 
 
 
