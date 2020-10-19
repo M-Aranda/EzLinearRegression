@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre;
+package com.arandastock001.ezregre.Modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
