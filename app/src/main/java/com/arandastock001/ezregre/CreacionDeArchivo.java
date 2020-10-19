@@ -64,11 +64,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 Date momentoActual = Calendar.getInstance().getTime();
                 String nombreArchivo = "txt creado el "+momentoActual.toString()+".txt";
 
-                String texto = "La suma de todas las X es: "+cr.calcularSumaDeTodasLasX()+"\n"+
-                        "La suma de todas las Y es: "+cr.calcularSumaDeTodasLasY()+"\n"+
-                        "La suma de todas las X2 es: "+cr.calcularSumaDeTodasLasXCuadrado()+"\n"+
-                        "La suma de todas las Y2 es: "+cr.calcularSumaDeTodasLasYCuadrado()+"\n"+
-                        "La suma de todas las XY es: "+cr.calcularSumaDeTodasLasXY()+"\n";
+                String texto = cr.mostrarPasoAPaso();
 
 
 
@@ -104,6 +100,13 @@ public class CreacionDeArchivo extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+
+
+
+                File from = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+nombreArchivo+".txt");
+                File to = new File(Environment.getExternalStorageDirectory().getAbsolutePath()+"/documents/"+nombreArchivo+".txt");
+                from.renameTo(to);
+
 
 
 
