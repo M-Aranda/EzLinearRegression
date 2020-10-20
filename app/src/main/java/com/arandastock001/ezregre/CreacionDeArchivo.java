@@ -62,7 +62,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 Date momentoActual = Calendar.getInstance().getTime();
                 String nombreArchivo = "txt creado el "+momentoActual.toString()+".txt";
 
-                String texto = cr.mostrarPasoAPaso();
+                String texto = cr.mostrarResultadosbreves();
 
 
                 // no usar?
@@ -71,7 +71,11 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 //deprecado?
                 File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
 
-                File file = new File(dir, nombreArchivo);
+                File file = new File(path, nombreArchivo);
+
+
+
+
 
                 FileOutputStream stream = null;
                 try {

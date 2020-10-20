@@ -273,8 +273,7 @@ public class CalculadorDeRegresion implements Serializable {
         pasos.concat(pasosInterseccion);
 
 
-
-
+        System.out.println(pasos);
         return pasos;
     }
 
