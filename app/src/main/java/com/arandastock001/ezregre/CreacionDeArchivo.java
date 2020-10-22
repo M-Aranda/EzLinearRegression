@@ -79,25 +79,35 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
                 PdfDocument document = new PdfDocument();
-                PdfDocument.PageInfo pageInfo = new
-                        PdfDocument.PageInfo.Builder(100, 100, 1).create();
+                PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(1000, 1000, 1).create();
                 PdfDocument.Page page = document.startPage(pageInfo);
 
 
-                Canvas canvas = page.getCanvas();
-                Paint paint = new Paint();
+               Canvas canvas = page.getCanvas();
+               Paint paint = new Paint();
 
                 canvas.drawText(texto, 10, 10, paint);
+                canvas.drawText("ahajhjasdh", 20, 20, paint);
 
 
 
                 document.finishPage(page);
+
                 try {
                     document.writeTo(fOut);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 document.close();
+
+
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Archivo pdf creado exitosamente",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+
+                toast.show();
 
 
 
@@ -138,7 +148,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                     stream = new FileOutputStream(file);
 
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            "Archivo guardado",
+                            "Archivo txt creado exitosamente",
                             Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
 
