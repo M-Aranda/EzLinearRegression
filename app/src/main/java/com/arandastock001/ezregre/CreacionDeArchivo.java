@@ -62,7 +62,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 Date momentoActual = Calendar.getInstance().getTime();
                 String nombreArchivo = "txt creado el "+momentoActual.toString()+".txt";
 
-                String texto = cr.mostrarResultadosbreves();
+                String texto = cr.mostrarPasoAPaso();
 
 
                 // no usar?

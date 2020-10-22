@@ -155,95 +155,95 @@ public class CalculadorDeRegresion implements Serializable {
      String pasosX = "1) Primero se suman todos los valores de la columa X (";
         for (int i = 0; i < this.getColumnaX().size(); i++) {
             if (i<this.getColumnaX().size()-1){
-                pasosX.concat(this.getColumnaX().get(i).toString()+" + ");
+                pasosX=pasosX+this.getColumnaX().get(i).toString()+" + ";
             }else{
-                pasosX.concat(this.getColumnaX().get(i).toString()+")\n");
+                pasosX=pasosX+this.getColumnaX().get(i).toString()+")\n";
             }
         }
         String resultadoSumaX = "Esta suma da como resultado: "+this.calcularSumaDeTodasLasX().toString();
-        pasosX.concat(resultadoSumaX);
+        pasosX=pasosX+resultadoSumaX;
 
 
         //Resultados de columna Y
         String pasosY = "2) Luego se suman todos los valores de la columna Y (";
         for (int i = 0; i < this.getColumnaX().size(); i++) {
             if (i<this.getColumnaX().size()-1){
-                pasosY.concat(this.getColumnaX().get(i).toString()+" + ");
+                pasosY=pasosY+this.getColumnaX().get(i).toString()+" + ";
             }else{
-                pasosY.concat(this.getColumnaX().get(i).toString()+")\n");
+                pasosY=pasosY+this.getColumnaX().get(i).toString()+")\n";
             }
         }
         String resultadoSumaY = "Esta suma da como resultado: "+this.calcularSumaDeTodasLasY().toString();
-        pasosY.concat(resultadoSumaY);
+        pasosY=pasosY+resultadoSumaY;
 
 
         //Resultados de columna X al cuadrado
         String pasosX2 = "3) Después se elevan al cuadrado todos los valores de la columna X para obtener los valores de la columna X2 (";
         for (int i = 0; i < this.getColumnaX().size(); i++) {
             if (i<this.getColumnaX().size()-1){
-                pasosX2.concat(this.getColumnaX().get(i).toString()+" * "+this.getColumnaX().get(i).toString());
+                pasosX2=pasosX2+(this.getColumnaX().get(i).toString()+" * "+this.getColumnaX().get(i).toString());
             }else{
-                pasosX2.concat(this.getColumnaX().get(i).toString()+" * "+this.getColumnaX().get(i).toString() +")\n");
+                pasosX2=pasosX2+(this.getColumnaX().get(i).toString()+" * "+this.getColumnaX().get(i).toString() +")\n");
             }
         }
 
         String pasosX2Continuacion =  "La suma de dichos valores quedaría como =";
         for (int i = 0; i < this.getColumnaX().size(); i++) {
             if (i<this.getColumnaX().size()-1){
-                pasosX2Continuacion.concat(this.calcularColumnaX2().get(i).toString()+" + ");
+                pasosX2Continuacion=pasosX2Continuacion+(this.calcularColumnaX2().get(i).toString()+" + ");
             }else{
-                pasosX2Continuacion.concat(this.calcularColumnaX2().get(i).toString()+")\n");
+                pasosX2Continuacion=pasosX2Continuacion+(this.calcularColumnaX2().get(i).toString()+")\n");
             }
         }
         String resultadoSumaX2 = "Dando como resultado: "+this.calcularSumaDeTodasLasXCuadrado().toString();
-        pasosX2.concat(pasosX2Continuacion);
-        pasosX2.concat(resultadoSumaX2);
+        pasosX2=pasosX2+(pasosX2Continuacion);
+        pasosX2=pasosX2+(resultadoSumaX2);
 
 
         //Resultados de columna Y al cuadrado
         String pasosY2 = "4) Después se elevan al cuadrado todos los valores de la columna Y para obtener los valores de la columna Y2 (";
         for (int i = 0; i < this.getColumnaY().size(); i++) {
             if (i<this.getColumnaY().size()-1){
-                pasosY2.concat(this.getColumnaY().get(i).toString()+" * "+this.getColumnaY().get(i).toString());
+                pasosY2=pasosY2+(this.getColumnaY().get(i).toString()+" * "+this.getColumnaY().get(i).toString());
             }else{
-                pasosY2.concat(this.getColumnaY().get(i).toString()+" * "+this.getColumnaY().get(i).toString() +")\n");
+                pasosY2=pasosY2+(this.getColumnaY().get(i).toString()+" * "+this.getColumnaY().get(i).toString() +")\n");
             }
         }
 
         String pasosY2Continuacion =  "La suma de dichos valores quedaría como =";
         for (int i = 0; i < this.getColumnaX().size(); i++) {
             if (i<this.calcularColumnaY2().size()-1){
-                pasosX2Continuacion.concat(this.calcularColumnaY2().get(i).toString()+" + ");
+                pasosY2Continuacion=pasosY2Continuacion+(this.calcularColumnaY2().get(i).toString()+" + ");
             }else{
-                pasosY2Continuacion.concat(this.calcularColumnaY2().get(i).toString()+")\n");
+                pasosY2Continuacion=pasosY2Continuacion+(this.calcularColumnaY2().get(i).toString()+")\n");
             }
         }
         String resultadoSumaY2 = "Dando como resultado: "+this.calcularSumaDeTodasLasYCuadrado().toString();
-        pasosX2.concat(pasosY2Continuacion);
-        pasosX2.concat(resultadoSumaY2);
+        pasosX2=pasosX2+(pasosY2Continuacion);
+        pasosX2=pasosX2+(resultadoSumaY2);
 
 
         //Resultados de columna XY
         String pasosXY = "5) Después se multiplican todos los valores de la columna X por todos los valores de la columna Y, para obtener la columna XY (";
         for (int i = 0; i < this.getColumnaY().size(); i++) {
             if (i<this.getColumnaY().size()-1){
-                pasosXY.concat(this.getColumnaX().get(i).toString()+" * "+this.getColumnaY().get(i).toString());
+                pasosXY=pasosXY+(this.getColumnaX().get(i).toString()+" * "+this.getColumnaY().get(i).toString());
             }else{
-                pasosXY.concat(this.getColumnaX().get(i).toString()+" * "+this.getColumnaY().get(i).toString() +")\n");
+                pasosXY=pasosXY+(this.getColumnaX().get(i).toString()+" * "+this.getColumnaY().get(i).toString() +")\n");
             }
         }
 
         String pasosXYContinuacion =  "La suma de dichos valores quedaría como =";
         for (int i = 0; i < this.getColumnaX().size(); i++) {
             if (i<this.calcularColumnaY2().size()-1){
-                pasosXYContinuacion.concat(this.getColumnaX().get(i).toString()+" + "+this.getColumnaY().get(i)+" + ");
+                pasosXYContinuacion=pasosXYContinuacion+(this.getColumnaX().get(i).toString()+" + "+this.getColumnaY().get(i)+" + ");
             }else{
-                pasosXYContinuacion.concat(this.getColumnaX().get(i).toString()+this.getColumnaY().get(i)+")\n");
+                pasosXYContinuacion=pasosXYContinuacion+(this.getColumnaX().get(i).toString()+this.getColumnaY().get(i)+")\n");
             }
         }
         String resultadoSumaXY = "Dando como resultado: "+this.calcularSumaDeTodasLasXY().toString();
-        pasosXY.concat(pasosXYContinuacion);
-        pasosXY.concat(resultadoSumaXY);
+        pasosXY=pasosXY+(pasosXYContinuacion);
+        pasosXY=pasosXY+(resultadoSumaXY);
 
 
 
@@ -258,22 +258,15 @@ public class CalculadorDeRegresion implements Serializable {
                 "la cantidad de valores en la columna X ("+this.getColumnaX().size()+")";
 
 
-        pasos.concat(pasosX);
-        pasos.concat("\n");
-        pasos.concat(pasosY);
-        pasos.concat("\n");
-        pasos.concat(pasosX2);
-        pasos.concat("\n");
-        pasos.concat(pasosY2);
-        pasos.concat("\n");
-        pasos.concat(pasosXY);
-        pasos.concat("\n");
-        pasos.concat(pasosPendiente);
-        pasos.concat("\n");
-        pasos.concat(pasosInterseccion);
 
 
-        System.out.println(pasos);
+
+
+        //este debiese ser el resumen
+
+
+        pasos = pasos+"\n"+pasosX+"\n"+pasosY+pasosX2+"\n"+pasosY2+"\n"+pasosXY+"\n"+pasosInterseccion+"\n"+pasosPendiente;
+
         return pasos;
     }
 
