@@ -3,8 +3,12 @@ package com.arandastock001.ezregre;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.os.Environment;
+import android.print.pdf.PrintedPdfDocument;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -47,6 +51,58 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnCrearPDF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent i = getIntent();
+                CalculadorDeRegresion cr = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+
+
+                Date momentoActual = Calendar.getInstance().getTime();
+                String nombreArchivo = "txt creado el "+momentoActual.toString()+".pdf";
+
+                String texto = cr.mostrarPasoAPaso();
+
+
+                File path = getApplicationContext().getExternalFilesDir(null);
+
+                final File file = new File(path, nombreArchivo);
+                try {
+                    file.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                FileOutputStream fOut = null;
+                try {
+                    fOut = new FileOutputStream(file);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+
+                PdfDocument document = new PdfDocument();
+                PdfDocument.PageInfo pageInfo = new
+                        PdfDocument.PageInfo.Builder(100, 100, 1).create();
+                PdfDocument.Page page = document.startPage(pageInfo);
+
+
+                Canvas canvas = page.getCanvas();
+                Paint paint = new Paint();
+
+                canvas.drawText(texto, 10, 10, paint);
+
+
+
+                document.finishPage(page);
+                try {
+                    document.writeTo(fOut);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                document.close();
+
+
+
+
+
 
             }
         });
