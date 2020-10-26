@@ -20,4 +20,6 @@
     <string name="txtTituloApp">Ez regression</string>
     <string name="btnVolverAMenuPrincipal">Volver</string>
     <string name="txtDescripcionApp">Algun texto</string>
+    <string name="txtr2">TextView</string>
+    <string name="txtr">TextView</string>
 </resources>

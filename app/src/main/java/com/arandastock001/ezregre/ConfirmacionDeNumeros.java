@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class ConfirmacionDeNumeros extends AppCompatActivity {
 
-    private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion;
+    private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion, txtr2, txtr;
     private Button btnContinuarConfirmacionDeNumeros;
     private CalculadorDeRegresion calculosRealizados;
 
@@ -33,6 +33,8 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         txtSumaXY = (TextView) findViewById(R.id.txtSumaXY);
         txtPendiente = (TextView) findViewById(R.id.txtPendiente);
         txtInterseccion = (TextView) findViewById(R.id.txtInterseccion);
+        txtr2 = (TextView) findViewById(R.id.txtr2);
+        txtr = (TextView) findViewById(R.id.txtr);
 
         btnContinuarConfirmacionDeNumeros = (Button) findViewById(R.id.btnContinuarConfirmacionDeNumeros);
 
@@ -86,6 +88,16 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
         txtPendiente.setText("La pendiente es "+df.format(cr.calcularPendiente()).toString());
         txtInterseccion.setText("La intersección es "+df.format(cr.calcularInterseccion()).toString());
+
+        txtr2.setText("El valor de r2 es "+df.format(cr.calcularR2()).toString());
+
+        txtr.setText("El valor de r es "+df.format(cr.calcularR()).toString());
+
+
+
+        System.out.println(cr.calcularR2().toString());
+        System.out.println(cr.calcularR().toString());
+
 
         btnContinuarConfirmacionDeNumeros.setOnClickListener(new View.OnClickListener() {
             @Override

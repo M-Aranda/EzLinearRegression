@@ -137,6 +137,36 @@ public class CalculadorDeRegresion implements Serializable {
         return resultado;
     }
 
+
+    public Double calcularR2(){
+        Double resultado = 0.0;
+
+        int cantidadDeRegistros = this.getColumnaX().size();
+
+        Double primerParte = Math.pow((cantidadDeRegistros*calcularSumaDeTodasLasXY()- calcularSumaDeTodasLasX()*calcularSumaDeTodasLasY()),2);
+        Double segundaParte=(cantidadDeRegistros*calcularSumaDeTodasLasXCuadrado()-Math.pow(calcularSumaDeTodasLasX(),2))*(cantidadDeRegistros*calcularSumaDeTodasLasYCuadrado()-Math.pow(calcularSumaDeTodasLasY(),2));
+
+
+        resultado=primerParte/segundaParte;
+
+        return resultado;
+    };
+
+    public Double calcularR(){
+        Double resultado = Math.sqrt(calcularR2());
+
+        return resultado;
+    };
+
+    public Double calcularDesviacionEstandar(){
+        Double resultado = 0.0;
+
+        return resultado;
+    };
+
+
+
+
     public String mostrarResultadosbreves(){
         String texto = "La suma de todas las X es: "+this.calcularSumaDeTodasLasX().toString()+"\n"+
                 "La suma de todas las Y es: "+this.calcularSumaDeTodasLasY().toString()+"\n"+
