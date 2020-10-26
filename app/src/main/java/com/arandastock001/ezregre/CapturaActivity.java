@@ -166,6 +166,7 @@ public class CapturaActivity extends AppCompatActivity {
 
                 String caracteresReconocidosColumnaX = textoReconocido.getText().toString();
 
+                //descomentar siguiente linea al terminar pruebas
                 caracteresReconocidos.add(caracteresReconocidosColumnaX);
 
 
@@ -179,6 +180,7 @@ public class CapturaActivity extends AppCompatActivity {
                 toast.show();
 
                 if((xCapturada==true) && (yCapturada==true)){
+
 
                     startActivity(new Intent(CapturaActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
                     finish();
@@ -194,10 +196,12 @@ public class CapturaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String caracteresReconocidosColumnaY = textoReconocido.getText().toString();
 
+
+                //descomentar siguiente linea esto al terminar pruebas
                 caracteresReconocidos.add(caracteresReconocidosColumnaY);
 
-                System.out.println("Lo que el programa ve ahora es"+ textoReconocido.getText().toString());
-                System.out.println("Los caracteres de la columna y son "+caracteresReconocidosColumnaY);
+
+
 
                 yCapturada = true;
 
