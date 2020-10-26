@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -57,9 +58,10 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
                 Date momentoActual = Calendar.getInstance().getTime();
-                String nombreArchivo = "txt creado el "+momentoActual.toString()+".pdf";
+                String nombreArchivo = "PDF creado creado el "+momentoActual.toString()+".pdf";
 
                 String texto = cr.mostrarPasoAPaso();
+                String[] lineasParaElPdf= texto.split("\n");
 
 
                 File path = getApplicationContext().getExternalFilesDir(null);
@@ -85,9 +87,15 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
                Canvas canvas = page.getCanvas();
                Paint paint = new Paint();
+               int valorX = 0;
+               int valorY = 0;
 
-                canvas.drawText(texto, 10, 10, paint);
-                canvas.drawText("ahajhjasdh", 20, 20, paint);
+                for (int j = 0; j <lineasParaElPdf.length ; j++) {
+                    //valorX=valorX+10;
+                    valorY=valorY+12;
+                    canvas.drawText(lineasParaElPdf[j],valorX,valorY,paint);
+                }
+
 
 
 
