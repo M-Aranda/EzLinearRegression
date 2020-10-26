@@ -6,9 +6,10 @@ import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
+
 import android.os.Bundle;
 import android.os.Environment;
-import android.print.pdf.PrintedPdfDocument;
+
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -116,6 +117,10 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 toast.setGravity(Gravity.CENTER, 0, 0);
 
                 toast.show();
+
+
+
+
 
 
 

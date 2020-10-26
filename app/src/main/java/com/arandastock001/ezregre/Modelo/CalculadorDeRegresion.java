@@ -280,13 +280,13 @@ public class CalculadorDeRegresion implements Serializable {
         // Calculos para pendiente
         String pasosPendiente = "6) Ahora, para calcular la pendiente se multiplica la cantidad de numeros en la columna X ("+this.getColumnaX().size()+") por la suma de todos los valores en la columna XY ("+this.calcularSumaDeTodasLasXY().toString()+") menos el resultado de" +
                 "\n la suma de todas las X("+this.calcularSumaDeTodasLasX().toString()+") por la suma de todas las Y("+this.calcularSumaDeTodasLasY().toString()+"). Luego, todo eso se divide por la cantidad de numeros en la columna X ("+this.getColumnaX().size()+") por la suma de todas" +
-                "\n las X al cuadrado ("+this.calcularSumaDeTodasLasXCuadrado().toString()+"), menos la suma de todas las X("+this.calcularSumaDeTodasLasX().toString()+"), al cuadrado ("+this.calcularSumaDeTodasLasX().toString()+" * "+this.calcularSumaDeTodasLasX().toString()+").\n";
+                "\n las X al cuadrado ("+this.calcularSumaDeTodasLasXCuadrado().toString()+"), menos la suma de todas las X("+this.calcularSumaDeTodasLasX().toString()+"), al cuadrado ("+this.calcularSumaDeTodasLasX().toString()+" * "+this.calcularSumaDeTodasLasX().toString()+"). Esto da como resultado "+calcularPendiente().toString()+".\n";
 
 
 
         //Calculos para la interseccion
         String pasosInterseccion = "7) Para el calculo de la intersección, a la suma de todas las Y ("+this.calcularSumaDeTodasLasY().toString()+"), se le resta la pendiente ("+this.calcularPendiente().toString().toString()+") por la suma de todas las X("+this.calcularSumaDeTodasLasX()+") y al resultado se le divide por\n" +
-                "la cantidad de valores en la columna X ("+this.getColumnaX().size()+").";
+                "la cantidad de valores en la columna X ("+this.getColumnaX().size()+"). Esto da como resultado "+calcularInterseccion().toString()+".";
 
 
 
