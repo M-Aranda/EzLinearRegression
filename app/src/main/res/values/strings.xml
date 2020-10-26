@@ -22,4 +22,5 @@
     <string name="txtDescripcionApp">Algun texto</string>
     <string name="txtr2">TextView</string>
     <string name="txtr">TextView</string>
+    <string name="txtTituloAcercaDe">Acerca de</string>
 </resources>
