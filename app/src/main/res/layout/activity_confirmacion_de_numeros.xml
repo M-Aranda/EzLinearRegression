@@ -60,10 +60,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="263dp"
+        android:layout_marginBottom="237dp"
         android:text="@string/txtsumaXY"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSumaX2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtPendiente"
@@ -103,4 +105,15 @@
         android:text="@string/txtr"
         app:layout_constraintEnd_toEndOf="@+id/txtr2"
         app:layout_constraintTop_toBottomOf="@+id/txtr2" />
+
+    <Button
+        android:id="@+id/btnContinuarADesarrollo"
+        android:layout_width="184dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="169dp"
+        android:text="@string/btnContinuarADesarrollo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtSumaXY" />
 </androidx.constraintlayout.widget.ConstraintLayout>

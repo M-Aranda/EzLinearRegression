@@ -10,7 +10,7 @@
     <string name="txtsumaXY">txtsumaXY</string>
     <string name="txtPendiente">txtPendiente</string>
     <string name="txtInterseccion">txtInterseccion</string>
-    <string name="btnContinuarConfirmacionDeNumeros">Continuar</string>
+    <string name="btnContinuarConfirmacionDeNumeros">Exportar resultados</string>
     <string name="txtPreguntaCreacionArchivo">¿Qué desea hacer?</string>
     <string name="btnCrearExcel">Crear Excel</string>
     <string name="btnCrearTxt">Crear txt</string>
@@ -23,4 +23,8 @@
     <string name="txtr2">TextView</string>
     <string name="txtr">TextView</string>
     <string name="txtTituloAcercaDe">Acerca de</string>
+    <string name="btnContinuarADesarrollo">Mostrar paso a paso</string>
+    <string name="btnVolverDesdePasoAPaso">Volver</string>
+    <string name="txtPasoAPaso">Paso a Paso</string>
+    <string name="btnVolverDesdeCreacionDeArchivo">Volver</string>
 </resources>

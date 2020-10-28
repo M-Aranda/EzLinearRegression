@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class ConfirmacionDeNumeros extends AppCompatActivity {
 
     private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion, txtr2, txtr;
-    private Button btnContinuarConfirmacionDeNumeros;
+    private Button btnContinuarConfirmacionDeNumeros, btnContinuarADesarrollo;
     private CalculadorDeRegresion calculosRealizados;
 
     @Override
@@ -36,6 +36,7 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         txtr2 = (TextView) findViewById(R.id.txtr2);
         txtr = (TextView) findViewById(R.id.txtr);
 
+        btnContinuarADesarrollo = (Button) findViewById(R.id.btnContinuarADesarrollo);
         btnContinuarConfirmacionDeNumeros = (Button) findViewById(R.id.btnContinuarConfirmacionDeNumeros);
 
         Intent i = getIntent();
@@ -111,6 +112,14 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
             }
         });
 
+
+        btnContinuarADesarrollo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConfirmacionDeNumeros.this, CreacionDeArchivo.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                finish();
+            }
+        });
 
 
 

@@ -27,7 +27,7 @@ import java.util.Date;
 
 public class CreacionDeArchivo extends AppCompatActivity {
 
-    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt;
+    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo;
 
 
 
@@ -39,6 +39,8 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnCrearExcel = (Button) findViewById(R.id.btnCrearExcel);
         btnCrearPDF = (Button) findViewById(R.id.btnCrearPDF);
         btnCrearTxt = (Button) findViewById(R.id.btnCrearTxt);
+        btnVolverDesdeCreacionDeArchivo = (Button) findViewById(R.id.btnVolverDesdeCreacionDeArchivo);
+
 
 
 
@@ -189,14 +191,20 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
 
-
-
-
-
             }
             }
 
         );
+
+        btnVolverDesdeCreacionDeArchivo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),ConfirmacionDeNumeros.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
 
 
 
@@ -205,6 +213,9 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
     }
+
+
+
 
 
 }
