@@ -22,6 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -199,9 +200,14 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnVolverDesdeCreacionDeArchivo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),ConfirmacionDeNumeros.class);
-                startActivity(i);
+                Intent i = getIntent();
+                CalculadorDeRegresion calculosRealizados = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+
+                startActivity(new Intent(CreacionDeArchivo.this, ConfirmacionDeNumeros.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
+
+
+
 
             }
         });

@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+
+import java.io.Serializable;
+
 public class PasoAPaso extends AppCompatActivity {
 
 
@@ -25,8 +29,10 @@ public class PasoAPaso extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getApplicationContext(),ConfirmacionDeNumeros.class);
-                startActivity(i);
+                Intent i = getIntent();
+                CalculadorDeRegresion calculosRealizados = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+
+                startActivity(new Intent(PasoAPaso.this, ConfirmacionDeNumeros.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
 
             }

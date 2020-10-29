@@ -40,41 +40,41 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         btnContinuarConfirmacionDeNumeros = (Button) findViewById(R.id.btnContinuarConfirmacionDeNumeros);
 
         Intent i = getIntent();
-        ArrayList<String> stringDeCaraceresReconocidos = (ArrayList<String>) i.getSerializableExtra("caracteresReconocidos");
-
-
 
         ArrayList<Integer> listadoDeNumerosX = new ArrayList<>();
         ArrayList<Integer> listadoDeNumerosY = new ArrayList<>();
 
+        CalculadorDeRegresion cr = null;
+
+        if( i.getSerializableExtra("caracteresReconocidos")!=null) {
 
 
-
-        String [] parteX = stringDeCaraceresReconocidos.get(0).split("\n");
-        String [] parteY = stringDeCaraceresReconocidos.get(1).split("\n");
+            ArrayList<String> stringDeCaraceresReconocidos = (ArrayList<String>) i.getSerializableExtra("caracteresReconocidos");
 
 
+            String[] parteX = stringDeCaraceresReconocidos.get(0).split("\n");
+            String[] parteY = stringDeCaraceresReconocidos.get(1).split("\n");
 
 
+            for (int j = 0; j < parteX.length; j++) {
+                listadoDeNumerosX.add(Integer.parseInt(parteX[j]));
+            }
 
 
-        for (int j = 0; j < parteX.length; j++) {
-            listadoDeNumerosX.add(Integer.parseInt(parteX[j]));
-
-        }
-
-
-
-
-        for (int j = 0; j < parteY.length  ; j++) {
+            for (int j = 0; j < parteY.length; j++) {
                 listadoDeNumerosY.add(Integer.parseInt(parteY[j]));
+            }
 
+            cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
+            calculosRealizados = cr;
+
+
+        }else if( i.getSerializableExtra("caracteresReconocidos")==null){
+            cr = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+            calculosRealizados = cr;
         }
 
 
-
-        CalculadorDeRegresion cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
-        calculosRealizados = cr;
 
 
         DecimalFormat df = new DecimalFormat("#.####");
@@ -116,7 +116,7 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         btnContinuarADesarrollo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ConfirmacionDeNumeros.this, CreacionDeArchivo.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                startActivity(new Intent(ConfirmacionDeNumeros.this, PasoAPaso.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
             }
         });
