@@ -188,12 +188,17 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
 
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
-                        +  File.separator + "ezregre" + File.separator);
-                intent.setDataAndType(uri, "text/csv");
-                startActivity(Intent.createChooser(intent, "Abrir carpeta"));
+                //Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                //Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
+                //+  File.separator + "ezregre" + File.separator);
+                //intent.setDataAndType(uri, "text/csv");
+                //startActivity(Intent.createChooser(intent, "Abrir carpeta"));
 
+
+
+                Intent intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
+
+                startActivity(intent);
 
 
             }
