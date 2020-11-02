@@ -1,6 +1,7 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
     private Button btnProcederACamara, btnAcercaDe;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,8 @@ public class MenuPrincipal extends AppCompatActivity {
 
         btnProcederACamara  = (Button)findViewById(R.id.btnProcederACamara);
         btnAcercaDe = (Button)findViewById(R.id.btnAcercaDe);
+
+
 
 
 

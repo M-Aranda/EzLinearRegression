@@ -7,9 +7,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 
+import android.provider.DocumentsContract;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -126,10 +128,6 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
 
-
-
-
-
             }
         });
 
@@ -189,6 +187,12 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 }
 
 
+
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
+                        +  File.separator + "ezregre" + File.separator);
+                intent.setDataAndType(uri, "text/csv");
+                startActivity(Intent.createChooser(intent, "Abrir carpeta"));
 
 
 
