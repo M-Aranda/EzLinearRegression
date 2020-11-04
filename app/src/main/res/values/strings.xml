@@ -28,4 +28,5 @@
     <string name="txtPasoAPaso">Paso a Paso</string>
     <string name="btnVolverDesdeCreacionDeArchivo">Volver</string>
     <string name="txtPasoAPasoDetallado">pasoAPaso</string>
+    <string name="txtTituloConfirmacionDeNumeros">Resumen</string>
 </resources>

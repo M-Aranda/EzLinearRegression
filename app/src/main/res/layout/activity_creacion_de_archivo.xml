@@ -25,6 +25,7 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="110dp"
         android:layout_marginBottom="45dp"
+        android:textColor="@android:color/white"
         android:text="@string/txtPreguntaCreacionArchivo"
         app:layout_constraintBottom_toTopOf="@+id/btnCrearExcel"
         app:layout_constraintStart_toStartOf="@+id/btnCrearExcel"

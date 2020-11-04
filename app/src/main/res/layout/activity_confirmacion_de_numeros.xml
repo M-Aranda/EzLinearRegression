@@ -117,4 +117,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSumaXY" />
+
+    <TextView
+        android:id="@+id/txtTituloConfirmacionDeNumeros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="85dp"
+        android:text="@string/txtTituloConfirmacionDeNumeros"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="@+id/btnContinuarConfirmacionDeNumeros"
+        app:layout_constraintStart_toStartOf="@+id/txtSumaX2"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
