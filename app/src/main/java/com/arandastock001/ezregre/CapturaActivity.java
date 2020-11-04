@@ -182,7 +182,7 @@ public class CapturaActivity extends AppCompatActivity {
                 if((xCapturada==true) && (yCapturada==true)){
 
 
-                    startActivity(new Intent(CapturaActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
+                    startActivity(new Intent(CapturaActivity.this, ResumenDeResultados.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
                     finish();
                 }
 
@@ -214,7 +214,7 @@ public class CapturaActivity extends AppCompatActivity {
 
                 if((xCapturada==true) && (yCapturada==true)){
 
-                    startActivity(new Intent(CapturaActivity.this, ConfirmacionDeNumeros.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
+                    startActivity(new Intent(CapturaActivity.this, ResumenDeResultados.class).putExtra("caracteresReconocidos", (Serializable) caracteresReconocidos));
                     finish();
                 }
 

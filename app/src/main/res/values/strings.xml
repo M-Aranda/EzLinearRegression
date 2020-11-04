@@ -29,4 +29,5 @@
     <string name="btnVolverDesdeCreacionDeArchivo">Volver</string>
     <string name="txtPasoAPasoDetallado">pasoAPaso</string>
     <string name="txtTituloConfirmacionDeNumeros">Resumen</string>
+    <string name="btnVerHistorial">ver historial</string>
 </resources>

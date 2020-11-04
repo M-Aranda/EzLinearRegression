@@ -47,7 +47,7 @@ public class PasoAPaso extends AppCompatActivity {
                 Intent i = getIntent();
                 CalculadorDeRegresion calculosRealizados = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
 
-                startActivity(new Intent(PasoAPaso.this, ConfirmacionDeNumeros.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                startActivity(new Intent(PasoAPaso.this, ResumenDeResultados.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
 
             }

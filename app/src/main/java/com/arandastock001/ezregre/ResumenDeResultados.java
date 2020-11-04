@@ -9,16 +9,21 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.Data;
+import com.arandastock001.ezregre.Modelo.Registro;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
-public class ConfirmacionDeNumeros extends AppCompatActivity {
+public class ResumenDeResultados extends AppCompatActivity {
 
     private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion, txtr2, txtr;
     private Button btnContinuarConfirmacionDeNumeros, btnContinuarADesarrollo;
     private CalculadorDeRegresion calculosRealizados;
+    private Data db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,8 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         btnContinuarADesarrollo = (Button) findViewById(R.id.btnContinuarADesarrollo);
         btnContinuarConfirmacionDeNumeros = (Button) findViewById(R.id.btnContinuarConfirmacionDeNumeros);
 
+        db = new Data(this.getApplicationContext());
+
         Intent i = getIntent();
 
         ArrayList<Integer> listadoDeNumerosX = new ArrayList<>();
@@ -46,6 +53,7 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
 
         CalculadorDeRegresion cr = null;
 
+        //datos vienene de activity de captura (camara), o sea, los calculos tienene que hacerse todavia
         if( i.getSerializableExtra("caracteresReconocidos")!=null) {
 
 
@@ -56,19 +64,45 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
             String[] parteY = stringDeCaraceresReconocidos.get(1).split("\n");
 
 
+           String parteXComoString = "";
+           String parteYComoString = "";
+
+
             for (int j = 0; j < parteX.length; j++) {
                 listadoDeNumerosX.add(Integer.parseInt(parteX[j]));
+                parteXComoString=parteXComoString+parteX[j]+"\n";
             }
 
 
             for (int j = 0; j < parteY.length; j++) {
                 listadoDeNumerosY.add(Integer.parseInt(parteY[j]));
+                parteYComoString=parteYComoString+parteY[j]+"\n";
             }
+
+
+            //Para ver si se agregaron los caracteres
+            System.out.println(parteXComoString);
+            System.out.println(parteYComoString);
+            Date momentoActual = Calendar.getInstance().getTime();
+            String momentoActualComoString = momentoActual.toString();
+
+
+            //Para ingresar registro a db
+            Registro r = new Registro();
+            r.setValoresColumnaX(parteXComoString);
+            r.setValoresColumnaY(parteYComoString);
+            r.setFechaRegistro(momentoActualComoString);
+            db.insertarRegistro(r); //Registro se hizo
+
+
+
+
 
             cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
             calculosRealizados = cr;
 
 
+            // datos NO vienen de captura, o sea, los calculos ya se hicieron
         }else if( i.getSerializableExtra("caracteresReconocidos")==null){
             cr = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
             calculosRealizados = cr;
@@ -105,7 +139,7 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                startActivity(new Intent(ConfirmacionDeNumeros.this, CreacionDeArchivo.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                startActivity(new Intent(ResumenDeResultados.this, CreacionDeArchivo.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
 
 
@@ -116,7 +150,7 @@ public class ConfirmacionDeNumeros extends AppCompatActivity {
         btnContinuarADesarrollo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ConfirmacionDeNumeros.this, PasoAPaso.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                startActivity(new Intent(ResumenDeResultados.this, PasoAPaso.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
             }
         });

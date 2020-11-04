@@ -7,11 +7,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 
-import android.provider.DocumentsContract;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -212,7 +210,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 Intent i = getIntent();
                 CalculadorDeRegresion calculosRealizados = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
 
-                startActivity(new Intent(CreacionDeArchivo.this, ConfirmacionDeNumeros.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                startActivity(new Intent(CreacionDeArchivo.this, ResumenDeResultados.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
 
 

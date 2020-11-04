@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class MenuPrincipal extends AppCompatActivity {
 
-    private Button btnProcederACamara, btnAcercaDe;
+    private Button btnProcederACamara, btnAcercaDe, btnVerHistorial;
 
 
     @Override
@@ -22,6 +22,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         btnProcederACamara  = (Button)findViewById(R.id.btnProcederACamara);
         btnAcercaDe = (Button)findViewById(R.id.btnAcercaDe);
+        btnVerHistorial = (Button)findViewById(R.id.btnVerHistorial);
 
 
 
@@ -49,14 +50,24 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
+
+
+        btnAcercaDe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),VerHistorial.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Bienvenido a la aplicación",
                 Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
 
         toast.show();
-
-
 
 
 

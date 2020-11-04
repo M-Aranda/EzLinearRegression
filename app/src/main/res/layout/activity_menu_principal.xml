@@ -9,22 +9,22 @@
 
     <Button
         android:id="@+id/btnAcercaDe"
-        android:layout_width="0dp"
+        android:layout_width="150dp"
         android:layout_height="0dp"
         android:layout_marginBottom="45dp"
         android:text="@string/btnAcercaDe"
         app:layout_constraintBottom_toTopOf="@+id/btnProcederACamara"
-        app:layout_constraintEnd_toEndOf="@+id/btnProcederACamara"
-        app:layout_constraintStart_toStartOf="@+id/btnProcederACamara"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloApp" />
 
     <Button
         android:id="@+id/btnProcederACamara"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="361dp"
+        android:layout_marginBottom="45dp"
         android:text="@string/btnProcederACamara"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerHistorial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAcercaDe" />
@@ -34,12 +34,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
+        android:layout_marginEnd="90dp"
         android:layout_marginBottom="84dp"
         android:text="@string/txtTituloApp"
         android:textColor="@android:color/white"
         android:textSize="32dp"
         app:layout_constraintBottom_toTopOf="@+id/btnAcercaDe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnVerHistorial"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="261dp"
+        android:text="@string/btnVerHistorial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnProcederACamara" />
 </androidx.constraintlayout.widget.ConstraintLayout>
