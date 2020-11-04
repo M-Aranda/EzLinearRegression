@@ -72,8 +72,24 @@ public class Data extends SQLiteOpenHelper{
         return registros;
     }
 
+    public Registro getRegistroById(int id){
 
+        SQLiteDatabase bd = getReadableDatabase();
+        Cursor leer = bd.rawQuery("SELECT * FROM REGISTRO WHERE _id= "+id+"; ",null);
 
+        Registro r = null;
+        while(leer.moveToNext()){
+            r = new Registro();
+            r.setId(leer.getInt(0));
+            r.setValoresColumnaX(leer.getString(1));
+            r.setValoresColumnaY(leer.getString(2));
+            r.setFechaRegistro(leer.getString(3));
+        }
+
+        bd.close();
+        return r;
+
+    }
 
 
 
