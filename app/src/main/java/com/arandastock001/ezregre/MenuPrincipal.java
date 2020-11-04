@@ -52,7 +52,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
 
 
-        btnAcercaDe.setOnClickListener(new View.OnClickListener() {
+        btnVerHistorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),VerHistorial.class);

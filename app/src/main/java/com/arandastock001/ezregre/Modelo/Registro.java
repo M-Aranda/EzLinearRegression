@@ -56,11 +56,6 @@ public class Registro {
 
     @Override
     public String toString() {
-        return "Registro{" +
-                "id=" + id +
-                ", valoresColumnaX='" + valoresColumnaX + '\'' +
-                ", valoresColumnaY='" + valoresColumnaY + '\'' +
-                ", fechaRegistro=" + fechaRegistro +
-                '}';
+        return "Captura realizada el " + fechaRegistro ;
     }
 }

@@ -6,4 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".VerHistorial">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-95dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="675dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lstRegistros"
+                android:layout_width="match_parent"
+                android:layout_height="690dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVolverDesdeHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:text="@string/btnVolverDesdeHistorial" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
