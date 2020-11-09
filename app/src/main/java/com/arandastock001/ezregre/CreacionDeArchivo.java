@@ -24,6 +24,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -72,7 +74,15 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
                 Date momentoActual = Calendar.getInstance().getTime();
-                String nombreArchivo = "PDF creado creado el "+momentoActual.toString()+".pdf";
+
+
+                DateFormat df = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
+                String fecha = df.format(momentoActual);
+
+
+
+                String nombreArchivo = "PDF creado el "+fecha+".pdf";
+
 
                 String texto = cr.mostrarPasoAPaso();
                 String[] lineasParaElPdf= texto.split("\n");
@@ -149,7 +159,13 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
                 Date momentoActual = Calendar.getInstance().getTime();
-                String nombreArchivo = "txt creado el "+momentoActual.toString()+".txt";
+
+                DateFormat df = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
+                String fecha = df.format(momentoActual);
+
+
+
+                String nombreArchivo = "txt creado el "+fecha+".txt";
 
                 String texto = cr.mostrarPasoAPaso();
 

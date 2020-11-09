@@ -27,7 +27,7 @@ public class AcercaDe extends AppCompatActivity {
                 " Instrucciones: "+ "\n"+
                 "Apunte y capture la columna x primero, y luego la columna y." +"\n"+
                 " El programa resolvera el ejercicio de regresón lineal simple." +"\n"+
-                "Se puede exportar el resultado a PDF, Excel o archivo Txt ");
+                "Se puede exportar el resultado a PDF, Excel o archivo Txt. ");
 
 
         btnVolverAMenuPrincipal.setOnClickListener(new View.OnClickListener() {

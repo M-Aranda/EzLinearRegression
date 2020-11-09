@@ -40,7 +40,7 @@
             <TextView
                 android:id="@+id/txtDescripcionApp"
                 android:layout_width="match_parent"
-                android:layout_height="213dp"
+                android:layout_height="708dp"
                 android:text="@string/txtDescripcionApp"
                 tools:layout_editor_absoluteX="81dp"
                 tools:layout_editor_absoluteY="157dp" />
@@ -48,15 +48,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="495dp"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btnVolverAMenuPrincipal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/btnVolverAMenuPrincipal"
-                tools:layout_editor_absoluteX="-16dp"
-                tools:layout_editor_absoluteY="681dp" />
+                <Button
+                    android:id="@+id/btnVolverAMenuPrincipal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btnVolverAMenuPrincipal"
+                    tools:layout_editor_absoluteX="-16dp"
+                    tools:layout_editor_absoluteY="681dp" />
+            </LinearLayout>
 
 
         </LinearLayout>

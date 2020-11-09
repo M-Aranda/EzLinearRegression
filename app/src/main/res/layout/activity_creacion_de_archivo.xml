@@ -9,55 +9,58 @@
 
     <Button
         android:id="@+id/btnCrearTxt"
-        android:layout_width="115dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="19dp"
         android:text="@string/btnCrearTxt"
         app:layout_constraintBottom_toTopOf="@+id/btnVerArchivos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnVerArchivos"
+        app:layout_constraintStart_toStartOf="@+id/btnVerArchivos"
         app:layout_constraintTop_toBottomOf="@+id/btnCrearPDF" />
 
     <TextView
         android:id="@+id/txtPreguntaCreacionArchivo"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
+        android:layout_width="165dp"
+        android:layout_height="0dp"
         android:layout_marginTop="110dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/txtPreguntaCreacionArchivo"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/btnCrearExcel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnCrearExcel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnCrearExcel"
-        android:layout_width="115dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/btnCrearExcel"
         app:layout_constraintBottom_toTopOf="@+id/btnCrearPDF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCrearPDF"
+        app:layout_constraintStart_toStartOf="@+id/btnCrearPDF"
         app:layout_constraintTop_toBottomOf="@+id/txtPreguntaCreacionArchivo" />
 
     <Button
         android:id="@+id/btnCrearPDF"
-        android:layout_width="115dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="18dp"
         android:text="@string/btnCrearPDF"
         app:layout_constraintBottom_toTopOf="@+id/btnCrearTxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCrearTxt"
+        app:layout_constraintStart_toStartOf="@+id/btnVerArchivos"
         app:layout_constraintTop_toBottomOf="@+id/btnCrearExcel" />
 
     <Button
         android:id="@+id/btnVolverDesdeCreacionDeArchivo"
-        android:layout_width="115dp"
+        android:layout_width="134dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="185dp"
+        android:layout_marginBottom="152dp"
         android:text="@string/btnVolverDesdeCreacionDeArchivo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,13 +69,13 @@
 
     <Button
         android:id="@+id/btnVerArchivos"
-        android:layout_width="121dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="26dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/btnVerArchivos"
         app:layout_constraintBottom_toTopOf="@+id/btnVolverDesdeCreacionDeArchivo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnVolverDesdeCreacionDeArchivo"
+        app:layout_constraintStart_toStartOf="@+id/btnVolverDesdeCreacionDeArchivo"
         app:layout_constraintTop_toBottomOf="@+id/btnCrearTxt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

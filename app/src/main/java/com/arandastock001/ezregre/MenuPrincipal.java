@@ -52,7 +52,7 @@ public class MenuPrincipal extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                 Intent i = new Intent(getApplicationContext(),AcercaDe.class);
+                Intent i = new Intent(getApplicationContext(),AcercaDe.class);
                 startActivity(i);
                 finish();
 
