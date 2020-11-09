@@ -29,7 +29,7 @@ import java.util.Date;
 
 public class CreacionDeArchivo extends AppCompatActivity {
 
-    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo;
+    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo,btnVerArchivos;
 
 
 
@@ -42,6 +42,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnCrearPDF = (Button) findViewById(R.id.btnCrearPDF);
         btnCrearTxt = (Button) findViewById(R.id.btnCrearTxt);
         btnVolverDesdeCreacionDeArchivo = (Button) findViewById(R.id.btnVolverDesdeCreacionDeArchivo);
+        btnVerArchivos = (Button) findViewById(R.id.btnVerArchivos);
 
 
 
@@ -130,7 +131,6 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
                 toast.show();
 
-                redirigirADirecotrioDeArchivosDeLaApp();
 
 
 
@@ -208,12 +208,19 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 //Intent intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
 
                 //startActivity(intent);
-                redirigirADirecotrioDeArchivosDeLaApp();
+
 
             }
             }
 
         );
+
+        btnVerArchivos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirigirADirecotrioDeArchivosDeLaApp();
+            }
+        });
 
         btnVolverDesdeCreacionDeArchivo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -263,8 +270,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
         }
         else
         {
-            // if you reach this place, it means there is no any file
-            // explorer app installed on your device
+            // se necesita app de explorarcion de archivos
         }
 
     }

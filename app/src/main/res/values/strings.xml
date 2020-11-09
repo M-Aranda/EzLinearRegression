@@ -31,4 +31,5 @@
     <string name="txtTituloConfirmacionDeNumeros">Resumen</string>
     <string name="btnVerHistorial">ver historial</string>
     <string name="btnVolverDesdeHistorial">Volver</string>
+    <string name="btnVerArchivos">ver archivos</string>
 </resources>
