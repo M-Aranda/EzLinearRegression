@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 
@@ -49,6 +50,14 @@ public class CreacionDeArchivo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+                redirigirADirecotrioDeArchivosDeLaApp();
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Funcionalidad para crear EXCEL aún en desarrollo",
+                        Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+
+                toast.show();
             }
         });
 
@@ -120,6 +129,8 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 toast.setGravity(Gravity.CENTER, 0, 0);
 
                 toast.show();
+
+                redirigirADirecotrioDeArchivosDeLaApp();
 
 
 
@@ -194,10 +205,10 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
 
-                Intent intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
+                //Intent intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
 
-                startActivity(intent);
-
+                //startActivity(intent);
+                redirigirADirecotrioDeArchivosDeLaApp();
 
             }
             }
@@ -222,8 +233,39 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
 
+    }
 
 
+    public void redirigirADirecotrioDeArchivosDeLaApp(){
+
+        //no es necesario este bloque, pero lo dejo para referencia
+/*
+                if(Build.VERSION.SDK_INT>=24){
+                    try{
+                        Method m = StrictMode.class.getMethod("disableDeathOnFileUriExposure");
+                        m.invoke(null);
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                }
+*/
+
+        //La siguiente linea permite  abrir el directorio especifico en donde se guardan los archivos
+        Uri selectedUri = Uri.parse(Environment.getExternalStorageDirectory() + "/Android/data/com.arandastock001.ezregre/files/");
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setDataAndType(selectedUri, "resource/folder");
+
+        if (intent.resolveActivityInfo(getPackageManager(), 0) != null)
+        {
+            startActivity(intent);
+            finish();
+        }
+        else
+        {
+            // if you reach this place, it means there is no any file
+            // explorer app installed on your device
+        }
 
     }
 

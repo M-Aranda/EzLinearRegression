@@ -4,11 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.StrictMode;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.io.File;
+import java.lang.reflect.Method;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -43,7 +50,9 @@ public class MenuPrincipal extends AppCompatActivity {
         btnAcercaDe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),AcercaDe.class);
+
+
+                 Intent i = new Intent(getApplicationContext(),AcercaDe.class);
                 startActivity(i);
                 finish();
 
