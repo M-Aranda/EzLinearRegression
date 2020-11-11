@@ -53,7 +53,7 @@ public class ResumenDeResultados extends AppCompatActivity {
 
         CalculadorDeRegresion cr = null;
 
-        //datos vienene de activity de captura (camara), o sea, los calculos tienene que hacerse todavia
+        //datos vienene de activity de captura (camara) o de ingreso manual, calculos pendientes
         if( i.getSerializableExtra("caracteresReconocidos")!=null) {
 
 

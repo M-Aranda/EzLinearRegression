@@ -198,9 +198,9 @@ public class CalculadorDeRegresion implements Serializable {
         String pasosY = "2) Luego se suman todos los valores de la columna Y (";
         for (int i = 0; i < this.getColumnaX().size(); i++) {
             if (i<this.getColumnaX().size()-1){
-                pasosY=pasosY+this.getColumnaX().get(i).toString()+" + ";
+                pasosY=pasosY+this.getColumnaY().get(i).toString()+" + ";
             }else{
-                pasosY=pasosY+this.getColumnaX().get(i).toString()+").\n";
+                pasosY=pasosY+this.getColumnaY().get(i).toString()+").\n";
             }
         }
         String resultadoSumaY = "Esta suma da como resultado: "+this.calcularSumaDeTodasLasY().toString()+"."+"\n";
