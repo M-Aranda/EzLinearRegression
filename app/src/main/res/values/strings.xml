@@ -32,4 +32,12 @@
     <string name="btnVerHistorial">ver historial</string>
     <string name="btnVolverDesdeHistorial">Volver</string>
     <string name="btnVerArchivos">ver archivos</string>
+    <string name="btnIngresarNumeros">Ingresar numeros</string>
+    <string name="btnVolverDesdeIngresoManual">Volver</string>
+    <string name="txtTituloIngresoManual">Ingreso manual</string>
+    <string name="txtColumnaX">Columna X</string>
+    <string name="txtColumnaY">Columna Y</string>
+    <string name="btnCalcular">Calcular</string>
+    <string name="txtFieldColumnaX" />
+    <string name="txtFieldColumnaY" />
 </resources>

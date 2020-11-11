@@ -22,9 +22,9 @@
         android:id="@+id/btnProcederACamara"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/btnProcederACamara"
-        app:layout_constraintBottom_toTopOf="@+id/btnVerHistorial"
+        app:layout_constraintBottom_toTopOf="@+id/btnIngresarNumeros"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAcercaDe" />
@@ -47,9 +47,20 @@
         android:id="@+id/btnVerHistorial"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="261dp"
+        android:layout_marginBottom="198dp"
         android:text="@string/btnVerHistorial"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresarNumeros" />
+
+    <Button
+        android:id="@+id/btnIngresarNumeros"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/btnIngresarNumeros"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerHistorial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnProcederACamara" />
