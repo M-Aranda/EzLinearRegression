@@ -24,7 +24,7 @@ import java.lang.reflect.Method;
 
 public class MenuPrincipal extends AppCompatActivity {
 
-    private Button btnProcederACamara, btnAcercaDe, btnVerHistorial, btnIngresarNumeros;
+    private Button btnProcederACamara, btnAcercaDe, btnVerHistorial, btnIngresarNumeros, btnOpciones;
 
 
     //metodo para verificar que tenga permisos
@@ -97,6 +97,8 @@ public class MenuPrincipal extends AppCompatActivity {
         btnAcercaDe = (Button)findViewById(R.id.btnAcercaDe);
         btnVerHistorial = (Button)findViewById(R.id.btnVerHistorial);
         btnIngresarNumeros = (Button)findViewById(R.id.btnIngresarNumeros);
+        btnOpciones = (Button)findViewById(R.id.btnOpciones);
+
 
         checkPermission(  Manifest.permission.WRITE_EXTERNAL_STORAGE,  1);
 
@@ -150,6 +152,19 @@ public class MenuPrincipal extends AppCompatActivity {
                 finish();
             }
         });
+
+
+
+        btnOpciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),MenuOpciones.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
 
 
         Toast toast = Toast.makeText(getApplicationContext(),

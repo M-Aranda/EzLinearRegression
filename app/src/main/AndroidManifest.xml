@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".IngresoManual"></activity>
+        <activity android:name=".MenuOpciones"></activity>
+        <activity android:name=".IngresoManual" />
         <activity android:name=".VerHistorial" />
         <activity android:name=".PasoAPaso" />
         <activity android:name=".AcercaDe" />

@@ -40,4 +40,9 @@
     <string name="btnCalcular">Calcular</string>
     <string name="txtFieldColumnaX" />
     <string name="txtFieldColumnaY" />
+    <string name="btnOpciones">opciones</string>
+    <string name="btnVolverDesdeOpciones">Volver</string>
+    <string name="btnCeleste">cambiar color a celeste</string>
+    <string name="btnRosa">cambiar color a púrpura</string>
+    <string name="btnAmarillo">cambiar color a naranjo</string>
 </resources>

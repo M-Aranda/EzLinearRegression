@@ -22,7 +22,7 @@
         android:id="@+id/btnProcederACamara"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="29dp"
         android:text="@string/btnProcederACamara"
         app:layout_constraintBottom_toTopOf="@+id/btnIngresarNumeros"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +35,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="90dp"
-        android:layout_marginBottom="84dp"
         android:text="@string/txtTituloApp"
         android:textColor="@android:color/white"
         android:textSize="32dp"
@@ -45,11 +44,11 @@
 
     <Button
         android:id="@+id/btnVerHistorial"
-        android:layout_width="150dp"
+        android:layout_width="142dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="198dp"
+        android:layout_marginBottom="70dp"
         android:text="@string/btnVerHistorial"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpciones"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIngresarNumeros" />
@@ -58,10 +57,21 @@
         android:id="@+id/btnIngresarNumeros"
         android:layout_width="145dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="53dp"
         android:text="@string/btnIngresarNumeros"
         app:layout_constraintBottom_toTopOf="@+id/btnVerHistorial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnProcederACamara" />
+
+    <Button
+        android:id="@+id/btnOpciones"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="78dp"
+        android:text="@string/btnOpciones"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerHistorial" />
 </androidx.constraintlayout.widget.ConstraintLayout>
