@@ -1,6 +1,7 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 import com.arandastock001.ezregre.Modelo.Data;
 import com.arandastock001.ezregre.Modelo.Registro;
 
@@ -24,6 +26,8 @@ public class ResumenDeResultados extends AppCompatActivity {
     private Button btnContinuarConfirmacionDeNumeros, btnContinuarADesarrollo;
     private CalculadorDeRegresion calculosRealizados;
     private Data db;
+    private ConstraintLayout resumenDeResultados;
+    private ControladorDeColores controladorDeColores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,13 @@ public class ResumenDeResultados extends AppCompatActivity {
 
         db = new Data(this.getApplicationContext());
 
+        ConstraintLayout resumenDeResultados = (ConstraintLayout) findViewById(R.id.LayoutConfirmacionDeNumeros);
+
         Intent i = getIntent();
+
+        ControladorDeColores controladorDeColores = ControladorDeColores.getInstance();
+        controladorDeColores.setObjetoConstraint(resumenDeResultados);
+        controladorDeColores.cambiarColor();
 
         ArrayList<Integer> listadoDeNumerosX = new ArrayList<>();
         ArrayList<Integer> listadoDeNumerosY = new ArrayList<>();

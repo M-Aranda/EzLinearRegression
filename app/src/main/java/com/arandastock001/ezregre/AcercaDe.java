@@ -1,17 +1,24 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.ControladorDeColores;
+
 public class AcercaDe extends AppCompatActivity {
 
     private Button btnVolverAMenuPrincipal;
     private TextView txtDescripcionApp;
+    private ConstraintLayout acercaDe;
+    private ControladorDeColores controladorDeColores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +29,25 @@ public class AcercaDe extends AppCompatActivity {
         btnVolverAMenuPrincipal = (Button)findViewById(R.id.btnVolverAMenuPrincipal);
         txtDescripcionApp = (TextView)findViewById(R.id.txtDescripcionApp);
 
+        acercaDe = (ConstraintLayout) findViewById(R.id.LayoutAcercaDe);
+
         txtDescripcionApp.setText("Ez regression es un aplicación creada por Marcelo Aranda como proyecto de Tesis." +"\n"+
                 " Es de libre uso." +"\n"+
                 " Instrucciones: "+ "\n"+
                 "Apunte y capture la columna x primero, y luego la columna y." +"\n"+
                 " El programa resolvera el ejercicio de regresón lineal simple." +"\n"+
                 "Se puede exportar el resultado a PDF, Excel o archivo Txt. ");
+
+
+
+        controladorDeColores= ControladorDeColores.getInstance();
+       controladorDeColores.setObjetoConstraint(acercaDe);
+        controladorDeColores.cambiarColor();
+
+
+
+
+
 
 
         btnVolverAMenuPrincipal.setOnClickListener(new View.OnClickListener() {
@@ -46,4 +66,8 @@ public class AcercaDe extends AppCompatActivity {
 
 
     }
+
+
+
+
 }

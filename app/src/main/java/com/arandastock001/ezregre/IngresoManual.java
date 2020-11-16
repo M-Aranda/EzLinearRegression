@@ -1,6 +1,7 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,6 +23,8 @@ public class IngresoManual extends AppCompatActivity {
 
     private Button btnVolverDesdeIngresoManual, btnCalcular;
     private EditText txtFieldColumnaX, txtFieldColumnaY;
+    private ConstraintLayout ingresoManual;
+    private ControladorDeColores controladorDeColores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,11 @@ public class IngresoManual extends AppCompatActivity {
         btnCalcular = (Button) findViewById(R.id.btnCalcular);
         txtFieldColumnaX = (EditText) findViewById(R.id.txtFieldColumnaX);
         txtFieldColumnaY = (EditText) findViewById(R.id.txtFieldColumnaY);
+        ingresoManual= (ConstraintLayout) findViewById(R.id.LayoutIngresoManual);
+
+       ControladorDeColores controladorDeColores= ControladorDeColores.getInstance();
+       controladorDeColores.setObjetoConstraint(ingresoManual);
+       controladorDeColores.cambiarColor();
 
 
 

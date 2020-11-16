@@ -1,6 +1,7 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 
 import java.io.Serializable;
 
@@ -18,6 +20,8 @@ public class PasoAPaso extends AppCompatActivity {
 
     private Button btnVolverDesdePasoAPaso;
     private TextView txtPasoAPasoDetallado;
+    private ConstraintLayout  pasoAPaso;
+    private ControladorDeColores controladorDeColores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,10 @@ public class PasoAPaso extends AppCompatActivity {
         Button btnVolverDesdePasoAPaso = (Button) findViewById(R.id.btnVolverDesdePasoAPaso);
         TextView txtPasoAPasoDetallado = (TextView) findViewById(R.id.txtPasoAPasoDetallado);
 
+        ConstraintLayout pasoAPaso = (ConstraintLayout) findViewById(R.id.LayoutPasoAPaso);
+
+
+
 
 
         Intent i = getIntent();
@@ -35,7 +43,9 @@ public class PasoAPaso extends AppCompatActivity {
         txtPasoAPasoDetallado.setText(calculosRealizados.mostrarPasoAPaso());
         txtPasoAPasoDetallado.setMovementMethod(new ScrollingMovementMethod());
 
-
+        ControladorDeColores cont=ControladorDeColores.getInstance();
+        cont.setObjetoConstraint(pasoAPaso);
+        cont.cambiarColor();
 
 
 

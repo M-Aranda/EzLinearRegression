@@ -1,6 +1,7 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Canvas;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -32,6 +34,8 @@ import java.util.Date;
 public class CreacionDeArchivo extends AppCompatActivity {
 
     private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo,btnVerArchivos;
+    private ConstraintLayout creacionDeArchivo;
+    private ControladorDeColores controladorDeColores;
 
 
 
@@ -45,6 +49,13 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnCrearTxt = (Button) findViewById(R.id.btnCrearTxt);
         btnVolverDesdeCreacionDeArchivo = (Button) findViewById(R.id.btnVolverDesdeCreacionDeArchivo);
         btnVerArchivos = (Button) findViewById(R.id.btnVerArchivos);
+
+        creacionDeArchivo = (ConstraintLayout) findViewById(R.id.LayoutCreacionDeArchivos);
+
+
+        ControladorDeColores controladorDeColores= ControladorDeColores.getInstance();
+        controladorDeColores.setObjetoConstraint(creacionDeArchivo);
+        controladorDeColores.cambiarColor();
 
 
 

@@ -2,7 +2,6 @@ package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,10 +9,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.arandastock001.ezregre.Modelo.ControladorDeColores;
+
+import java.io.Serializable;
+
 public class MenuOpciones extends AppCompatActivity {
 
-    private Button btnCeleste, btnPurpura, btnNaranjo, btnVolverDesdeOpciones;
-    private ConstraintLayout acercaDe,creacionDeArchivo, ingresoManual, menuOpciones, menuPrincipal, pasoAPaso, resumenDeResultados, verHistorial;
+    private Button btnCeleste, btnRosa, btnNaranjo, btnVolverDesdeOpciones;
+    private ConstraintLayout menuOpciones;
+    private Integer codigoColor;
+    private ControladorDeColores controladorDeColores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,21 +27,16 @@ public class MenuOpciones extends AppCompatActivity {
 
 
         btnCeleste = (Button) findViewById(R.id.btnCeleste);
-        btnPurpura = (Button) findViewById(R.id.btnRosa);
+        btnRosa = (Button) findViewById(R.id.btnRosa);
         btnNaranjo = (Button) findViewById(R.id.btnAmarillo);
         btnVolverDesdeOpciones = (Button) findViewById(R.id.btnVolverDesdeOpciones);
 
 
-
-
-        acercaDe = (ConstraintLayout) findViewById(R.id.LayoutMenuOpciones);
-        creacionDeArchivo = (ConstraintLayout)findViewById(R.id.LayoutMenuOpciones);
-        ingresoManual = (ConstraintLayout)findViewById(R.id.LayoutMenuOpciones);
         menuOpciones = (ConstraintLayout)findViewById(R.id.LayoutMenuOpciones);
-        menuPrincipal = (ConstraintLayout)findViewById(R.id.LayoutMenuOpciones);
-        pasoAPaso = (ConstraintLayout) findViewById(R.id.LayoutMenuOpciones);
-        resumenDeResultados = (ConstraintLayout) findViewById(R.id.LayoutMenuOpciones);
-        verHistorial = (ConstraintLayout) findViewById(R.id.LayoutMenuOpciones);
+
+
+        controladorDeColores= ControladorDeColores.getInstance();
+        controladorDeColores.setObjetoConstraint(menuOpciones);
 
 
 
@@ -45,47 +45,34 @@ public class MenuOpciones extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                acercaDe.setBackgroundColor(Color.parseColor("#000000"));
-                creacionDeArchivo.setBackgroundColor(Color.parseColor("#000000"));
-                ingresoManual.setBackgroundColor(Color.parseColor("#000000"));
-                menuOpciones.setBackgroundColor(Color.parseColor("#000000"));
-                menuPrincipal.setBackgroundColor(Color.parseColor("#000000"));
-                pasoAPaso.setBackgroundColor(Color.parseColor("#000000"));
-                resumenDeResultados.setBackgroundColor(Color.parseColor("#000000"));
-                verHistorial.setBackgroundColor(Color.parseColor("#000000"));
+                codigoColor=1;
+                controladorDeColores.setCodigoColor(codigoColor);
+                controladorDeColores.cambiarColor();
 
 
             }
         });
 
-        btnPurpura.setOnClickListener(new View.OnClickListener() {
+        btnRosa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
 
-                acercaDe.setBackgroundColor(Color.parseColor("#000000"));
-                creacionDeArchivo.setBackgroundColor(Color.parseColor("#000000"));
-                ingresoManual.setBackgroundColor(Color.parseColor("#000000"));
-                menuOpciones.setBackgroundColor(Color.parseColor("#000000"));
-                menuPrincipal.setBackgroundColor(Color.parseColor("#000000"));
-                pasoAPaso.setBackgroundColor(Color.parseColor("#000000"));
-                resumenDeResultados.setBackgroundColor(Color.parseColor("#000000"));
-                verHistorial.setBackgroundColor(Color.parseColor("#000000"));
+                codigoColor=2;
+                controladorDeColores.setCodigoColor(codigoColor);
+                controladorDeColores.cambiarColor();
             }
         });
 
         btnNaranjo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                acercaDe.setBackgroundColor(Color.parseColor("#000000"));
-                creacionDeArchivo.setBackgroundColor(Color.parseColor("#000000"));
-                ingresoManual.setBackgroundColor(Color.parseColor("#000000"));
-                menuOpciones.setBackgroundColor(Color.parseColor("#000000"));
-                menuPrincipal.setBackgroundColor(Color.parseColor("#000000"));
-                pasoAPaso.setBackgroundColor(Color.parseColor("#000000"));
-                resumenDeResultados.setBackgroundColor(Color.parseColor("#000000"));
-                verHistorial.setBackgroundColor(Color.parseColor("#000000"));
+
+
+                codigoColor=3;
+                controladorDeColores.setCodigoColor(codigoColor);
+                controladorDeColores.cambiarColor();
 
             }
         });
@@ -100,9 +87,15 @@ public class MenuOpciones extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(),MenuPrincipal.class);
                 startActivity(i);
                 finish();
+
             }
         });
 
 
     }
+
+
+
+
+
 }

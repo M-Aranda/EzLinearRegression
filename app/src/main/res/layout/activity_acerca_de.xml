@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light"
-    tools:context=".AcercaDe">
+    tools:context=".AcercaDe"
+    android:id="@+id/LayoutAcercaDe">
 
 
     <LinearLayout
@@ -33,8 +34,8 @@
                     android:id="@+id/txtTituloAcercaDe"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@android:color/white"
-                    android:text="@string/txtTituloAcercaDe" />
+                    android:text="@string/txtTituloAcercaDe"
+                    android:textColor="@android:color/white" />
             </LinearLayout>
 
             <TextView

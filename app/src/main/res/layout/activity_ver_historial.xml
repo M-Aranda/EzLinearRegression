@@ -2,12 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LayoutVerHistorial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light"
     tools:context=".VerHistorial">
 
     <LinearLayout
+        android:id="@+id/LayoutListadoEnHistorial"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -20,10 +22,10 @@
             android:orientation="vertical">
 
             <ListView
-                android:background="@android:color/holo_blue_light"
                 android:id="@+id/lstRegistros"
                 android:layout_width="match_parent"
-                android:layout_height="690dp" />
+                android:layout_height="690dp"
+                android:background="@android:color/holo_blue_light" />
         </LinearLayout>
 
         <Button

@@ -1,18 +1,22 @@
 package com.arandastock001.ezregre;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CursorAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 import com.arandastock001.ezregre.Modelo.Data;
 import com.arandastock001.ezregre.Modelo.Registro;
 
@@ -25,6 +29,9 @@ public class VerHistorial extends AppCompatActivity {
     private ListView lstRegistros;
     private ArrayList<Registro> registros;
     private Data db;
+    private ConstraintLayout verHistorial;
+    private ControladorDeColores controladorDeColores;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,34 @@ public class VerHistorial extends AppCompatActivity {
 
         btnVolverDesdeHistorial = findViewById(R.id.btnVolverDesdeHistorial);
         lstRegistros = findViewById(R.id.lstRegistros);
+
+
+        verHistorial = (ConstraintLayout) findViewById(R.id.LayoutVerHistorial);
+
+
+        ControladorDeColores controladorDeColores= ControladorDeColores.getInstance();
+        controladorDeColores.setObjetoConstraint(verHistorial);
+        controladorDeColores.cambiarColor();
+
+        switch (controladorDeColores.getCodigoColor()){
+            case 1:{
+                lstRegistros.setBackgroundColor(Color.parseColor("#69D0F1"));
+                break;
+            }
+            case 2:{
+                lstRegistros.setBackgroundColor(Color.parseColor("#F778E4"));
+                break;
+            }
+            case 3:{
+                lstRegistros.setBackgroundColor(Color.parseColor("#FC9A2B"));
+                break;
+            }
+
+            default:
+                System.out.println("No pasa nada");
+                break;
+
+        }
 
 
         db = new Data(this.getApplicationContext());
