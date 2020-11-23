@@ -39,5 +39,8 @@ dependencies {
     //implementation 'org.apache.poi:poi:3.17'
     //implementation 'org.apache.poi:poi-ooxml:3.17'
 
+    //libreria necesaria para creación de gráfico dentro de app
+    implementation 'com.jjoe64:graphview:4.2.2'
+
 
 }

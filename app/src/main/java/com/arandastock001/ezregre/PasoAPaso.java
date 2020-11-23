@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class PasoAPaso extends AppCompatActivity {
 
 
-    private Button btnVolverDesdePasoAPaso;
+    private Button btnVolverDesdePasoAPaso, btnVerGrafico;
     private TextView txtPasoAPasoDetallado;
     private ConstraintLayout  pasoAPaso;
     private ControladorDeColores controladorDeColores;
@@ -29,9 +29,11 @@ public class PasoAPaso extends AppCompatActivity {
         setContentView(R.layout.activity_paso_a_paso);
 
         Button btnVolverDesdePasoAPaso = (Button) findViewById(R.id.btnVolverDesdePasoAPaso);
+        Button btnVerGrafico = (Button) findViewById(R.id.btnVerGrafico);
+
         TextView txtPasoAPasoDetallado = (TextView) findViewById(R.id.txtPasoAPasoDetallado);
 
-        ConstraintLayout pasoAPaso = (ConstraintLayout) findViewById(R.id.LayoutPasoAPaso);
+        ConstraintLayout pasoAPaso = (ConstraintLayout) findViewById(R.id.layoutPasoAPaso);
 
 
 
@@ -60,6 +62,17 @@ public class PasoAPaso extends AppCompatActivity {
                 startActivity(new Intent(PasoAPaso.this, ResumenDeResultados.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();
 
+            }
+        });
+
+        btnVerGrafico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = getIntent();
+                CalculadoraDeValores calculosRealizados = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
+
+                startActivity(new Intent(PasoAPaso.this, VerGrafico.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                finish();
             }
         });
     }

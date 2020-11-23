@@ -50,7 +50,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnVolverDesdeCreacionDeArchivo = (Button) findViewById(R.id.btnVolverDesdeCreacionDeArchivo);
         btnVerArchivos = (Button) findViewById(R.id.btnVerArchivos);
 
-        creacionDeArchivo = (ConstraintLayout) findViewById(R.id.LayoutCreacionDeArchivos);
+        creacionDeArchivo = (ConstraintLayout) findViewById(R.id.layoutCreacionDeArchivos);
 
 
         ControladorDeColores controladorDeColores= ControladorDeColores.getInstance();

@@ -27,7 +27,7 @@ public class AcercaDe extends AppCompatActivity {
         btnVolverAMenuPrincipal = (Button)findViewById(R.id.btnVolverAMenuPrincipal);
         txtDescripcionApp = (TextView)findViewById(R.id.txtDescripcionApp);
 
-        acercaDe = (ConstraintLayout) findViewById(R.id.LayoutAcercaDe);
+        acercaDe = (ConstraintLayout) findViewById(R.id.layoutAcercaDe);
 
         txtDescripcionApp.setText("Ez regression es un aplicación creada por Marcelo Aranda como proyecto de Tesis." +"\n"+
                 " Es de libre uso." +"\n"+

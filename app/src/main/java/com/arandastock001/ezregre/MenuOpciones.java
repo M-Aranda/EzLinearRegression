@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
-
-import java.io.Serializable;
 
 public class MenuOpciones extends AppCompatActivity {
 
@@ -32,7 +29,7 @@ public class MenuOpciones extends AppCompatActivity {
         btnVolverDesdeOpciones = (Button) findViewById(R.id.btnVolverDesdeOpciones);
 
 
-        menuOpciones = (ConstraintLayout)findViewById(R.id.LayoutMenuOpciones);
+        menuOpciones = (ConstraintLayout)findViewById(R.id.layoutMenuOpciones);
 
 
         controladorDeColores= ControladorDeColores.getInstance();
