@@ -10,12 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CursorAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 import com.arandastock001.ezregre.Modelo.Data;
 import com.arandastock001.ezregre.Modelo.Registro;
@@ -104,7 +101,7 @@ public class VerHistorial extends AppCompatActivity {
 
                 }
 
-                CalculadorDeRegresion cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
+                CalculadoraDeValores cr = new CalculadoraDeValores(listadoDeNumerosX,listadoDeNumerosY);
                 startActivity(new Intent(VerHistorial.this, ResumenDeResultados.class).putExtra("calculosRealizados", (Serializable) cr));
                 finish();
             }

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 
 import java.io.Serializable;
@@ -38,7 +38,7 @@ public class PasoAPaso extends AppCompatActivity {
 
 
         Intent i = getIntent();
-        CalculadorDeRegresion calculosRealizados = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+        CalculadoraDeValores calculosRealizados = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
         txtPasoAPasoDetallado.setText(calculosRealizados.mostrarPasoAPaso());
         txtPasoAPasoDetallado.setMovementMethod(new ScrollingMovementMethod());
@@ -55,7 +55,7 @@ public class PasoAPaso extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = getIntent();
-                CalculadorDeRegresion calculosRealizados = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+                CalculadoraDeValores calculosRealizados = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
                 startActivity(new Intent(PasoAPaso.this, ResumenDeResultados.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();

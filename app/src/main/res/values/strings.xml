@@ -45,4 +45,6 @@
     <string name="btnCeleste">cambiar color a celeste</string>
     <string name="btnRosa">cambiar color a rosa</string>
     <string name="btnAmarillo">cambiar color a naranjo</string>
+    <string name="txtDesviacionEstandarY">txtDesviacionEstandarY</string>
+    <string name="txtDesviacionEstandarX">txtDesviacionEstandarX</string>
 </resources>

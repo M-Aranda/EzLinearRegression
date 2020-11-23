@@ -3,20 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
+    android:id="@+id/LayoutConfirmacionDeNumeros"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light"
-    tools:context=".ResumenDeResultados"
-    android:id="@+id/LayoutConfirmacionDeNumeros">
+    tools:context=".ResumenDeResultados">
 
     <TextView
         android:id="@+id/txtInterseccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:layout_marginBottom="169dp"
         android:text="@string/txtInterseccion"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
         app:layout_constraintStart_toStartOf="@+id/txtPendiente"
-        app:layout_constraintTop_toBottomOf="@+id/txtPendiente" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloConfirmacionDeNumeros" />
 
     <TextView
         android:id="@+id/txtPruebaX"
@@ -33,7 +34,7 @@
         android:id="@+id/txtPruebaY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="26dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/txtPruebaX"
         app:layout_constraintTop_toBottomOf="@+id/txtPruebaX"
@@ -45,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="27dp"
         android:text="@string/txtSumaX2"
-        app:layout_constraintEnd_toEndOf="@+id/txtSumaY2"
+        app:layout_constraintStart_toStartOf="@+id/txtSumaY2"
         app:layout_constraintTop_toBottomOf="@+id/txtPruebaY" />
 
     <TextView
@@ -53,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/txtSumaY2"
         app:layout_constraintBottom_toTopOf="@+id/txtSumaXY"
         app:layout_constraintStart_toStartOf="@+id/txtSumaXY" />
@@ -63,12 +64,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginTop="263dp"
-        android:layout_marginBottom="237dp"
+        android:layout_marginTop="77dp"
         android:text="@string/txtsumaXY"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSumaX2" />
 
     <TextView
         android:id="@+id/txtPendiente"
@@ -83,11 +82,11 @@
         android:id="@+id/btnContinuarConfirmacionDeNumeros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="101dp"
+        android:layout_marginBottom="52dp"
         android:text="@string/btnContinuarConfirmacionDeNumeros"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/btnContinuarADesarrollo"
+        app:layout_constraintTop_toBottomOf="@+id/btnContinuarADesarrollo" />
 
     <TextView
         android:id="@+id/txtr2"
@@ -103,33 +102,54 @@
         android:id="@+id/txtr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/txtr"
-        app:layout_constraintEnd_toEndOf="@+id/txtr2"
-        app:layout_constraintTop_toBottomOf="@+id/txtr2" />
+        app:layout_constraintBottom_toTopOf="@+id/txtDesviacionEstandarX"
+        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarX" />
 
     <Button
         android:id="@+id/btnContinuarADesarrollo"
         android:layout_width="184dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="169dp"
+        android:layout_marginBottom="27dp"
         android:text="@string/btnContinuarADesarrollo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarConfirmacionDeNumeros"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSumaXY" />
+        app:layout_constraintTop_toBottomOf="@+id/txtInterseccion" />
 
     <TextView
         android:id="@+id/txtTituloConfirmacionDeNumeros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="85dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="347dp"
         android:text="@string/txtTituloConfirmacionDeNumeros"
         android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/txtInterseccion"
         app:layout_constraintEnd_toEndOf="@+id/btnContinuarConfirmacionDeNumeros"
         app:layout_constraintStart_toStartOf="@+id/txtSumaX2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDesviacionEstandarX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="67dp"
+        android:layout_marginBottom="51dp"
+        android:text="@string/txtDesviacionEstandarX"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDesviacionEstandarY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="@string/txtDesviacionEstandarY"
+        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarX"
+        app:layout_constraintTop_toBottomOf="@+id/txtDesviacionEstandarX" />
 </androidx.constraintlayout.widget.ConstraintLayout>

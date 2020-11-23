@@ -17,7 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 
 import java.io.File;
@@ -81,7 +81,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = getIntent();
-                CalculadorDeRegresion cr = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+                CalculadoraDeValores cr = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
 
                 Date momentoActual = Calendar.getInstance().getTime();
@@ -166,7 +166,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = getIntent();
-                CalculadorDeRegresion cr = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+                CalculadoraDeValores cr = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
 
                 Date momentoActual = Calendar.getInstance().getTime();
@@ -253,7 +253,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = getIntent();
-                CalculadorDeRegresion calculosRealizados = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+                CalculadoraDeValores calculosRealizados = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
                 startActivity(new Intent(CreacionDeArchivo.this, ResumenDeResultados.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
                 finish();

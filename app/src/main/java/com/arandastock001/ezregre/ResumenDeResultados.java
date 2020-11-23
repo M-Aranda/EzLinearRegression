@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 import com.arandastock001.ezregre.Modelo.Data;
 import com.arandastock001.ezregre.Modelo.Registro;
@@ -22,9 +22,9 @@ import java.util.Date;
 
 public class ResumenDeResultados extends AppCompatActivity {
 
-    private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion, txtr2, txtr;
+    private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion, txtr2, txtr, txtDesviacionEstandarX, txtDesviacionEstandarY;
     private Button btnContinuarConfirmacionDeNumeros, btnContinuarADesarrollo;
-    private CalculadorDeRegresion calculosRealizados;
+    private CalculadoraDeValores calculosRealizados;
     private Data db;
     private ConstraintLayout resumenDeResultados;
     private ControladorDeColores controladorDeColores;
@@ -44,6 +44,9 @@ public class ResumenDeResultados extends AppCompatActivity {
         txtInterseccion = (TextView) findViewById(R.id.txtInterseccion);
         txtr2 = (TextView) findViewById(R.id.txtr2);
         txtr = (TextView) findViewById(R.id.txtr);
+        txtDesviacionEstandarX = (TextView) findViewById(R.id.txtDesviacionEstandarX);
+        txtDesviacionEstandarY = (TextView) findViewById(R.id.txtDesviacionEstandarY);
+
 
         btnContinuarADesarrollo = (Button) findViewById(R.id.btnContinuarADesarrollo);
         btnContinuarConfirmacionDeNumeros = (Button) findViewById(R.id.btnContinuarConfirmacionDeNumeros);
@@ -61,7 +64,7 @@ public class ResumenDeResultados extends AppCompatActivity {
         ArrayList<Integer> listadoDeNumerosX = new ArrayList<>();
         ArrayList<Integer> listadoDeNumerosY = new ArrayList<>();
 
-        CalculadorDeRegresion cr = null;
+        CalculadoraDeValores cr = null;
 
         //datos vienene de activity de captura (camara) o de ingreso manual, calculos pendientes
         if( i.getSerializableExtra("caracteresReconocidos")!=null) {
@@ -108,13 +111,13 @@ public class ResumenDeResultados extends AppCompatActivity {
 
 
 
-            cr = new CalculadorDeRegresion(listadoDeNumerosX,listadoDeNumerosY);
+            cr = new CalculadoraDeValores(listadoDeNumerosX,listadoDeNumerosY);
             calculosRealizados = cr;
 
 
             // datos NO vienen de captura, o sea, los calculos ya se hicieron
         }else if( i.getSerializableExtra("caracteresReconocidos")==null){
-            cr = (CalculadorDeRegresion) i.getSerializableExtra("calculosRealizados");
+            cr = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
             calculosRealizados = cr;
         }
 
@@ -136,8 +139,12 @@ public class ResumenDeResultados extends AppCompatActivity {
 
         txtr2.setText("El valor de r2 es "+df.format(cr.calcularR2()).toString());
 
+
         txtr.setText("El valor de r es "+df.format(cr.calcularR()).toString());
 
+        //desviacion estandar
+        txtDesviacionEstandarX.setText("La desviación estandar de la columna X es "+df.format(cr.calcularDesviacionEstandarColumnaX()).toString());
+        txtDesviacionEstandarY.setText("La desviación estandar de la columna Y es "+df.format(cr.calcularDesviacionEstandarColumnaY()).toString());
 
 
         System.out.println(cr.calcularR2().toString());

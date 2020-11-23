@@ -11,12 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.arandastock001.ezregre.Modelo.CalculadorDeRegresion;
+import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 public class IngresoManual extends AppCompatActivity {
 
@@ -65,7 +64,7 @@ public class IngresoManual extends AppCompatActivity {
                 }
 
 
-                CalculadorDeRegresion calculosRealizados = new CalculadorDeRegresion(numerosDeX, numerosDeY);
+                CalculadoraDeValores calculosRealizados = new CalculadoraDeValores(numerosDeX, numerosDeY);
 
 
 

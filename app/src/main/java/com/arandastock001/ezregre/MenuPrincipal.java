@@ -109,11 +109,16 @@ public class MenuPrincipal extends AppCompatActivity {
 
         controladorDeColores=ControladorDeColores.getInstance();
 
+
         if(controladorDeColores.getCodigoColor()!=null){
 
             controladorDeColores.setObjetoConstraint(menuPrincipal);
             controladorDeColores.cambiarColor();
+        }else if(controladorDeColores.getCodigoColor()==null){
+            controladorDeColores.setCodigoColor(1);
         }
+
+
 
 
 

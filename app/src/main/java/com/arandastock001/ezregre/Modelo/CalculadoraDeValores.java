@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculadorDeRegresion implements Serializable {
+public class CalculadoraDeValores implements Serializable {
     
 
     private ArrayList<Integer> columnaX;
     private ArrayList<Integer> columnaY;
 
-    public CalculadorDeRegresion(ArrayList<Integer> columnaX, ArrayList<Integer> columnaY) {
+    public CalculadoraDeValores(ArrayList<Integer> columnaX, ArrayList<Integer> columnaY) {
         this.columnaX = columnaX;
         this.columnaY = columnaY;
     }
@@ -158,8 +158,50 @@ public class CalculadorDeRegresion implements Serializable {
         return resultado;
     };
 
-    public Double calcularDesviacionEstandar(){
+    public Double calcularDesviacionEstandarColumnaX() {
         Double resultado = 0.0;
+
+        Integer cantidadDeNumeros = this.getColumnaX().size();
+        Double promedio = this.calcularSumaDeTodasLasX() / Double.valueOf(cantidadDeNumeros);
+
+        ArrayList<Double> valoresXMenosPromedioAlCuadrado = new ArrayList<>();
+        for (Integer i : this.getColumnaX()) {
+            valoresXMenosPromedioAlCuadrado.add(Math.pow(Double.valueOf(i - promedio), 2));
+        }
+
+        Double sumaDeValores = 0.0;
+
+        for (Double valor : valoresXMenosPromedioAlCuadrado) {
+            sumaDeValores = sumaDeValores + valor;
+        }
+
+        resultado = sumaDeValores / (cantidadDeNumeros - 1);
+        resultado=Math.sqrt(resultado);
+
+
+        return resultado;
+    };
+
+    public Double calcularDesviacionEstandarColumnaY(){
+        Double resultado = 0.0;
+
+        Integer cantidadDeNumeros = this.getColumnaX().size();
+        Double promedio = this.calcularSumaDeTodasLasX() / Double.valueOf(cantidadDeNumeros);
+
+        ArrayList<Double> valoresXMenosPromedioAlCuadrado = new ArrayList<>();
+        for (Integer i : this.getColumnaX()) {
+            valoresXMenosPromedioAlCuadrado.add(Math.pow(Double.valueOf(i - promedio), 2));
+        }
+
+        Double sumaDeValores = 0.0;
+
+        for (Double valor : valoresXMenosPromedioAlCuadrado) {
+            sumaDeValores = sumaDeValores + valor;
+        }
+
+        resultado = sumaDeValores / (cantidadDeNumeros - 1);
+        resultado=Math.sqrt(resultado);
+
 
         return resultado;
     };
@@ -297,6 +339,8 @@ public class CalculadorDeRegresion implements Serializable {
 
         return pasos;
     }
+
+
 
 
 
