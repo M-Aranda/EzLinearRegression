@@ -47,4 +47,5 @@
     <string name="btnAmarillo">cambiar color a naranjo</string>
     <string name="txtDesviacionEstandarY">txtDesviacionEstandarY</string>
     <string name="txtDesviacionEstandarX">txtDesviacionEstandarX</string>
+    <string name="txtTituloVerHistorial">Historial</string>
 </resources>
