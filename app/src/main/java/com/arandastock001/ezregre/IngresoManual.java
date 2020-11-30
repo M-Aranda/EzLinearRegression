@@ -13,9 +13,13 @@ import android.widget.Toast;
 
 import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
+import com.arandastock001.ezregre.Modelo.Data;
+import com.arandastock001.ezregre.Modelo.Registro;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class IngresoManual extends AppCompatActivity {
 
@@ -24,6 +28,7 @@ public class IngresoManual extends AppCompatActivity {
     private EditText txtFieldColumnaX, txtFieldColumnaY;
     private ConstraintLayout ingresoManual;
     private ControladorDeColores controladorDeColores;
+    private Data db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,8 @@ public class IngresoManual extends AppCompatActivity {
        ControladorDeColores controladorDeColores= ControladorDeColores.getInstance();
        controladorDeColores.setObjetoConstraint(ingresoManual);
        controladorDeColores.cambiarColor();
+
+        db = new Data(this.getApplicationContext());
 
 
 
@@ -66,11 +73,33 @@ public class IngresoManual extends AppCompatActivity {
 
                 CalculadoraDeValores calculosRealizados = new CalculadoraDeValores(numerosDeX, numerosDeY);
 
-
-
                 startActivity(new Intent(IngresoManual.this, ResumenDeResultados.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
 
 
+                Date momentoActual = Calendar.getInstance().getTime();
+                String momentoActualComoString = momentoActual.toString();
+
+                String parteXComoString = "";
+                String parteYComoString = "";
+
+
+                for (int j = 0; j < numerosDeX.size(); j++) {
+
+                    parteXComoString=parteXComoString+numerosDeX.get(j)+"\n";
+                }
+
+
+                for (int j = 0; j < numerosDeY.size(); j++) {
+                    parteYComoString=parteYComoString+numerosDeY.get(j)+"\n";
+                }
+
+
+                //insertar registro
+                Registro r = new Registro();
+                r.setValoresColumnaX(parteXComoString);
+                r.setValoresColumnaY(parteYComoString);
+                r.setFechaRegistro(momentoActualComoString);
+                db.insertarRegistro(r);
 
                 finish();
 
