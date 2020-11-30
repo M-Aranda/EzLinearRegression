@@ -13,9 +13,9 @@
         android:id="@+id/txtInterseccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="169dp"
+        android:layout_marginBottom="105dp"
         android:text="@string/txtInterseccion"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
+        app:layout_constraintBottom_toTopOf="@+id/txtDesviacionEstandarX"
         app:layout_constraintStart_toStartOf="@+id/txtPendiente"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloConfirmacionDeNumeros" />
 
@@ -23,10 +23,12 @@
         android:id="@+id/txtPruebaX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="33dp"
         android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtPruebaY"
+        app:layout_constraintEnd_toEndOf="@+id/txtPruebaY"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="TextoX" />
 
@@ -34,9 +36,11 @@
         android:id="@+id/txtPruebaY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="27dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/txtPruebaX"
+        app:layout_constraintBottom_toTopOf="@+id/txtSumaX2"
+        app:layout_constraintStart_toStartOf="@+id/txtSumaX2"
         app:layout_constraintTop_toBottomOf="@+id/txtPruebaX"
         tools:text="textoY" />
 
@@ -44,94 +48,101 @@
         android:id="@+id/txtSumaX2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginBottom="31dp"
         android:text="@string/txtSumaX2"
-        app:layout_constraintStart_toStartOf="@+id/txtSumaY2"
+        app:layout_constraintBottom_toTopOf="@+id/txtSumaY2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPruebaY" />
 
     <TextView
         android:id="@+id/txtSumaY2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="33dp"
         android:text="@string/txtSumaY2"
         app:layout_constraintBottom_toTopOf="@+id/txtSumaXY"
-        app:layout_constraintStart_toStartOf="@+id/txtSumaXY" />
+        app:layout_constraintStart_toStartOf="@+id/txtSumaX2"
+        app:layout_constraintTop_toBottomOf="@+id/txtSumaX2" />
 
     <TextView
         android:id="@+id/txtSumaXY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="77dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="34dp"
         android:text="@string/txtsumaXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtSumaX2" />
+        app:layout_constraintBottom_toTopOf="@+id/txtPendiente"
+        app:layout_constraintEnd_toEndOf="@+id/txtSumaY2"
+        app:layout_constraintTop_toBottomOf="@+id/txtSumaY2" />
 
     <TextView
         android:id="@+id/txtPendiente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
+        android:layout_marginBottom="81dp"
         android:text="@string/txtPendiente"
+        app:layout_constraintBottom_toTopOf="@+id/txtr2"
         app:layout_constraintStart_toStartOf="@+id/txtSumaXY"
         app:layout_constraintTop_toBottomOf="@+id/txtSumaXY" />
 
     <Button
         android:id="@+id/btnContinuarConfirmacionDeNumeros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_width="192dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="18dp"
         android:text="@string/btnContinuarConfirmacionDeNumeros"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btnContinuarADesarrollo"
-        app:layout_constraintTop_toBottomOf="@+id/btnContinuarADesarrollo" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtr" />
 
     <TextView
         android:id="@+id/txtr2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/txtr2"
-        app:layout_constraintStart_toStartOf="@+id/txtInterseccion"
-        app:layout_constraintTop_toBottomOf="@+id/txtInterseccion" />
+        app:layout_constraintBottom_toTopOf="@+id/txtr"
+        app:layout_constraintStart_toStartOf="@+id/txtr"
+        app:layout_constraintTop_toBottomOf="@+id/txtPendiente" />
 
     <TextView
         android:id="@+id/txtr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="156dp"
         android:text="@string/txtr"
-        app:layout_constraintBottom_toTopOf="@+id/txtDesviacionEstandarX"
-        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarX" />
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarConfirmacionDeNumeros"
+        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarX"
+        app:layout_constraintTop_toBottomOf="@+id/txtr2" />
 
     <Button
         android:id="@+id/btnContinuarADesarrollo"
-        android:layout_width="184dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="19dp"
         android:text="@string/btnContinuarADesarrollo"
         app:layout_constraintBottom_toTopOf="@+id/btnContinuarConfirmacionDeNumeros"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInterseccion" />
+        app:layout_constraintEnd_toEndOf="@+id/btnContinuarConfirmacionDeNumeros"
+        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarY"
+        app:layout_constraintTop_toBottomOf="@+id/txtDesviacionEstandarY" />
 
     <TextView
         android:id="@+id/txtTituloConfirmacionDeNumeros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="153dp"
         android:layout_marginTop="7dp"
-        android:layout_marginEnd="84dp"
         android:layout_marginBottom="347dp"
         android:text="@string/txtTituloConfirmacionDeNumeros"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toTopOf="@+id/txtInterseccion"
-        app:layout_constraintEnd_toEndOf="@+id/btnContinuarConfirmacionDeNumeros"
-        app:layout_constraintStart_toStartOf="@+id/txtSumaX2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -139,17 +150,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="67dp"
-        android:layout_marginBottom="51dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/txtDesviacionEstandarX"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/txtDesviacionEstandarY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInterseccion" />
 
     <TextView
         android:id="@+id/txtDesviacionEstandarY"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginBottom="15dp"
         android:text="@string/txtDesviacionEstandarY"
+        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
         app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarX"
         app:layout_constraintTop_toBottomOf="@+id/txtDesviacionEstandarX" />
 </androidx.constraintlayout.widget.ConstraintLayout>
