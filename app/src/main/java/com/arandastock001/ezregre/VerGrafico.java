@@ -68,6 +68,7 @@ public class VerGrafico extends AppCompatActivity {
 
 
 
+        //Esto añade datos al grafico
         grafico.addSeries(series);
 
 
@@ -79,6 +80,7 @@ public class VerGrafico extends AppCompatActivity {
                 CalculadoraDeValores calculosRealizados = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
                 startActivity(new Intent(VerGrafico.this, PasoAPaso.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+
                 finish();
             }
         });

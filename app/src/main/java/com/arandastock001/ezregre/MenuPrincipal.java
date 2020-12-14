@@ -34,8 +34,6 @@ public class MenuPrincipal extends AppCompatActivity {
        // return true;
    // }
 
-
-
     int PERMISSION_ALL = 1;
     String[] PERMISSIONS = {
             //android.Manifest.permission.READ_CONTACTS,
