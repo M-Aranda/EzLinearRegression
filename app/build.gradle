@@ -36,11 +36,12 @@ dependencies {
     implementation 'com.google.android.gms:play-services-vision:9.8.0'
 
     //librerias necesarias para creacion de archivo excel
-    //implementation 'org.apache.poi:poi:3.17'
-    //implementation 'org.apache.poi:poi-ooxml:3.17'
+
+    implementation 'org.apache.poi:poi:3.17'
 
     //libreria necesaria para creación de gráfico dentro de app
     implementation 'com.jjoe64:graphview:4.2.2'
+
 
 
 }

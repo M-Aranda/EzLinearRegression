@@ -20,6 +20,11 @@ import android.widget.Toast;
 import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
 import com.arandastock001.ezregre.Modelo.ControladorDeColores;
 
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -65,14 +70,54 @@ public class CreacionDeArchivo extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                redirigirADirecotrioDeArchivosDeLaApp();
+
+
+                    HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+                    HSSFSheet hssfSheet = hssfWorkbook.createSheet("Custom Sheet");
+
+                    HSSFRow hssfRow = hssfSheet.createRow(0);
+                    HSSFCell hssfCell = hssfRow.createCell(0);
+
+                    hssfCell.setCellValue("valor de prueba");
+
+                    File filePath = new File(getExternalFilesDir(null),"prueba.xls");//getApplicationContext().getExternalFilesDir(null);
+
+                    try {
+                        if (!filePath.exists()){
+                            filePath.createNewFile();
+                        }
+
+                        FileOutputStream fileOutputStream= new FileOutputStream(filePath);
+                        hssfWorkbook.write(fileOutputStream);
+
+                        if (fileOutputStream!=null){
+                            fileOutputStream.flush();
+                            fileOutputStream.close();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+
+
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Funcionalidad para crear EXCEL aún en desarrollo",
+                        "Archivo de Excel creado con exito",
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
 
                 toast.show();
+
+
+
+
             }
+
+
+
+
+
+
+
         });
 
 
