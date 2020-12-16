@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre;
+package com.arandastock001.EzLinearRegression;
 
 import android.content.Context;
 

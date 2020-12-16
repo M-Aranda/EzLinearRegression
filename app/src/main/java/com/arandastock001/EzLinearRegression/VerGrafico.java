@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre;
+package com.arandastock001.EzLinearRegression;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -8,9 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
-import com.arandastock001.ezregre.Modelo.ControladorDeColores;
-import com.arandastock001.ezregre.Modelo.Data;
+import com.arandastock001.EzLinearRegression.Modelo.CalculadoraDeValores;
+import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;

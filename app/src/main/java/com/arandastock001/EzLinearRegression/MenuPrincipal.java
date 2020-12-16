@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre;
+package com.arandastock001.EzLinearRegression;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.arandastock001.ezregre.Modelo.ControladorDeColores;
+import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
 
 public class MenuPrincipal extends AppCompatActivity {
 

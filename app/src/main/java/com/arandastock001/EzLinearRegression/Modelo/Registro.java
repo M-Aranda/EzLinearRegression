@@ -1,7 +1,4 @@
-package com.arandastock001.ezregre.Modelo;
-
-import java.util.ArrayList;
-import java.util.Date;
+package com.arandastock001.EzLinearRegression.Modelo;
 
 public class Registro {
 

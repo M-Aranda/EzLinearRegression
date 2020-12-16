@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre;
+package com.arandastock001.EzLinearRegression;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
-import com.arandastock001.ezregre.Modelo.ControladorDeColores;
-import com.arandastock001.ezregre.Modelo.Data;
-import com.arandastock001.ezregre.Modelo.Registro;
+import com.arandastock001.EzLinearRegression.Modelo.CalculadoraDeValores;
+import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
+import com.arandastock001.EzLinearRegression.Modelo.Data;
+import com.arandastock001.EzLinearRegression.Modelo.Registro;
 
 import java.io.Serializable;
 import java.util.ArrayList;

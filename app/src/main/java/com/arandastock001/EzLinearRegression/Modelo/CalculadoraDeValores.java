@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre.Modelo;
+package com.arandastock001.EzLinearRegression.Modelo;
 
 import java.io.Serializable;
 import java.util.ArrayList;

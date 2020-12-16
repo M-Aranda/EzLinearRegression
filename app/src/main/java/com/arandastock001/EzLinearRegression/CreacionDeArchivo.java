@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre;
+package com.arandastock001.EzLinearRegression;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,8 +17,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.arandastock001.ezregre.Modelo.CalculadoraDeValores;
-import com.arandastock001.ezregre.Modelo.ControladorDeColores;
+import com.arandastock001.EzLinearRegression.Modelo.CalculadoraDeValores;
+import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -69,18 +69,58 @@ public class CreacionDeArchivo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent i = getIntent();
+                CalculadoraDeValores cr = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
+
+
+                Date momentoActual = Calendar.getInstance().getTime();
+
+
+                DateFormat df = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
+                String fecha = df.format(momentoActual);
+
+
+
+                String nombreArchivo = "Archivo de Excel.xls";
 
 
 
                     HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-                    HSSFSheet hssfSheet = hssfWorkbook.createSheet("Custom Sheet");
+                    HSSFSheet PrimeraHoja = hssfWorkbook.createSheet("Hoja de calculo");
 
-                    HSSFRow hssfRow = hssfSheet.createRow(0);
-                    HSSFCell hssfCell = hssfRow.createCell(0);
+                HSSFRow filaActual = PrimeraHoja.createRow(0);
 
-                    hssfCell.setCellValue("valor de prueba");
+                HSSFCell celdaColumnaX = filaActual.createCell(0);
+                HSSFCell celdaColumnaY = filaActual.createCell(1);
+                celdaColumnaX.setCellValue("Columna X");
+                celdaColumnaY.setCellValue("Columna Y");
 
-                    File filePath = new File(getExternalFilesDir(null),"prueba.xls");//getApplicationContext().getExternalFilesDir(null);
+
+                Integer contador=0;
+
+                for (int j = 0; j < cr.getColumnaX().size()  ; j++) {
+                    contador++;
+                    filaActual=PrimeraHoja.createRow(contador);
+                    celdaColumnaX=filaActual.createCell(0);
+                    celdaColumnaX.setCellValue(cr.getColumnaX().get(j));
+
+                    celdaColumnaY = filaActual.createCell(1);
+                    celdaColumnaY.setCellValue(cr.getColumnaY().get(j));
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+                    File filePath = new File(getExternalFilesDir(null),nombreArchivo);//getApplicationContext().getExternalFilesDir(null);
 
                     try {
                         if (!filePath.exists()){

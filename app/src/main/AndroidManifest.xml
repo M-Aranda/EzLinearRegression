@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.arandastock001.ezregre">
+    package="com.arandastock001.EzLinearRegression">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -9,20 +9,20 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="EzLinearRegression"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VerGrafico"></activity>
-        <activity android:name=".MenuOpciones" />
-        <activity android:name=".IngresoManual" />
-        <activity android:name=".VerHistorial" />
-        <activity android:name=".PasoAPaso" />
-        <activity android:name=".AcercaDe" />
-        <activity android:name=".CapturaActivity" />
-        <activity android:name=".CreacionDeArchivo" />
-        <activity android:name=".ResumenDeResultados" />
-        <activity android:name=".MenuPrincipal">
+        <activity android:name="com.arandastock001.EzLinearRegression.VerGrafico"></activity>
+        <activity android:name="com.arandastock001.EzLinearRegression.MenuOpciones" />
+        <activity android:name="com.arandastock001.EzLinearRegression.IngresoManual" />
+        <activity android:name="com.arandastock001.EzLinearRegression.VerHistorial" />
+        <activity android:name="com.arandastock001.EzLinearRegression.PasoAPaso" />
+        <activity android:name="com.arandastock001.EzLinearRegression.AcercaDe" />
+        <activity android:name="com.arandastock001.EzLinearRegression.CapturaActivity" />
+        <activity android:name="com.arandastock001.EzLinearRegression.CreacionDeArchivo" />
+        <activity android:name="com.arandastock001.EzLinearRegression.ResumenDeResultados" />
+        <activity android:name="com.arandastock001.EzLinearRegression.MenuPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

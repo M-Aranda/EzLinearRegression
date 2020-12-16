@@ -1,4 +1,4 @@
-package com.arandastock001.ezregre.Modelo;
+package com.arandastock001.EzLinearRegression.Modelo;
 
 import android.content.Context;
 import android.database.Cursor;

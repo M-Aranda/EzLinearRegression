@@ -1,6 +1,5 @@
-package com.arandastock001.ezregre.Modelo;
+package com.arandastock001.EzLinearRegression.Modelo;
 
-import android.content.Intent;
 import android.graphics.Color;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
