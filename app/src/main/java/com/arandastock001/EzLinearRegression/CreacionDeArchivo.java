@@ -35,10 +35,9 @@ import java.util.Date;
 
 public class CreacionDeArchivo extends AppCompatActivity {
 
-    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo,btnVerArchivos;
+    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo, btnVerArchivos;
     private ConstraintLayout creacionDeArchivo;
     private ControladorDeColores controladorDeColores;
-
 
 
     @Override
@@ -55,11 +54,9 @@ public class CreacionDeArchivo extends AppCompatActivity {
         creacionDeArchivo = (ConstraintLayout) findViewById(R.id.layoutCreacionDeArchivos);
 
 
-        ControladorDeColores controladorDeColores= ControladorDeColores.getInstance();
+        ControladorDeColores controladorDeColores = ControladorDeColores.getInstance();
         controladorDeColores.setObjetoConstraint(creacionDeArchivo);
         controladorDeColores.cambiarColor();
-
-
 
 
         btnCrearExcel.setOnClickListener(new View.OnClickListener() {
@@ -77,13 +74,11 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 String fecha = df.format(momentoActual);
 
 
-
                 String nombreArchivo = "Archivo de Excel.xls";
 
 
-
-                    HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-                    HSSFSheet PrimeraHoja = hssfWorkbook.createSheet("Detalles en Excel");
+                HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
+                HSSFSheet PrimeraHoja = hssfWorkbook.createSheet("Detalles en Excel");
 
                 HSSFRow filaActual = PrimeraHoja.createRow(0);
 
@@ -99,80 +94,92 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 celdaDeDetalles.setCellValue("Valores");
 
 
-                Integer contador=0;
+                Integer contador = 0;
 
-                for (int j = 0; j < cr.getColumnaX().size()  ; j++) {
+                for (int j = 0; j < cr.getColumnaX().size(); j++) {
                     contador++;
-                    filaActual=PrimeraHoja.createRow(contador);
-                    celdaColumnaX=filaActual.createCell(0);
+                    filaActual = PrimeraHoja.createRow(contador);
+                    celdaColumnaX = filaActual.createCell(0);
                     celdaColumnaX.setCellValue(cr.getColumnaX().get(j));
 
                     celdaColumnaY = filaActual.createCell(1);
                     celdaColumnaY.setCellValue(cr.getColumnaY().get(j));
 
-
-
-                }
-
-
-                contador=1;
-
-                for (int j = 0; j < 6; j++) {
-                    contador++;
-                    celdaDeDetalles=filaActual.createCell(1);
-                    celdaDeDetalles.setCellValue("Suma de todas las x:"+cr.calcularSumaDeTodasLasX());
-                    celdaDeDetalles=filaActual.createCell(2);
-                    celdaDeDetalles.setCellValue("Suma de todas las y:"+cr.calcularSumaDeTodasLasY());
-                    celdaDeDetalles=filaActual.createCell(3);
-                    celdaDeDetalles.setCellValue("Suma de todas las x 2:"+cr.calcularColumnaX2());
-                    celdaDeDetalles=filaActual.createCell(4);
-                    celdaDeDetalles.setCellValue("Suma de todas las y 2:");
-                    celdaDeDetalles=filaActual.createCell(5);
-                    celdaDeDetalles.setCellValue("Suma de todas las xy:");
-                    celdaDeDetalles=filaActual.createCell(6);
-                    celdaDeDetalles.setCellValue("Valor de pendiente:");
-                    celdaDeDetalles=filaActual.createCell(7);
-                    celdaDeDetalles.setCellValue("Valor de  interseccion:");
-                    celdaDeDetalles=filaActual.createCell(8);
-                    celdaDeDetalles.setCellValue("Valor de r:");
-                    celdaDeDetalles=filaActual.createCell(9);
-                    celdaDeDetalles.setCellValue("Valor de r 2");
-                    celdaDeDetalles=filaActual.createCell(10);
-                    celdaDeDetalles.setCellValue("Valor de la desviación estándar de la columna X:");
-                    celdaDeDetalles=filaActual.createCell(11);
-                    celdaDeDetalles.setCellValue("Valor de la desviación estándar de la columna Y:");
-
-
                 }
 
 
 
+                filaActual.setRowNum(1);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Suma de todas las x: " + cr.calcularSumaDeTodasLasX().toString());
 
 
+                filaActual.setRowNum(2);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Suma de todas las y: " + cr.calcularSumaDeTodasLasY().toString());
 
 
+                filaActual.setRowNum(3);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Suma de todas las x 2: " + cr.calcularSumaDeTodasLasX().toString());
+
+                filaActual.setRowNum(4);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Suma de todas las y 2: " + cr.calcularSumaDeTodasLasY().toString());
 
 
+                filaActual.setRowNum(5);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Suma de todas las xy: " + cr.calcularSumaDeTodasLasXY().toString());
 
 
-                    File filePath = new File(getExternalFilesDir(null),nombreArchivo);//getApplicationContext().getExternalFilesDir(null);
+                filaActual.setRowNum(6);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Valor de pendiente: " + cr.calcularPendiente().toString());
 
-                    try {
-                        if (!filePath.exists()){
-                            filePath.createNewFile();
-                        }
 
-                        FileOutputStream fileOutputStream= new FileOutputStream(filePath);
-                        hssfWorkbook.write(fileOutputStream);
+                filaActual.setRowNum(7);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Valor de  interseccion: " + cr.calcularInterseccion().toString());
 
-                        if (fileOutputStream!=null){
-                            fileOutputStream.flush();
-                            fileOutputStream.close();
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
+
+                filaActual.setRowNum(8);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Valor de r: " + cr.calcularR().toString());
+
+
+                filaActual.setRowNum(9);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Valor de r 2: " + cr.calcularR2().toString());
+
+
+                filaActual.setRowNum(10);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Valor de la desviación estándar de la columna X: " + cr.calcularDesviacionEstandarColumnaX().toString());
+
+
+                filaActual.setRowNum(11);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Valor de la desviación estándar de la columna Y: " + cr.calcularDesviacionEstandarColumnaY().toString());
+
+
+                File filePath = new File(getExternalFilesDir(null), nombreArchivo);//getApplicationContext().getExternalFilesDir(null);
+
+                try {
+                    if (!filePath.exists()) {
+                        filePath.createNewFile();
                     }
 
+                    FileOutputStream fileOutputStream = new FileOutputStream(filePath);
+                    hssfWorkbook.write(fileOutputStream);
+
+                    if (fileOutputStream != null) {
+                        fileOutputStream.flush();
+                        fileOutputStream.close();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
 
                 Toast toast = Toast.makeText(getApplicationContext(),
@@ -183,14 +190,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 toast.show();
 
 
-
-
             }
-
-
-
-
-
 
 
         });
@@ -211,12 +211,11 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 String fecha = df.format(momentoActual);
 
 
-
-                String nombreArchivo = "PDF creado el "+fecha+".pdf";
+                String nombreArchivo = "PDF creado el " + fecha + ".pdf";
 
 
                 String texto = cr.mostrarPasoAPaso();
-                String[] lineasParaElPdf= texto.split("\n");
+                String[] lineasParaElPdf = texto.split("\n");
 
 
                 File path = getApplicationContext().getExternalFilesDir(null);
@@ -240,18 +239,16 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 PdfDocument.Page page = document.startPage(pageInfo);
 
 
-               Canvas canvas = page.getCanvas();
-               Paint paint = new Paint();
-               int valorX = 0;
-               int valorY = 0;
+                Canvas canvas = page.getCanvas();
+                Paint paint = new Paint();
+                int valorX = 0;
+                int valorY = 0;
 
-                for (int j = 0; j <lineasParaElPdf.length ; j++) {
+                for (int j = 0; j < lineasParaElPdf.length; j++) {
                     //valorX=valorX+10;
-                    valorY=valorY+12;
-                    canvas.drawText(lineasParaElPdf[j],valorX,valorY,paint);
+                    valorY = valorY + 12;
+                    canvas.drawText(lineasParaElPdf[j], valorX, valorY, paint);
                 }
-
-
 
 
                 document.finishPage(page);
@@ -273,92 +270,81 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 toast.show();
 
 
-
-
-
-
-
             }
         });
 
         btnCrearTxt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                                           @Override
+                                           public void onClick(View v) {
 
-                Intent i = getIntent();
-                CalculadoraDeValores cr = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
-
-
-                Date momentoActual = Calendar.getInstance().getTime();
-
-                DateFormat df = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
-                String fecha = df.format(momentoActual);
+                                               Intent i = getIntent();
+                                               CalculadoraDeValores cr = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
 
+                                               Date momentoActual = Calendar.getInstance().getTime();
 
-                String nombreArchivo = "txt creado el "+fecha+".txt";
-
-                String texto = cr.mostrarPasoAPaso();
-
-
-                // no usar?
-                File path = getApplicationContext().getExternalFilesDir(null);
-
-                //deprecado?
-                File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
-
-                File file = new File(path, nombreArchivo);
+                                               DateFormat df = new SimpleDateFormat("dd-MMM-yyyy hh:mm");
+                                               String fecha = df.format(momentoActual);
 
 
+                                               String nombreArchivo = "txt creado el " + fecha + ".txt";
+
+                                               String texto = cr.mostrarPasoAPaso();
 
 
+                                               // no usar?
+                                               File path = getApplicationContext().getExternalFilesDir(null);
 
-                FileOutputStream stream = null;
-                try {
-                    stream = new FileOutputStream(file);
+                                               //deprecado?
+                                               File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
 
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Archivo txt creado exitosamente",
-                            Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
-
-                    toast.show();
+                                               File file = new File(path, nombreArchivo);
 
 
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    try {
-                        stream.write(texto.getBytes());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } finally {
-                    try {
-                        stream.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+                                               FileOutputStream stream = null;
+                                               try {
+                                                   stream = new FileOutputStream(file);
+
+                                                   Toast toast = Toast.makeText(getApplicationContext(),
+                                                           "Archivo txt creado exitosamente",
+                                                           Toast.LENGTH_SHORT);
+                                                   toast.setGravity(Gravity.CENTER, 0, 0);
+
+                                                   toast.show();
 
 
+                                               } catch (FileNotFoundException e) {
+                                                   e.printStackTrace();
+                                               }
+                                               try {
+                                                   try {
+                                                       stream.write(texto.getBytes());
+                                                   } catch (IOException e) {
+                                                       e.printStackTrace();
+                                                   }
+                                               } finally {
+                                                   try {
+                                                       stream.close();
+                                                   } catch (IOException e) {
+                                                       e.printStackTrace();
+                                                   }
+                                               }
 
-                //Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                //Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
-                //+  File.separator + "ezregre" + File.separator);
-                //intent.setDataAndType(uri, "text/csv");
-                //startActivity(Intent.createChooser(intent, "Abrir carpeta"));
+
+                                               //Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                                               //Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()
+                                               //+  File.separator + "ezregre" + File.separator);
+                                               //intent.setDataAndType(uri, "text/csv");
+                                               //startActivity(Intent.createChooser(intent, "Abrir carpeta"));
 
 
+                                               //Intent intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
 
-                //Intent intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
-
-                //startActivity(intent);
+                                               //startActivity(intent);
 
 
-            }
-            }
+                                           }
+                                       }
 
         );
 
@@ -379,18 +365,14 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 finish();
 
 
-
-
             }
         });
-
-
 
 
     }
 
 
-    public void redirigirADirecotrioDeArchivosDeLaApp(){
+    public void redirigirADirecotrioDeArchivosDeLaApp() {
 
         //no es necesario este bloque, pero lo dejo para referencia
 /*
@@ -410,20 +392,14 @@ public class CreacionDeArchivo extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setDataAndType(selectedUri, "resource/folder");
 
-        if (intent.resolveActivityInfo(getPackageManager(), 0) != null)
-        {
+        if (intent.resolveActivityInfo(getPackageManager(), 0) != null) {
             startActivity(intent);
             finish();
-        }
-        else
-        {
+        } else {
             // se necesita app de explorarcion de archivos
         }
 
     }
-
-
-
 
 
 }
