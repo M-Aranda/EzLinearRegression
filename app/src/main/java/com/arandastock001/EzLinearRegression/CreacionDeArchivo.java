@@ -1,21 +1,19 @@
 package com.arandastock001.EzLinearRegression;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.arandastock001.EzLinearRegression.Modelo.CalculadoraDeValores;
 import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
@@ -29,7 +27,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -86,7 +83,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
                     HSSFWorkbook hssfWorkbook = new HSSFWorkbook();
-                    HSSFSheet PrimeraHoja = hssfWorkbook.createSheet("Hoja de calculo");
+                    HSSFSheet PrimeraHoja = hssfWorkbook.createSheet("Detalles en Excel");
 
                 HSSFRow filaActual = PrimeraHoja.createRow(0);
 
@@ -94,6 +91,12 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 HSSFCell celdaColumnaY = filaActual.createCell(1);
                 celdaColumnaX.setCellValue("Columna X");
                 celdaColumnaY.setCellValue("Columna Y");
+
+                HSSFCell celdaEspaciadora = filaActual.createCell(2);
+                celdaEspaciadora.setCellValue("");
+
+                HSSFCell celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Valores");
 
 
                 Integer contador=0;
@@ -106,6 +109,38 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
                     celdaColumnaY = filaActual.createCell(1);
                     celdaColumnaY.setCellValue(cr.getColumnaY().get(j));
+
+
+
+                }
+
+
+                contador=1;
+
+                for (int j = 0; j < 6; j++) {
+                    contador++;
+                    celdaDeDetalles=filaActual.createCell(1);
+                    celdaDeDetalles.setCellValue("Suma de todas las x:"+cr.calcularSumaDeTodasLasX());
+                    celdaDeDetalles=filaActual.createCell(2);
+                    celdaDeDetalles.setCellValue("Suma de todas las y:"+cr.calcularSumaDeTodasLasY());
+                    celdaDeDetalles=filaActual.createCell(3);
+                    celdaDeDetalles.setCellValue("Suma de todas las x 2:"+cr.calcularColumnaX2());
+                    celdaDeDetalles=filaActual.createCell(4);
+                    celdaDeDetalles.setCellValue("Suma de todas las y 2:");
+                    celdaDeDetalles=filaActual.createCell(5);
+                    celdaDeDetalles.setCellValue("Suma de todas las xy:");
+                    celdaDeDetalles=filaActual.createCell(6);
+                    celdaDeDetalles.setCellValue("Valor de pendiente:");
+                    celdaDeDetalles=filaActual.createCell(7);
+                    celdaDeDetalles.setCellValue("Valor de  interseccion:");
+                    celdaDeDetalles=filaActual.createCell(8);
+                    celdaDeDetalles.setCellValue("Valor de r:");
+                    celdaDeDetalles=filaActual.createCell(9);
+                    celdaDeDetalles.setCellValue("Valor de r 2");
+                    celdaDeDetalles=filaActual.createCell(10);
+                    celdaDeDetalles.setCellValue("Valor de la desviación estándar de la columna X:");
+                    celdaDeDetalles=filaActual.createCell(11);
+                    celdaDeDetalles.setCellValue("Valor de la desviación estándar de la columna Y:");
 
 
                 }
