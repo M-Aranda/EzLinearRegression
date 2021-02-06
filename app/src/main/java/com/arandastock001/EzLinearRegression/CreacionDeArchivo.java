@@ -109,7 +109,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
 
 
 
-                filaActual.setRowNum(1);
+                filaActual.setRowNum(1);//set row number se usa para cambiar la fila en la que se esta trabajando.
                 celdaDeDetalles = filaActual.createCell(3);
                 celdaDeDetalles.setCellValue("Suma de todas las x: " + cr.calcularSumaDeTodasLasX().toString());
 
