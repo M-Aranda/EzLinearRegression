@@ -112,11 +112,6 @@ public class MenuPrincipal extends AppCompatActivity {
 
 
 
-
-
-
-
-
         checkPermission(  Manifest.permission.WRITE_EXTERNAL_STORAGE,  1);
 
 

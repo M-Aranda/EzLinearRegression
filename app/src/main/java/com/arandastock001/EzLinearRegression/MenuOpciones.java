@@ -36,6 +36,19 @@ public class MenuOpciones extends AppCompatActivity {
         controladorDeColores.setObjetoConstraint(menuOpciones);
 
 
+//esta parte debiese mantener el color
+
+
+        if(controladorDeColores.getCodigoColor()!=null){
+
+            controladorDeColores.setCodigoColor(controladorDeColores.getCodigoColor());
+            controladorDeColores.setObjetoConstraint(menuOpciones);
+            controladorDeColores.cambiarColor();
+        }else if(controladorDeColores.getCodigoColor()==null){
+            controladorDeColores.setCodigoColor(1);
+        }
+//esta parte debiese mantener el color
+
 
 
         btnCeleste.setOnClickListener(new View.OnClickListener() {
