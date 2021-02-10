@@ -33,17 +33,13 @@ public class AcercaDe extends AppCompatActivity {
                 " Es de libre uso." +"\n"+
                 " Instrucciones: "+ "\n"+
                 "Apunte y capture la columna x primero, y luego la columna y." +"\n"+
-                " El programa resolvera el ejercicio de regresón lineal simple." +"\n"+
-                "Se puede exportar el resultado a PDF, Excel o archivo Txt. ");
-
-
+                " El programa resolvera el ejercicio de regresón lineal simple de manera automática y sin necesidad de realizar pasos adicionales." +"\n"+
+                "Se puede exportar el resultado a PDF, Excel o archivo Txt. También es posible crear un gráfico de la regresión"
+                );
 
         controladorDeColores= ControladorDeColores.getInstance();
        controladorDeColores.setObjetoConstraint(acercaDe);
-        controladorDeColores.cambiarColor();
-
-
-
+       controladorDeColores.cambiarColor();
 
 
 

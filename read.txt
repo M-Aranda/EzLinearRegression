@@ -1,0 +1,1 @@
+Fue necesario crear un nuevo proyecto con en android con un sdk de 30 (se usaba de 22 creo? 5.1) 10/2/2020
