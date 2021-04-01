@@ -36,7 +36,7 @@ public class MenuOpciones extends AppCompatActivity {
         controladorDeColores.setObjetoConstraint(menuOpciones);
 
 
-//esta parte debiese mantener el color
+//esta parte rescata el color que se selecciono anteriormente, y si no lo deja en celeste por defecto --
 
 
         if(controladorDeColores.getCodigoColor()!=null){
@@ -47,7 +47,7 @@ public class MenuOpciones extends AppCompatActivity {
         }else if(controladorDeColores.getCodigoColor()==null){
             controladorDeColores.setCodigoColor(1);
         }
-//esta parte debiese mantener el color
+// --
 
 
 
