@@ -9,160 +9,411 @@
     android:background="@android:color/holo_blue_light"
     tools:context=".ResumenDeResultados">
 
-    <TextView
-        android:id="@+id/txtInterseccion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="105dp"
-        android:text="@string/txtInterseccion"
-        app:layout_constraintBottom_toTopOf="@+id/txtDesviacionEstandarX"
-        app:layout_constraintStart_toStartOf="@+id/txtPendiente"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloConfirmacionDeNumeros" />
-
-    <TextView
-        android:id="@+id/txtPruebaX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="71dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="33dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/txtPruebaY"
-        app:layout_constraintEnd_toEndOf="@+id/txtPruebaY"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="TextoX" />
-
-    <TextView
-        android:id="@+id/txtPruebaY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginBottom="27dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/txtSumaX2"
-        app:layout_constraintStart_toStartOf="@+id/txtSumaX2"
-        app:layout_constraintTop_toBottomOf="@+id/txtPruebaX"
-        tools:text="textoY" />
-
-    <TextView
-        android:id="@+id/txtSumaX2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginBottom="31dp"
-        android:text="@string/txtSumaX2"
-        app:layout_constraintBottom_toTopOf="@+id/txtSumaY2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPruebaY" />
-
-    <TextView
-        android:id="@+id/txtSumaY2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="33dp"
-        android:text="@string/txtSumaY2"
-        app:layout_constraintBottom_toTopOf="@+id/txtSumaXY"
-        app:layout_constraintStart_toStartOf="@+id/txtSumaX2"
-        app:layout_constraintTop_toBottomOf="@+id/txtSumaX2" />
-
-    <TextView
-        android:id="@+id/txtSumaXY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="34dp"
-        android:text="@string/txtsumaXY"
-        app:layout_constraintBottom_toTopOf="@+id/txtPendiente"
-        app:layout_constraintEnd_toEndOf="@+id/txtSumaY2"
-        app:layout_constraintTop_toBottomOf="@+id/txtSumaY2" />
-
-    <TextView
-        android:id="@+id/txtPendiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="81dp"
-        android:text="@string/txtPendiente"
-        app:layout_constraintBottom_toTopOf="@+id/txtr2"
-        app:layout_constraintStart_toStartOf="@+id/txtSumaXY"
-        app:layout_constraintTop_toBottomOf="@+id/txtSumaXY" />
-
-    <Button
-        android:id="@+id/btnContinuarConfirmacionDeNumeros"
-        android:layout_width="192dp"
+    <LinearLayout
+        android:id="@+id/linearLayoutTitulo"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="18dp"
-        android:text="@string/btnContinuarConfirmacionDeNumeros"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="49dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llvTitulo1"
+            android:layout_width="152dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTituloConfirmacionDeNumeros"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:text="@string/txtTituloConfirmacionDeNumeros"
+                android:textColor="@android:color/background_light" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayourTextoX"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llvtextoX"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtPruebaX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                tools:text="TextoX" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="601dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtr" />
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayourTextoX">
 
-    <TextView
-        android:id="@+id/txtr2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="25dp"
-        android:text="@string/txtr2"
-        app:layout_constraintBottom_toTopOf="@+id/txtr"
-        app:layout_constraintStart_toStartOf="@+id/txtr"
-        app:layout_constraintTop_toBottomOf="@+id/txtPendiente" />
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
 
-    <TextView
-        android:id="@+id/txtr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="156dp"
-        android:text="@string/txtr"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarConfirmacionDeNumeros"
-        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarX"
-        app:layout_constraintTop_toBottomOf="@+id/txtr2" />
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnContinuarADesarrollo"
+            <TextView
+                android:id="@+id/txtPruebaY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                tools:text="textoY" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="19dp"
-        android:text="@string/btnContinuarADesarrollo"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarConfirmacionDeNumeros"
-        app:layout_constraintEnd_toEndOf="@+id/btnContinuarConfirmacionDeNumeros"
-        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarY"
-        app:layout_constraintTop_toBottomOf="@+id/txtDesviacionEstandarY" />
-
-    <TextView
-        android:id="@+id/txtTituloConfirmacionDeNumeros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="347dp"
-        android:text="@string/txtTituloConfirmacionDeNumeros"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toTopOf="@+id/txtInterseccion"
+        android:layout_marginBottom="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
-    <TextView
-        android:id="@+id/txtDesviacionEstandarX"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginBottom="15dp"
-        android:text="@string/txtDesviacionEstandarX"
-        app:layout_constraintBottom_toTopOf="@+id/txtDesviacionEstandarY"
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtSumaX2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtSumaX2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInterseccion" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
-    <TextView
-        android:id="@+id/txtDesviacionEstandarY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:text="@string/txtDesviacionEstandarY"
-        app:layout_constraintBottom_toTopOf="@+id/btnContinuarADesarrollo"
-        app:layout_constraintStart_toStartOf="@+id/txtDesviacionEstandarX"
-        app:layout_constraintTop_toBottomOf="@+id/txtDesviacionEstandarX" />
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtSumaY2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtSumaY2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="36dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtSumaXY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtsumaXY" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtPendiente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtPendiente" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="14dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtInterseccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtInterseccion" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtr2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtr2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtr" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtDesviacionEstandarX"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/txtDesviacionEstandarX" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout14"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="9dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtDesviacionEstandarY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtDesviacionEstandarY" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout15"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnContinuarADesarrollo"
+                android:layout_width="160dp"
+                android:layout_height="60dp"
+                android:text="@string/btnContinuarADesarrollo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="101dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnContinuarConfirmacionDeNumeros"
+            android:layout_width="192dp"
+            android:layout_height="60dp"
+            android:text="@string/btnContinuarConfirmacionDeNumeros" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
