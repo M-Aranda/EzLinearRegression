@@ -1,2 +1,3 @@
 Fue necesario crear un nuevo proyecto con en android con un sdk de 30 (se usaba de 22 creo? 5.1) 10/2/2020
 Commit de prueba
+7/4/2020 version antes de intentar integrar sign in de google para usar google drive 
