@@ -20,21 +20,29 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="675dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ListView
                 android:id="@+id/lstRegistros"
                 android:layout_width="match_parent"
-                android:layout_height="690dp"
+                android:layout_height="684dp"
                 android:background="@android:color/holo_blue_light" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnVolverDesdeHistorial"
+                    android:layout_width="413dp"
+                    android:layout_height="74dp"
+                    android:text="@string/btnVolverDesdeHistorial" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnVolverDesdeHistorial"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:text="@string/btnVolverDesdeHistorial" />
     </LinearLayout>
 
     <TextView

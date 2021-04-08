@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EzRegre</string>
+    <string name="app_name">Ez Linear Regression</string>
     <string name="btnCapturar">Capturar columna x</string>
     <string name="txtPruebaX">pruebaEsto</string>
     <string name="apunte_a_un_texto">Apunte a una columna primero</string>
@@ -17,7 +17,7 @@
     <string name="btnCrearPDF">Crear PDF</string>
     <string name="btnAcercaDe">Acerca de</string>
     <string name="btnProcederACamara">Capturar imagen</string>
-    <string name="txtTituloApp">Ez regression</string>
+    <string name="txtTituloApp">Ez Linear Regression</string>
     <string name="btnVolverAMenuPrincipal">Volver</string>
     <string name="txtDescripcionApp">Algun texto</string>
     <string name="txtr2">TextView</string>
