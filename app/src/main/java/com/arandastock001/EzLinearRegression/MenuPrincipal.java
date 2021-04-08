@@ -1,10 +1,5 @@
 package com.arandastock001.EzLinearRegression;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -14,11 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
 
 public class MenuPrincipal extends AppCompatActivity {
 
-    private Button btnProcederACamara, btnAcercaDe, btnVerHistorial, btnIngresarNumeros, btnOpciones;
+    private Button btnProcederACamara, btnAcercaDe, btnVerHistorial, btnIngresarNumeros, btnOpciones, btnLogIn, btnLogOut;
     private ConstraintLayout menuPrincipal;
     private ControladorDeColores controladorDeColores;
 
@@ -92,10 +92,13 @@ public class MenuPrincipal extends AppCompatActivity {
         btnIngresarNumeros = (Button)findViewById(R.id.btnIngresarNumeros);
         btnOpciones = (Button)findViewById(R.id.btnOpciones);
 
+        btnLogIn = (Button)findViewById(R.id.btnLogIn);
+        btnLogOut = (Button)findViewById(R.id.btnLogOut);
+
         menuPrincipal = (ConstraintLayout)findViewById(R.id.layoutMenuPrincipal);
 
 
-        controladorDeColores=ControladorDeColores.getInstance();
+        controladorDeColores = ControladorDeColores.getInstance();
 
 
         if(controladorDeColores.getCodigoColor()!=null){
@@ -174,6 +177,37 @@ public class MenuPrincipal extends AppCompatActivity {
                 startActivity(i);
                 finish();
 
+            }
+        });
+
+
+        btnLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnLogIn.setEnabled(false);
+                btnLogOut.setEnabled(true);
+                //ingresar
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Ingreso exitoso",
+                        Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+
+                toast.show();
+            }
+        });
+
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnLogIn.setEnabled(true);
+                btnLogOut.setEnabled(false);
+                //salir
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Cierre de sesión exitoso",
+                        Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+
+                toast.show();
             }
         });
 

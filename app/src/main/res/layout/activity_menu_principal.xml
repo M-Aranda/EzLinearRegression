@@ -11,24 +11,24 @@
     <Button
         android:id="@+id/btnAcercaDe"
         android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="45dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/btnAcercaDe"
         app:layout_constraintBottom_toTopOf="@+id/btnProcederACamara"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloApp" />
+        app:layout_constraintTop_toTopOf="@+id/txtTituloApp" />
 
     <Button
         android:id="@+id/btnProcederACamara"
         android:layout_width="150dp"
-        android:layout_height="0dp"
+        android:layout_height="65dp"
         android:layout_marginBottom="29dp"
         android:text="@string/btnProcederACamara"
         app:layout_constraintBottom_toTopOf="@+id/btnIngresarNumeros"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAcercaDe" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtTituloApp"
@@ -36,44 +36,63 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="73dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="15dp"
         android:text="@string/txtTituloApp"
         android:textColor="@android:color/white"
         android:textSize="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAcercaDe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnVerHistorial"
         android:layout_width="142dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="70dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="213dp"
+        android:layout_marginBottom="214dp"
         android:text="@string/btnVerHistorial"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpciones"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIngresarNumeros" />
+        app:layout_constraintTop_toTopOf="@+id/btnProcederACamara" />
 
     <Button
         android:id="@+id/btnIngresarNumeros"
         android:layout_width="145dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="53dp"
+        android:layout_height="65dp"
         android:text="@string/btnIngresarNumeros"
-        app:layout_constraintBottom_toTopOf="@+id/btnVerHistorial"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnProcederACamara" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnOpciones"
         android:layout_width="145dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="78dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginBottom="62dp"
         android:text="@string/btnOpciones"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnLogOut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVerHistorial" />
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btnLogIn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnOpciones" />
+
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btnLogOut"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

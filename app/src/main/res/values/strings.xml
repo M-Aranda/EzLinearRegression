@@ -51,4 +51,6 @@
     <string name="btnVerGrafico">Ver grafico</string>
     <string name="btnVolverDesdeGrafico">Volver</string>
     <string name="txtTituloGrafico">Gráfico</string>
+    <string name="btnLogIn">Ingresar</string>
+    <string name="btnLogOut">Salir</string>
 </resources>
