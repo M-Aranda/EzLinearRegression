@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -16,11 +17,17 @@ import androidx.core.content.ContextCompat;
 
 import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
 
+
 public class MenuPrincipal extends AppCompatActivity {
 
     private Button btnProcederACamara, btnAcercaDe, btnVerHistorial, btnIngresarNumeros, btnOpciones, btnLogIn, btnLogOut;
     private ConstraintLayout menuPrincipal;
     private ControladorDeColores controladorDeColores;
+
+
+
+
+
 
     //metodo para verificar que tenga permisos
    // public static boolean hasPermissions(Context context, String... permissions) {
@@ -187,12 +194,8 @@ public class MenuPrincipal extends AppCompatActivity {
                 btnLogIn.setEnabled(false);
                 btnLogOut.setEnabled(true);
                 //ingresar
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Ingreso exitoso",
-                        Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 0, 0);
 
-                toast.show();
+
             }
         });
 
@@ -202,12 +205,9 @@ public class MenuPrincipal extends AppCompatActivity {
                 btnLogIn.setEnabled(true);
                 btnLogOut.setEnabled(false);
                 //salir
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Cierre de sesión exitoso",
-                        Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 0, 0);
 
-                toast.show();
+
+
             }
         });
 
@@ -221,6 +221,7 @@ public class MenuPrincipal extends AppCompatActivity {
         toast.show();
 
     }
+
 
 
 

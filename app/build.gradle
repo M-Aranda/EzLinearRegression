@@ -21,6 +21,8 @@ android {
         }
     }
 
+
+
 }
 
 dependencies {
@@ -41,6 +43,8 @@ dependencies {
 
     //libreria necesaria para creación de gráfico dentro de app
     implementation 'com.jjoe64:graphview:4.2.2'
+
+
 
 
 
