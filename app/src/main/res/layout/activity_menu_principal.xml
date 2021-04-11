@@ -46,13 +46,13 @@
         android:id="@+id/btnVerHistorial"
         android:layout_width="142dp"
         android:layout_height="65dp"
-        android:layout_marginTop="213dp"
-        android:layout_marginBottom="214dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="57dp"
         android:text="@string/btnVerHistorial"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSubirArchivo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnProcederACamara" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresarNumeros" />
 
     <Button
         android:id="@+id/btnIngresarNumeros"
@@ -68,13 +68,13 @@
         android:id="@+id/btnOpciones"
         android:layout_width="145dp"
         android:layout_height="65dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="62dp"
         android:layout_marginBottom="62dp"
         android:text="@string/btnOpciones"
         app:layout_constraintBottom_toBottomOf="@+id/btnLogOut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVerHistorial" />
+        app:layout_constraintTop_toTopOf="@+id/btnSubirArchivo" />
 
     <Button
         android:id="@+id/btnLogIn"
@@ -90,9 +90,31 @@
         android:id="@+id/btnLogOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="66dp"
+        android:layout_marginEnd="65dp"
         android:layout_marginBottom="16dp"
+        android:onClick="signOut"
         android:text="@string/btnLogOut"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnCrearCarp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:onClick="createFolder"
+        android:text="crearCarpeta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerHistorial" />
+
+    <Button
+        android:id="@+id/btnSubirArchivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="157dp"
+        android:text="subir archiv"
+        android:onClick="uploadFile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnVerHistorial" />
 </androidx.constraintlayout.widget.ConstraintLayout>

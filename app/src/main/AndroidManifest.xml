@@ -5,24 +5,27 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="EzLinearRegression"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.arandastock001.EzLinearRegression.VerGrafico"></activity>
-        <activity android:name="com.arandastock001.EzLinearRegression.MenuOpciones" />
-        <activity android:name="com.arandastock001.EzLinearRegression.IngresoManual" />
-        <activity android:name="com.arandastock001.EzLinearRegression.VerHistorial" />
-        <activity android:name="com.arandastock001.EzLinearRegression.PasoAPaso" />
-        <activity android:name="com.arandastock001.EzLinearRegression.AcercaDe" />
-        <activity android:name="com.arandastock001.EzLinearRegression.CapturaActivity" />
-        <activity android:name="com.arandastock001.EzLinearRegression.CreacionDeArchivo" />
-        <activity android:name="com.arandastock001.EzLinearRegression.ResumenDeResultados" />
-        <activity android:name="com.arandastock001.EzLinearRegression.MenuPrincipal">
+        <activity android:name=".Gdrive.ter"></activity>
+        <activity android:name=".Gdrive.Terciary" />
+        <activity android:name=".VerGrafico" />
+        <activity android:name=".MenuOpciones" />
+        <activity android:name=".IngresoManual" />
+        <activity android:name=".VerHistorial" />
+        <activity android:name=".PasoAPaso" />
+        <activity android:name=".AcercaDe" />
+        <activity android:name=".CapturaActivity" />
+        <activity android:name=".CreacionDeArchivo" />
+        <activity android:name=".ResumenDeResultados" />
+        <activity android:name=".MenuPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

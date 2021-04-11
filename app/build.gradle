@@ -43,6 +43,9 @@ android {
 
 
 dependencies {
+
+
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -51,11 +54,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    //libreria necesaria para que se pueda "ver los numeros"
-    implementation 'com.google.android.gms:play-services-vision:9.8.0'
+    //libreria necesaria para que se pueda "ver los numeros" (tuve que emparejarla con la implementacion del google auth, o sea misma version)
+    implementation 'com.google.android.gms:play-services-vision:19.0.0'
 
-    //librerias necesarias para creacion de archivo excel
-
+    //libreria necesarias para creacion de archivo excel
     implementation 'org.apache.poi:poi:3.17'
 
     //libreria necesaria para creación de gráfico dentro de app
@@ -65,18 +67,26 @@ dependencies {
 
 
 
-    // g drive libs
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    // for runtime permission
+    implementation 'com.karumi:dexter:6.2.1'
+
+    //for top side toast, text with animation
+    implementation 'net.steamcrafted:load-toast:1.0.12'
+
+
+
+    // google drive api libs
+    //google auth
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
     implementation 'com.google.http-client:google-http-client-gson:1.26.0'
+    //google client api
     implementation('com.google.api-client:google-api-client-android:1.26.0') {
         exclude group: 'org.apache.httpcomponents'
     }
+    //google services api
     implementation('com.google.apis:google-api-services-drive:v3-rev136-1.25.0') {
         exclude group: 'org.apache.httpcomponents'
     }
-
-
-
 
 
 
