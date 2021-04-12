@@ -32,7 +32,7 @@ public class GoogleDriveServiceHelper {
 
     private final String FOLDER_MIME_TYPE = "application/vnd.google-apps.folder";
     private final String SHEET_MIME_TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-    private final String FOLDER_NAME = "Example_Folder";
+    private final String FOLDER_NAME = "Ez Linear Regression";
 
     public GoogleDriveServiceHelper(Drive driveService) {
         mDriveService = driveService;
