@@ -318,6 +318,8 @@ public class CreacionDeArchivo extends AppCompatActivity {
                                                }
                                                try {
                                                    try {
+
+
                                                        stream.write(texto.getBytes());
                                                    } catch (IOException e) {
                                                        e.printStackTrace();
@@ -352,6 +354,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 redirigirADirecotrioDeArchivosDeLaApp();
+                //abrirCarpetaDeArchivos();
             }
         });
 
@@ -400,6 +403,8 @@ public class CreacionDeArchivo extends AppCompatActivity {
         }
 
     }
+
+
 
 
 }

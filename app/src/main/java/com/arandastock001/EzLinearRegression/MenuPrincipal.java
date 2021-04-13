@@ -317,6 +317,7 @@ public class MenuPrincipal extends AppCompatActivity {
         Intent intent;
         if (android.os.Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
             intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
+            //intent = new Intent("com/android/data/com.arandastock001.ezregre/files/");
             intent.putExtra("CONTENT_TYPE", "*/*");
             intent.addCategory(Intent.CATEGORY_DEFAULT);
             Log.e(TAG, "uploadFile: if" );
@@ -340,7 +341,7 @@ public class MenuPrincipal extends AppCompatActivity {
             intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
             Log.e(TAG, "uploadFile: else" );
         }
-        startActivityForResult(Intent.createChooser(intent,"Choose File to Upload.."),PICK_FILE_REQUEST);
+        startActivityForResult(Intent.createChooser(intent,"Elegir archivo para subir"),PICK_FILE_REQUEST);
 
     }
 
@@ -368,7 +369,7 @@ public class MenuPrincipal extends AppCompatActivity {
                                             @Override
                                             public void onFailure(@NonNull Exception exception) {
                                               //
-                                                Log.e(TAG, "Couldn't create file.", exception);
+                                                Log.e(TAG, "No se pudo crear el archivo.", exception);
                                             }
                                         });
                             }else {
@@ -382,7 +383,7 @@ public class MenuPrincipal extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception exception) {
                           //  showMessage("Couldn't create file..");
-                            Log.e(TAG, "Couldn't create file..", exception);
+                            Log.e(TAG, "No se pudo crear el archivo", exception);
                         }
                     });
         }
@@ -396,7 +397,7 @@ public class MenuPrincipal extends AppCompatActivity {
     private void handleSignInResult(Intent result) {
         GoogleSignIn.getSignedInAccountFromIntent(result)
                 .addOnSuccessListener(googleAccount -> {
-                    Log.d(TAG, "Signed in as " + googleAccount.getEmail());
+                    Log.d(TAG, "Ingreso como " + googleAccount.getEmail());
 
                     // Use the authenticated account to sign in to the Drive service.
                     GoogleAccountCredential credential =
@@ -425,7 +426,7 @@ public class MenuPrincipal extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception exception) {
-                        Log.e(TAG, "Unable to sign in.", exception);
+                        Log.e(TAG, "No se pudo ingresar.", exception);
 
                         btnLogIn.setEnabled(true);
                     }
@@ -478,7 +479,7 @@ public class MenuPrincipal extends AppCompatActivity {
                                 });
                     }
                 }else{
-                    Toast.makeText(this,"Cannot upload file to server",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this,"No se pudo subir el archivo",Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -500,7 +501,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
                         // check if all permissions are granted
                         if (report.areAllPermissionsGranted()) {
-                            Toast.makeText(getApplicationContext(), "All permissions are granted!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Permisos otorgados", Toast.LENGTH_SHORT).show();
                             requestSignIn();
                         }
 
@@ -519,7 +520,7 @@ public class MenuPrincipal extends AppCompatActivity {
                 withErrorListener(new PermissionRequestErrorListener() {
                     @Override
                     public void onError(DexterError error) {
-                        Toast.makeText(getApplicationContext(), "Error occurred! ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Ocurrio un error! ", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .onSameThread()
@@ -541,9 +542,9 @@ public class MenuPrincipal extends AppCompatActivity {
      */
     private void showSettingsDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MenuPrincipal.this);
-        builder.setTitle("Need Permissions");
-        builder.setMessage("This app needs permission to use this feature. You can grant them in app settings.");
-        builder.setPositiveButton("GOTO SETTINGS", new DialogInterface.OnClickListener() {
+        builder.setTitle("Permisos requeridos");
+        builder.setMessage("Faltan permisos, concedalos en ajustes");
+        builder.setPositiveButton("Ir a ajustes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
