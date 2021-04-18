@@ -466,6 +466,7 @@ public class MenuPrincipal extends AppCompatActivity {
                                 .addOnSuccessListener(new OnSuccessListener<Boolean>() {
                                     @Override
                                     public void onSuccess(Boolean result) {
+                                        Toast.makeText(getApplicationContext(), "Se subió el archivo! ", Toast.LENGTH_SHORT).show();
                                      //   loadToast.success();
                                    //     showMessage("File uploaded ...!!");
                                     }

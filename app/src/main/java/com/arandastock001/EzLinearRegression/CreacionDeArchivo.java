@@ -211,7 +211,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 String fecha = df.format(momentoActual);
 
 
-                String nombreArchivo = "PDF creado el " + fecha + ".pdf";
+                String nombreArchivo = "Archivo PDF.pdf";//"PDF creado el " + fecha + ".pdf";
 
 
                 String texto = cr.mostrarPasoAPaso();
@@ -287,7 +287,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                                                String fecha = df.format(momentoActual);
 
 
-                                               String nombreArchivo = "txt creado el " + fecha + ".txt";
+                                               String nombreArchivo = "Archivo txt.txt";//"txt creado el " + fecha + ".txt";
 
                                                String texto = cr.mostrarPasoAPaso();
 

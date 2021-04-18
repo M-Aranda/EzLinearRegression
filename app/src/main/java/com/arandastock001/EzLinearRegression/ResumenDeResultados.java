@@ -25,7 +25,7 @@ import java.util.Date;
 public class ResumenDeResultados extends AppCompatActivity {
 
     private TextView txtPruebaX, txtPruebaY, txtSumaX2, txtSumaY2, txtSumaXY ,txtPendiente, txtInterseccion, txtr2, txtr, txtDesviacionEstandarX, txtDesviacionEstandarY;
-    private Button btnContinuarConfirmacionDeNumeros, btnContinuarADesarrollo;
+    private Button btnContinuarConfirmacionDeNumeros, btnContinuarADesarrollo, btnVolverAMenuPrincipalDesdeResumen;
     private CalculadoraDeValores calculosRealizados;
     private Data db;
     private ConstraintLayout resumenDeResultados;
@@ -52,6 +52,8 @@ public class ResumenDeResultados extends AppCompatActivity {
 
         btnContinuarADesarrollo = (Button) findViewById(R.id.btnContinuarADesarrollo);
         btnContinuarConfirmacionDeNumeros = (Button) findViewById(R.id.btnContinuarConfirmacionDeNumeros);
+        btnVolverAMenuPrincipalDesdeResumen = (Button)findViewById(R.id.btnVolverAMenuPrincipalDesdeResumen);
+
 
         db = new Data(this.getApplicationContext());
 
@@ -188,6 +190,15 @@ public class ResumenDeResultados extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ResumenDeResultados.this, PasoAPaso.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                finish();
+            }
+        });
+
+        btnVolverAMenuPrincipalDesdeResumen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),MenuPrincipal.class);
+                startActivity(i);
                 finish();
             }
         });

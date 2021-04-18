@@ -53,4 +53,5 @@
     <string name="txtTituloGrafico">Gráfico</string>
     <string name="btnLogIn">Ingresar</string>
     <string name="btnLogOut">Salir</string>
+    <string name="btnVolverAMenuPrincipalDesdeResumen">Menú principal</string>
 </resources>

@@ -26,7 +26,7 @@
             <ListView
                 android:id="@+id/lstRegistros"
                 android:layout_width="match_parent"
-                android:layout_height="684dp"
+                android:layout_height="673dp"
                 android:background="@android:color/holo_blue_light" />
 
             <LinearLayout
