@@ -5,9 +5,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.arandastock001.EzLinearRegression.Modelo.CalculadoraDeValores;
 import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
@@ -53,7 +55,12 @@ public class ResumenDeResultados extends AppCompatActivity {
 
         db = new Data(this.getApplicationContext());
 
+
         ConstraintLayout resumenDeResultados = (ConstraintLayout) findViewById(R.id.LayoutConfirmacionDeNumeros);
+
+
+        try{
+
 
         Intent i = getIntent();
 
@@ -150,6 +157,19 @@ public class ResumenDeResultados extends AppCompatActivity {
         System.out.println(cr.calcularR2().toString());
         System.out.println(cr.calcularR().toString());
 
+        }catch(Exception error){
+
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Debe capturar sólo números en igual cantidad en ambas columnas",
+                    Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+
+            toast.show();
+            Intent i = new Intent(getApplicationContext(),CapturaActivity.class);
+            startActivity(i);
+            finish();
+
+        }
 
         btnContinuarConfirmacionDeNumeros.setOnClickListener(new View.OnClickListener() {
             @Override

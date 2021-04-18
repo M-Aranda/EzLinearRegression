@@ -295,6 +295,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
                                                // no usar?
                                                File path = getApplicationContext().getExternalFilesDir(null);
 
+
                                                //deprecado?
                                                File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
 
