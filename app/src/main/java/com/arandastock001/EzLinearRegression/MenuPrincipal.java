@@ -62,7 +62,7 @@ public class MenuPrincipal extends AppCompatActivity {
     static String folderId="";
     GoogleSignInClient googleSignInClient;
 
-    private Button btnProcederACamara, btnAcercaDe, btnVerHistorial, btnIngresarNumeros, btnOpciones, btnLogIn, btnLogOut;
+    private Button btnProcederACamara, btnAcercaDe, btnVerHistorial, btnIngresarNumeros, btnOpciones, btnLogIn, btnLogOut, btnCrearCarp;
     private ConstraintLayout menuPrincipal;
     private ControladorDeColores controladorDeColores;
 
@@ -143,6 +143,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         btnLogIn = (Button)findViewById(R.id.btnLogIn);
         btnLogOut = (Button)findViewById(R.id.btnLogOut);
+        btnCrearCarp = (Button)findViewById(R.id.btnCrearCarp);
 
         menuPrincipal = (ConstraintLayout)findViewById(R.id.layoutMenuPrincipal);
 
@@ -160,6 +161,8 @@ public class MenuPrincipal extends AppCompatActivity {
         }
 
 
+        //No es necesario que lo vea
+        btnCrearCarp.setVisibility(View.INVISIBLE);
 
         //checkPermission(  Manifest.permission.WRITE_EXTERNAL_STORAGE,  1);
 
@@ -258,7 +261,6 @@ public class MenuPrincipal extends AppCompatActivity {
         });
 
 
-
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Bienvenido a la aplicación",
                 Toast.LENGTH_LONG);
@@ -308,12 +310,17 @@ public class MenuPrincipal extends AppCompatActivity {
                         }
                     });
         }
+
+
+
+
     }
 
 
     // This method will get call when user click on upload file button
     public void uploadFile(View view) {
 
+        btnCrearCarp.callOnClick();
         Intent intent;
         if (android.os.Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
             intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
@@ -431,6 +438,8 @@ public class MenuPrincipal extends AppCompatActivity {
                         btnLogIn.setEnabled(true);
                     }
                 });
+
+
     }
 
     @Override
@@ -504,6 +513,7 @@ public class MenuPrincipal extends AppCompatActivity {
                         if (report.areAllPermissionsGranted()) {
                             Toast.makeText(getApplicationContext(), "Permisos otorgados", Toast.LENGTH_SHORT).show();
                             requestSignIn();
+
                         }
 
                         // check for permanent denial of any permission

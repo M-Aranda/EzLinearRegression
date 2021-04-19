@@ -51,6 +51,8 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnVolverDesdeCreacionDeArchivo = (Button) findViewById(R.id.btnVolverDesdeCreacionDeArchivo);
         btnVerArchivos = (Button) findViewById(R.id.btnVerArchivos);
 
+        btnVerArchivos.setVisibility(View.INVISIBLE);
+
         creacionDeArchivo = (ConstraintLayout) findViewById(R.id.layoutCreacionDeArchivos);
 
 
