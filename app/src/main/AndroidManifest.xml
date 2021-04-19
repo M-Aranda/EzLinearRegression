@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Gdrive.ter"></activity>
+        <activity android:name=".UsarEcuacionDeLaRecta"></activity>
+        <activity android:name=".Gdrive.ter" />
         <activity android:name=".Gdrive.Terciary" />
         <activity android:name=".VerGrafico" />
         <activity android:name=".MenuOpciones" />

@@ -35,7 +35,7 @@ import java.util.Date;
 
 public class CreacionDeArchivo extends AppCompatActivity {
 
-    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo, btnVerArchivos;
+    private Button btnCrearExcel, btnCrearPDF, btnCrearTxt, btnVolverDesdeCreacionDeArchivo, btnVerArchivos, btnProyectar;
     private ConstraintLayout creacionDeArchivo;
     private ControladorDeColores controladorDeColores;
 
@@ -50,6 +50,7 @@ public class CreacionDeArchivo extends AppCompatActivity {
         btnCrearTxt = (Button) findViewById(R.id.btnCrearTxt);
         btnVolverDesdeCreacionDeArchivo = (Button) findViewById(R.id.btnVolverDesdeCreacionDeArchivo);
         btnVerArchivos = (Button) findViewById(R.id.btnVerArchivos);
+        btnProyectar = (Button) findViewById(R.id.btnProyectar);
 
         btnVerArchivos.setVisibility(View.INVISIBLE);
 
@@ -376,6 +377,17 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 finish();
 
 
+            }
+        });
+
+        btnProyectar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = getIntent();
+                CalculadoraDeValores calculosRealizados = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
+
+                startActivity(new Intent(CreacionDeArchivo.this, UsarEcuacionDeLaRecta.class).putExtra("calculosRealizados", (Serializable) calculosRealizados));
+                finish();
             }
         });
 

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutUsarEcuacionDeLaRecta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    tools:context=".UsarEcuacionDeLaRecta">
+
+    <Button
+        android:id="@+id/btnVolverDesdeER"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="291dp"
+        android:text="@string/btnVolverDesdeER"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtResultado"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultado" />
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="65dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverDesdeER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcularResultado" />
+
+    <Button
+        android:id="@+id/btnCalcularResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:text="@string/btnCalcularResultado"
+        app:layout_constraintBottom_toTopOf="@+id/txtResultado"
+        app:layout_constraintStart_toStartOf="@+id/txtResultado"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtEcuaciónDeLaRecta"
+            android:layout_width="411dp"
+            android:layout_height="47dp"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="49dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalcularResultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <LinearLayout
+            android:layout_width="136dp"
+            android:layout_height="84dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="136dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtYIgualA"
+                    android:layout_width="133dp"
+                    android:layout_height="95dp"
+                    android:text="TextView" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="145dp"
+            android:layout_height="85dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtFieldX"
+                android:layout_width="133dp"
+                android:layout_height="48dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Ingrese valor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="138dp"
+            android:layout_height="88dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtMasB"
+                android:layout_width="133dp"
+                android:layout_height="48dp"
+                android:text="TextView" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

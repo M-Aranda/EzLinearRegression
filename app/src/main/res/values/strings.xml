@@ -54,4 +54,8 @@
     <string name="btnLogIn">Ingresar</string>
     <string name="btnLogOut">Salir</string>
     <string name="btnVolverAMenuPrincipalDesdeResumen">Menú principal</string>
+    <string name="btnProyectar">usar ecuación de la recta</string>
+    <string name="btnCalcularResultado">Calcular</string>
+    <string name="btnVolverDesdeER">Volver</string>
+    <string name="subir_archiv">subir archivo</string>
 </resources>
