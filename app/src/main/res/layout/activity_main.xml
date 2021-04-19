@@ -9,11 +9,11 @@
 
     <SurfaceView
         android:id="@+id/surface_view"
-        android:layout_width="412dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnCapturarColumnaX"
-        app:layout_constraintStart_toEndOf="@+id/btnCapturarColumnaX"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -22,32 +22,58 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="646dp"
         android:text="@string/apunte_a_un_texto"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCapturarColumnaX"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/surface_view" />
 
-    <Button
-        android:id="@+id/btnCapturarColumnaX"
-        android:layout_width="206dp"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="@string/btnCapturar"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnCapturarColumnaY"
-        android:layout_width="206dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="6dp"
-        android:text="@string/btnCapturarColumnaY"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnCapturarColumnaX"
-        app:layout_constraintEnd_toEndOf="@+id/surface_view" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="679dp"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCapturarColumnaX"
+                    android:layout_width="206dp"
+                    android:layout_height="57dp"
+                    android:text="@string/btnCapturar" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnCapturarColumnaY"
+                        android:layout_width="206dp"
+                        android:layout_height="60dp"
+                        android:text="@string/btnCapturarColumnaY" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
