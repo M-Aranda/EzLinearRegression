@@ -46,10 +46,10 @@
         android:id="@+id/btnVerHistorial"
         android:layout_width="142dp"
         android:layout_height="65dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginBottom="57dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginBottom="41dp"
         android:text="@string/btnVerHistorial"
-        app:layout_constraintBottom_toBottomOf="@+id/btnSubirArchivo"
+        app:layout_constraintBottom_toTopOf="@+id/btnCrearCarp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnIngresarNumeros" />
@@ -67,14 +67,14 @@
     <Button
         android:id="@+id/btnOpciones"
         android:layout_width="145dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="62dp"
-        android:layout_marginBottom="62dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="13dp"
         android:text="@string/btnOpciones"
-        app:layout_constraintBottom_toBottomOf="@+id/btnLogOut"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogOut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnSubirArchivo" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSubirArchivo" />
 
     <Button
         android:id="@+id/btnLogIn"
@@ -101,20 +101,28 @@
         android:id="@+id/btnCrearCarp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="142dp"
         android:onClick="createFolder"
         android:text="crearCarpeta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSubirArchivo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVerHistorial" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIngresarNumeros" />
 
     <Button
         android:id="@+id/btnSubirArchivo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="157dp"
-        android:text="subir archiv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="8dp"
         android:onClick="uploadFile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnVerHistorial" />
+        android:text="subir archiv"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCrearCarp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCrearCarp"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerHistorial" />
 </androidx.constraintlayout.widget.ConstraintLayout>

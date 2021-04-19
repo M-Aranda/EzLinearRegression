@@ -206,6 +206,14 @@ public class CalculadoraDeValores implements Serializable {
         return resultado;
     };
 
+    public Double calcularValorDependiente (Double pendiente, int variableIndependienteX, Double interseccion){
+        Double resultado = 0.0;
+        resultado = (pendiente*variableIndependienteX) + interseccion;
+
+        return resultado;
+
+    }
+
 
 
 
@@ -327,15 +335,17 @@ public class CalculadoraDeValores implements Serializable {
 
 
         //Calculos para la interseccion
-        String pasosInterseccion = "7) Para el calculo de la intersección, a la suma de todas las Y ("+this.calcularSumaDeTodasLasY().toString()+"), se le resta la pendiente ("+this.calcularPendiente().toString().toString()+") por la suma de todas las X("+this.calcularSumaDeTodasLasX()+") y al resultado se le divide por\n" +
+        String pasosInterseccion = "7) Para el cálculo de la intersección, a la suma de todas las Y ("+this.calcularSumaDeTodasLasY().toString()+"), se le resta la pendiente ("+this.calcularPendiente().toString().toString()+") por la suma de todas las X("+this.calcularSumaDeTodasLasX()+") y al resultado se le divide por\n" +
                 "la cantidad de valores en la columna X ("+this.getColumnaX().size()+"). Esto da como resultado "+calcularInterseccion().toString()+".";
 
 
+        String pasosEcuacionDeLaRecta = "\n8) Para obtener la ecuación de la recta se necesita la pendiente, la intersección y la variable independiente (x). De modo que en este caso quedaría como: " +
+                "y = "+calcularPendiente().toString()+" * x "+" +"+calcularInterseccion().toString()+"\n. Para encontrar el valor de y sólo hace falta reemplazar la x por su valor.\n";
 
         //este debiese ser el resumen
 
 
-        pasos = pasos+"\n"+pasosX+"\n"+pasosY+pasosX2+"\n"+pasosY2+"\n"+pasosXY+"\n"+pasosPendiente+"\n"+pasosInterseccion;
+        pasos = pasos+"\n"+pasosX+"\n"+pasosY+pasosX2+"\n"+pasosY2+"\n"+pasosXY+"\n"+pasosPendiente+"\n"+pasosInterseccion+"\n"+pasosEcuacionDeLaRecta;
 
         return pasos;
     }

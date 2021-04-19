@@ -165,6 +165,11 @@ public class CreacionDeArchivo extends AppCompatActivity {
                 celdaDeDetalles.setCellValue("Valor de la desviación estándar de la columna Y: " + cr.calcularDesviacionEstandarColumnaY().toString());
 
 
+                filaActual.setRowNum(12);
+                celdaDeDetalles = filaActual.createCell(3);
+                celdaDeDetalles.setCellValue("Ecuación de la recta: y = "+cr.calcularPendiente().toString()+" * x "+" + "+cr.calcularInterseccion().toString());
+
+
                 File filePath = new File(getExternalFilesDir(null), nombreArchivo);//getApplicationContext().getExternalFilesDir(null);
 
                 try {

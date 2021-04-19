@@ -69,8 +69,6 @@ public class MenuPrincipal extends AppCompatActivity {
 
 
 
-
-
     //metodo para verificar que tenga permisos
    // public static boolean hasPermissions(Context context, String... permissions) {
      //   if (context != null && permissions != null) {
