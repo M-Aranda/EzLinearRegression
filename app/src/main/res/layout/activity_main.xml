@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="648dp"
+        android:layout_marginBottom="646dp"
         android:text="@string/apunte_a_un_texto"
         android:textColor="@android:color/white"
         android:textSize="20sp"
@@ -34,7 +34,7 @@
     <Button
         android:id="@+id/btnCapturarColumnaX"
         android:layout_width="206dp"
-        android:layout_height="60dp"
+        android:layout_height="0dp"
         android:text="@string/btnCapturar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
