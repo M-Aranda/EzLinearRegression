@@ -58,4 +58,6 @@
     <string name="btnCalcularResultado">Calcular</string>
     <string name="btnVolverDesdeER">Volver</string>
     <string name="subir_archiv">subir archivo</string>
+    <string name="txtTituloGraficoPosiciones">Grafico de posiciones</string>
+    <string name="txtGraficoRecta">Gráfico de recta</string>
 </resources>
