@@ -245,6 +245,7 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
+        /*
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -252,10 +253,17 @@ public class MenuPrincipal extends AppCompatActivity {
                 btnLogOut.setEnabled(false);
                 //salir
 
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Se llamo esto",
+                        Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
 
+                toast.show();
 
             }
         });
+        */
+
 
 
         Toast toast = Toast.makeText(getApplicationContext(),
@@ -296,6 +304,13 @@ public class MenuPrincipal extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             btnLogIn.setEnabled(true);
                             btnLogOut.setEnabled(false);
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Sesión cerrada",
+                                    Toast.LENGTH_LONG);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+
+                            toast.show();
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -308,7 +323,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     });
         }
 
-
+        this.finishAffinity();
 
 
     }
