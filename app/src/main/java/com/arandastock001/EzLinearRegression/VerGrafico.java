@@ -55,7 +55,6 @@ public class VerGrafico extends AppCompatActivity {
         for (int j = 0; j <calculosRealizados.getColumnaX().size() ; j++) {
             datos.add(new DataPoint(calculosRealizados.getColumnaX().get(j),calculosRealizados.getColumnaY().get(j)));
 
-
             addToDataPointToArray(puntosDeDatos, new DataPoint(calculosRealizados.getColumnaX().get(j),calculosRealizados.getColumnaY().get(j)));
 
         }

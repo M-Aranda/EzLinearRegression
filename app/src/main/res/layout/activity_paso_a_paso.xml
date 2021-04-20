@@ -42,20 +42,27 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="690dp"
+            android:layout_height="570dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtPasoAPasoDetallado"
                 android:layout_width="match_parent"
-                android:layout_height="566dp"
+                android:layout_height="match_parent"
                 android:scrollbars="vertical"
                 android:text="@string/txtPasoAPasoDetallado" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="177dp"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btnVerGrafico"
                 android:layout_width="410dp"
-                android:layout_height="60dp"
+                android:layout_height="58dp"
                 android:text="@string/btnVerGrafico" />
 
             <Button
@@ -63,7 +70,6 @@
                 android:layout_width="410dp"
                 android:layout_height="60dp"
                 android:text="@string/btnVolverDesdePasoAPaso" />
-
         </LinearLayout>
 
     </LinearLayout>

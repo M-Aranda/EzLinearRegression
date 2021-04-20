@@ -10,12 +10,12 @@
 
     <Button
         android:id="@+id/btnVolverDesdeER"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="291dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="@string/btnVolverDesdeER"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtResultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtResultado" />
 
     <TextView
@@ -23,7 +23,7 @@
         android:layout_width="200dp"
         android:layout_height="0dp"
         android:layout_marginEnd="78dp"
-        android:layout_marginBottom="65dp"
+        android:layout_marginBottom="346dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/btnVolverDesdeER"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,8 +96,8 @@
                 android:layout_width="133dp"
                 android:layout_height="48dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Ingrese valor" />
+                android:hint="Ingrese valor"
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <LinearLayout

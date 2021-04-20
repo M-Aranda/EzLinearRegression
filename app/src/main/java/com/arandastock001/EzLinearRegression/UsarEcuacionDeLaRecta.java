@@ -16,6 +16,7 @@ import com.arandastock001.EzLinearRegression.Modelo.CalculadoraDeValores;
 import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class UsarEcuacionDeLaRecta extends AppCompatActivity {
 
@@ -52,8 +53,11 @@ public class UsarEcuacionDeLaRecta extends AppCompatActivity {
         CalculadoraDeValores cr = (CalculadoraDeValores) i.getSerializableExtra("calculosRealizados");
 
 
-        txtYIgualA.setText("Y = "+cr.calcularPendiente().toString()+" * ");
-        txtMasB.setText("+ "+cr.calcularInterseccion());
+        DecimalFormat form = new DecimalFormat("0.00");
+
+
+        txtYIgualA.setText("Y = "+form.format(cr.calcularPendiente()).toString()+" * ");
+        txtMasB.setText("+ "+form.format(cr.calcularInterseccion()).toString());
 
         txtResultado.setText("El valor de Y es: ...");
 

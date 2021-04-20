@@ -319,8 +319,8 @@ public class MenuPrincipal extends AppCompatActivity {
         btnCrearCarp.callOnClick();
         Intent intent;
         if (android.os.Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
-            intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
-            //intent = new Intent("com/android/data/com.arandastock001.ezregre/files/");
+            //intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
+            intent = new Intent("com/android/data/com.arandastock001.ezregre/files/");
             intent.putExtra("CONTENT_TYPE", "*/*");
             intent.addCategory(Intent.CATEGORY_DEFAULT);
             Log.e(TAG, "uploadFile: if" );

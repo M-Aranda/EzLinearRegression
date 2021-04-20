@@ -79,8 +79,8 @@
 
     <Button
         android:id="@+id/btnProyectar"
-        android:layout_width="133dp"
-        android:layout_height="69dp"
+        android:layout_width="135dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="49dp"
         android:text="@string/btnProyectar"
         app:layout_constraintBottom_toTopOf="@+id/btnVolverDesdeCreacionDeArchivo"
