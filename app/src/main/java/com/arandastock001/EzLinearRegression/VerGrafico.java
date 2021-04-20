@@ -11,10 +11,10 @@ import android.widget.Button;
 
 import com.arandastock001.EzLinearRegression.Modelo.CalculadoraDeValores;
 import com.arandastock001.EzLinearRegression.Modelo.ControladorDeColores;
-import com.arandastock001.EzLinearRegression.Modelo.Data;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.jjoe64.graphview.series.PointsGraphSeries;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class VerGrafico extends AppCompatActivity {
 
     private Button btnVolverDesdeGrafico;
     private ConstraintLayout layoutVerGrafico;
-    private GraphView grafico, grafico2;
+    private GraphView grafico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class VerGrafico extends AppCompatActivity {
          btnVolverDesdeGrafico = (Button) findViewById(R.id.btnVolverDesdeGrafico);
          layoutVerGrafico = (ConstraintLayout) findViewById(R.id.layoutVerGrafico);
          grafico = (GraphView) findViewById(R.id.grafico);
-        grafico2 = (GraphView) findViewById(R.id.grafico2);
+
 
 
 
@@ -50,8 +50,6 @@ public class VerGrafico extends AppCompatActivity {
 
 
         DataPoint [] puntosDeDatos = new DataPoint[]{ };
-
-
         ArrayList<DataPoint> datos =  new ArrayList<>();
 
         for (int j = 0; j <calculosRealizados.getColumnaX().size() ; j++) {
@@ -61,18 +59,18 @@ public class VerGrafico extends AppCompatActivity {
 
         }
 
+        PointsGraphSeries<DataPoint> posicionesDePuntos = new PointsGraphSeries<>(datos.toArray(new DataPoint[0]));
 
 
 
-      LineGraphSeries<DataPoint> series = new LineGraphSeries<>(datos.toArray(new DataPoint[0]));
+        //Esto añade datos al grafico (los puntos)
+        grafico.addSeries(posicionesDePuntos);
+        posicionesDePuntos.setShape(PointsGraphSeries.Shape.POINT);
+        posicionesDePuntos.setColor(Color.RED);
 
 
 
-        //Esto añade datos al grafico
-        grafico.addSeries(series);
-
-
-        //Esto debiese agregar otra linea
+        //Esto debiese la recta
         DataPoint[] lineaRecta = new DataPoint[]{};
 
         ArrayList<DataPoint> datosLineaRecta = new ArrayList<>();
@@ -94,11 +92,18 @@ public class VerGrafico extends AppCompatActivity {
         }
 
 
-
         LineGraphSeries<DataPoint> lineaDibujo = new LineGraphSeries<>(datosLineaRecta.toArray(new DataPoint[0]));
 
 
-        grafico2.addSeries(lineaDibujo);
+        grafico.addSeries(lineaDibujo);
+
+
+
+
+
+
+
+
 
 
 

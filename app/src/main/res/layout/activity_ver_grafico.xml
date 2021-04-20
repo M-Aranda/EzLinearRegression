@@ -11,65 +11,35 @@
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/grafico"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="33dp"
-        app:layout_constraintBottom_toTopOf="@+id/grafico2"
+        android:layout_width="411dp"
+        android:layout_height="270dp"
+        android:layout_marginBottom="195dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverDesdeGrafico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTituloGrafico" />
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/grafico2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVolverDesdeGrafico"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grafico" />
-
     <Button
         android:id="@+id/btnVolverDesdeGrafico"
-        android:layout_width="410dp"
-        android:layout_height="65dp"
+        android:layout_width="411dp"
+        android:layout_height="70dp"
         android:text="@string/btnVolverDesdeGrafico"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grafico2" />
+        app:layout_constraintTop_toBottomOf="@+id/grafico" />
 
     <TextView
         android:id="@+id/txtTituloGrafico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="154dp"
-        android:layout_marginBottom="67dp"
+        android:layout_marginBottom="190dp"
         android:text="@string/txtTituloGrafico"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/grafico"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtTituloGraficoPosiciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/txtTituloGraficoPosiciones"
-        app:layout_constraintBottom_toTopOf="@+id/grafico"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtGraficoRecta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginBottom="6dp"
-        android:text="@string/txtGraficoRecta"
-        app:layout_constraintBottom_toTopOf="@+id/grafico2"
-        app:layout_constraintStart_toStartOf="@+id/grafico2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
