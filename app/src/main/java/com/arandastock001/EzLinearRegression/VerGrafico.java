@@ -70,7 +70,7 @@ public class VerGrafico extends AppCompatActivity {
 
 
 
-        //Esto debiese la recta
+        //Esto  agrega la recta
         DataPoint[] lineaRecta = new DataPoint[]{};
 
         ArrayList<DataPoint> datosLineaRecta = new ArrayList<>();
@@ -81,26 +81,36 @@ public class VerGrafico extends AppCompatActivity {
         int valorASumar =  (int)Math.round(calculosRealizados.calcularPendiente());
 
         for (int j = 0; j <calculosRealizados.getColumnaX().size() ; j++) {
-            valorXMasBajo = valorXMasBajo+valorASumar;
-            valorYMasBajo = valorYMasBajo+valorASumar;
+
+            if(j==0){
+                valorXMasBajo = calculosRealizados.getColumnaX().get(j)-valorASumar;
+                valorYMasBajo = calculosRealizados.getColumnaY().get(j)-valorASumar;
 
 
-            datosLineaRecta.add(new DataPoint(valorXMasBajo,valorYMasBajo));
+                datosLineaRecta.add(new DataPoint(valorXMasBajo,valorYMasBajo));
 
-            addToDataPointToArray(lineaRecta, new DataPoint(valorXMasBajo,valorYMasBajo));
+                addToDataPointToArray(lineaRecta, new DataPoint(valorXMasBajo,valorYMasBajo));
+
+            }else if(j+1==calculosRealizados.getColumnaX().size()){
+                valorXMasBajo = calculosRealizados.getColumnaX().get(j)+valorASumar;
+                valorYMasBajo = calculosRealizados.getColumnaY().get(j)+valorASumar;
+
+
+                datosLineaRecta.add(new DataPoint(valorXMasBajo,valorYMasBajo));
+
+                addToDataPointToArray(lineaRecta, new DataPoint(valorXMasBajo,valorYMasBajo));
+            }
+
+
 
         }
+
 
 
         LineGraphSeries<DataPoint> lineaDibujo = new LineGraphSeries<>(datosLineaRecta.toArray(new DataPoint[0]));
 
 
         grafico.addSeries(lineaDibujo);
-
-
-
-
-
 
 
 
