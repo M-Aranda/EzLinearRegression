@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
@@ -302,7 +303,7 @@ public class MenuPrincipal extends AppCompatActivity {
                         public void onFailure(@NonNull Exception exception) {
 
 
-                            Log.e(TAG, "Unable to sign out.", exception);
+                            Log.e(TAG, "No se puede salir.", exception);
                         }
                     });
         }
@@ -317,10 +318,12 @@ public class MenuPrincipal extends AppCompatActivity {
     public void uploadFile(View view) {
 
         btnCrearCarp.callOnClick();
+
         Intent intent;
+
         if (android.os.Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
-            //intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
-            intent = new Intent("com/android/data/com.arandastock001.ezregre/files/");
+              //intent = new Intent("com.sec.android.app.myfiles.PICK_DATA");
+            intent = new Intent("com.android.data/com/arandastock001/ezregre/files");
             intent.putExtra("CONTENT_TYPE", "*/*");
             intent.addCategory(Intent.CATEGORY_DEFAULT);
             Log.e(TAG, "uploadFile: if" );
@@ -507,7 +510,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
                         // check if all permissions are granted
                         if (report.areAllPermissionsGranted()) {
-                            Toast.makeText(getApplicationContext(), "Permisos otorgados", Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getApplicationContext(), "Permisos otorgados", Toast.LENGTH_SHORT).show();
                             requestSignIn();
 
                         }

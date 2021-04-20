@@ -44,7 +44,7 @@
 
     <Button
         android:id="@+id/btnVerHistorial"
-        android:layout_width="142dp"
+        android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_marginTop="37dp"
         android:layout_marginBottom="41dp"
@@ -56,7 +56,7 @@
 
     <Button
         android:id="@+id/btnIngresarNumeros"
-        android:layout_width="145dp"
+        android:layout_width="150dp"
         android:layout_height="65dp"
         android:text="@string/btnIngresarNumeros"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,8 +66,8 @@
 
     <Button
         android:id="@+id/btnOpciones"
-        android:layout_width="145dp"
-        android:layout_height="0dp"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="13dp"
         android:text="@string/btnOpciones"
@@ -114,8 +114,8 @@
 
     <Button
         android:id="@+id/btnSubirArchivo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="150dp"
+        android:layout_height="65dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="136dp"
         android:layout_marginBottom="8dp"
