@@ -1,5 +1,12 @@
 package com.arandastock001.EzLinearRegression.Modelo;
 
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class Registro {
 
     private Integer id;
@@ -51,8 +58,13 @@ public class Registro {
         this.fechaRegistro = fechaRegistro;
     }
 
+
     @Override
     public String toString() {
-        return "Captura realizada el " + fechaRegistro ;
+
+
+
+        return "Registro realizado el " + fechaRegistro ;
     }
 }
+
